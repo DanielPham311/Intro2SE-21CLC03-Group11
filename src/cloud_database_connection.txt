@@ -1,0 +1,4 @@
+Host: bxh6rlcqe6vqwqfuiety-mysql.services.clever-cloud.com
+Username: u5fvioagytwx65uw
+Password: Ipt1lCnQeQ7C2ahpcYiF
+Port: 3306
