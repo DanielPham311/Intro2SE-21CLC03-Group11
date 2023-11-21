@@ -184,13 +184,29 @@ create table Award_Movie
     award_date date,
     
     constraint PK_award_movie
-    primary key (award_id, movie_id),
+    primary key (award_id, movie_id, award_date),
     
     constraint FK_award
     foreign key (award_id) references Award(award_id),
     
     constraint FK_movie
     foreign key (movie_id) references Movie(movie_id)
+);
+
+create table Award_Actor
+(
+	award_id int ,
+    actor_id int,
+    award_date date,
+    
+    constraint PK_award_movie
+    primary key (award_id, actor_id, award_date),
+    
+    constraint FK_award_actor
+    foreign key (award_id) references Award(award_id),
+    
+    constraint FK_actor_award
+    foreign key (actor_id) references Actor(actor_id)
 );
 
 create table Genre
@@ -219,26 +235,23 @@ create table Genre_Movie
 
 create table Image_actor
 (
-	image_id int auto_increment,
-    image_link varchar(255),
     actor int not null,
+    image_link varchar(255),
     
     constraint PK_image_actor
-    primary key (image_id),
+    primary key (actor, image_link),
     
     constraint FK_image_actor
     foreign key (actor) references Actor(actor_id)
 );
 
-create table MoviePoster
+create table MovieTrailer
 (
 	movie int,
-    poster_link1 varchar(255),
-    poster_link2 varchar(255),
     trailer_link varchar(255),
     
-    constraint PK_MoviePoster primary key(movie),
-    constraint FK_MoviePoster
+    constraint PK_MoviePoster primary key(movie, trailer_link),
+    constraint FK_MovieTrailer
     foreign key (movie) references Movie(movie_id)
 );
 
@@ -300,3 +313,13 @@ insert into Subcription(subcription_name, price_per_month, resolution_cap)
 values ('Free',108000.00,720),
 		('Premium', 220000.00, 1080),
         ('Signature', 260000.00, 1440);
+        
+insert into Award(award_name)
+values ('Golden Globe Awards'),
+		('Oscars (Academy Awards)'),
+        ('Annie Awards'),
+        ('Best Director'),
+        ('Best Actor'),
+        ('Best Actress'),
+        ('Best Picture'),
+        ('Best Cinematography');
