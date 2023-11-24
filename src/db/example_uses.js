@@ -1,5 +1,4 @@
 const pool = require('./dbConnection');
- 
 (async () => {
   try {
     const connection = await pool.getConnection();

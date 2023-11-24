@@ -2,4 +2,8 @@ Host: btqwfrkhhohfbtds6c9u-mysql.services.clever-cloud.com
 Username: uj2tscyupyps9mg4
 Password: LPJarBB9v1OuuA9dwMpD
 Port: 3306
+<<<<<<< Updated upstream
 database-name: btqwfrkhhohfbtds6c9u
+=======
+database_name: btqwfrkhhohfbtds6c9u
+>>>>>>> Stashed changes

@@ -1,11 +1,11 @@
 const dbConfig = {
-  host: "localhost",
-  user: "your_database_username",
-  password: "your_database_password",
-  database: "your_database_name",
+  host: "btqwfrkhhohfbtds6c9u-mysql.services.clever-cloud.com",
+  user: "uj2tscyupyps9mg4",
+  password: "LPJarBB9v1OuuA9dwMpD",
+  database: "btqwfrkhhohfbtds6c9u",
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
 };
 
-module.exports = dbConfig;
+module.exports = {dbConfig};
