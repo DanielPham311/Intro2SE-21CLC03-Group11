@@ -1,36 +1,475 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Welcome to NETFLEX</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- Bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
 
-</head>
+    <!-- Local CSS sheet-->
+    <link rel="stylesheet" href="../styles/index.css" />
+  </head>
 
-<body>
-  <header>
-    <!-- place navbar here -->
-  </header>
-  <main>
+  <body>
+    <header class="container-fluid bg-dark border-bottom">
+      <nav class="navbar navbar-expand-sm navbar-dark container p-0">
+        <div class="container">
+          <a class="navbar-brand p-0 h-25 w-25" href="#"
+            ><img
+              src="../resources/logo.png"
+              class="img-fluid rounded-top w-50 h-50"
+              id="homeIcon"
+              alt="Welcome to NETLFEX"
+          /></a>
+          <button
+            class="navbar-toggler d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+              <li class="nav-item m-2">
+                <a class="nav-link active" href="#" aria-current="page"
+                  >Home <span class="visually-hidden">(current)</span></a
+                >
+              </li>
+              <li class="nav-item m-2">
+                <a class="nav-link" href="#">Movies</a>
+              </li>
+              <li class="nav-item m-2">
+                <a class="nav-link" href="#">TV Shows</a>
+              </li>
+              <li class="nav-item m-2">
+                <a class="nav-link" href="#">My Playlist</a>
+              </li>
+              <li class="nav-item m-2">
+                <a class="nav-link" href="#"><i class="bi bi-search"></i></a>
+              </li>
+              <li class="nav-item dropdown m-2">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="dropdownId"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  ><i class="bi bi-person px-2"></i>Welcome back, User</a
+                >
+                <div class="dropdown-menu" aria-labelledby="dropdownId">
+                  <a class="dropdown-item" href="#">Manage Account</a>
+                  <a class="dropdown-item" href="#">Subscription Plans</a>
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <a class="dropdown-item" href="#">Log Out</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-  </main>
-  <footer>
-    <!-- place footer here -->
-  </footer>
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    <main>
+      <div id="recommended" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active" id="FNAF">
+            <div class="overlay"></div>
+            <img
+              src="../resources/FNAF-horizontal.jpg"
+              class="w-100 d-block bg-img"
+              alt="First movie"
+            />
+            <div class="carousel-caption d-block">
+              <h1 class="display-4 fw-bold">Five Nights at Freddy's</h1>
+              <p class="fst-italic">
+                A troubled security guard begins working at Freddy Fazbear's
+                Pizza. During his first night on the job, he realizes that the
+                night shift won't be so easy to get through. Pretty soon he will
+                unveil what actually happened at Freddy's
+              </p>
+              <p class="fw-semibold">
+                2023 | <span class="highlight">PG-13</span> | Cinematic Movie
+              </p>
+              <p class="fw-semibold fs-3">
+                <i class="bi bi-star-fill"></i> IMDb Rating: 5.5/10 Genre:
+                <span class="highlight fs-4 fst-italic"
+                  >Action, Horror, Video Game</span
+                >
+              </p>
+              <a
+                name="playMovie"
+                id=""
+                class="btn p-3 mx-3 fw-bold play-btn text-white"
+                href="#"
+                role="button"
+                ><i class="bi bi-play-fill"></i> Watch</a
+              >
+            </div>
+          </div>
+          <div class="carousel-item" id="PB">
+            <div class="overlay"></div>
+            <img
+              src="../resources/PBlinders-horizontal.png"
+              class="w-100 d-block bg-img"
+              alt="Second movie"
+            />
+            <div class="carousel-caption d-block">
+              <h1 class="display-4 fw-bold">Peaky Blinders</h1>
+              <p class="fst-italic">
+                A gangster family epic set in 1900s England, centering on a gang
+                who sew razor blades in the peaks of their caps, and their
+                fierce boss Tommy Shelby.
+              </p>
+              <p class="fw-semibold">
+                2013-2022 | <span class="highlight">PG-16</span> | TV Series
+              </p>
+              <p class="fw-semibold fs-3">
+                <i class="bi bi-star-fill"></i> IMDb Rating: 8.8/10 Genre:
+                <span class="highlight fs-4 fst-italic">Crime, Drama</span>
+              </p>
+              <a
+                name="playMovie"
+                id=""
+                class="btn p-3 mx-3 fw-bold play-btn text-white"
+                href="#"
+                role="button"
+                ><i class="bi bi-play-fill"></i> Watch</a
+              >
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="overlay"></div>
+            <img
+              src="../resources/spiderman-horizontal.jpg"
+              class="w-100 d-block bg-img"
+              alt="Third movie"
+            />
+            <div class="carousel-caption d-block" id="SMNWH">
+              <h1 class="display-4 fw-bold">Spider-Man: No Way Home</h1>
+              <p class="fst-italic">
+                With Spider-Man's identity now revealed, Peter asks Doctor
+                Strange for help. When a spell goes wrong, dangerous foes from
+                other worlds start to appear, forcing Peter to discover what it
+                truly means to be Spider-Man.
+              </p>
+              <p class="fw-semibold">
+                2021 | <span class="highlight">PG-13</span> | Cinematic Movie
+              </p>
+              <p class="fw-semibold fs-3">
+                <i class="bi bi-star-fill"></i> IMDb Rating: 8.2/10 Genre:
+                <span class="highlight fs-4 fst-italic"
+                  >Action, Adventure, Fantasy</span
+                >
+              </p>
+              <a
+                name="playMovie"
+                id=""
+                class="btn p-3 mx-3 fw-bold play-btn text-white"
+                href="#"
+                role="button"
+                ><i class="bi bi-play-fill"></i> Watch</a
+              >
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#recommended"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#recommended"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
-</body>
+      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter"><i class="bi bi-play-fill" id="play-title"></i>Unfinished Movies</h2>
 
+      <div id="unfinished" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active d-flex justify-content-center bg-dark">
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/FNAF-caption.jpg"
+                class="card-img-top w-100"
+                alt="FNAF"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Horror</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text w-100">
+                  Five Nights At Freddy's
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/PBlinders-caption.jpg"
+                class="card-img-top w-100"
+                alt="FNAF"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Crime/Drama</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Peaky Blinders
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/TSTET-caption.jpg"
+                class="card-img-top w-100"
+                alt="PB"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Story/Musical</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Taylor Swift: The Eras Tour
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/spiderman-caption.jpg"
+                class="card-img-top w-100"
+                alt="TSET"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Adventure/Fantasy</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Spider-Man: No Way Home
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item d-flex justify-content-center bg-dark">
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/FNAF-caption.jpg"
+                class="card-img-top w-100"
+                alt="FNAF"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Horror</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text w-100">
+                  Five Nights At Freddy's
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/PBlinders-caption.jpg"
+                class="card-img-top w-100"
+                alt="FNAF"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Crime/Drama</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Peaky Blinders
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/TSTET-caption.jpg"
+                class="card-img-top w-100"
+                alt="PB"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Story/Musical</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Taylor Swift: The Eras Tour
+                </p>
+              </div>
+            </div>
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="../resources/spiderman-caption.jpg"
+                class="card-img-top w-100"
+                alt="TSET"
+              />
+              <div class="card-body text-white">
+                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Adventure/Fantasy</h5>
+                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
+                <p class="card-text">
+                  Spider-Man: No Way Home
+                </p>
+              </div>
+            </div>
+          </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#unfinished"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#unfinished"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
+    <footer>
+      <!-- place footer here -->
+      <div class="container-fluid bg-dark text-white">
+        <div class="container p-0">
+          <div class="row">
+            <div class="col col-6 h-100 mx-3">
+              <a class="navbar-brand" href="#"
+                ><img
+                  src="../resources/logo.png"
+                  class="img-fluid rounded-top w-25 h-25"
+                  id="homeIcon"
+                  alt="Welcome to NETLFEX"
+              /></a>
+              <p class="fw-semibold mx-2 foot-text">
+                Netflex aims to offer a wide range of movies to all you movie
+                lovers out there who wants to catch up with a favourite series
+                or to simply end their day with a blockbuster. Are you a
+                student? Currently working? No matter what your occupation is,
+                we got you! Start your movie experience free or sign up for a
+                subscription pack suitable for you today!
+              </p>
+            </div>
+            <div class="col col-auto h-100 mx-3">
+              <p class="fw-semibold text-white foot-nav-title">Pages</p>
+              <ul>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-white fw-semibold"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-white fw-semibold"
+                    >Top-Rated Movies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-white fw-semibold"
+                    >Currently Trending</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-white fw-semibold"
+                    >Movies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-white fw-semibold"
+                    >TV Series</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col col-auto h-100 mx-3">
+              <div class="container-fluid d-grid">
+                <p class="fw-semibold text-white foot-nav-title">
+                  Connect with Us
+                </p>
+                <div class="container p-0">
+                  <div class="row">
+                    <div class="col col-auto h-100">
+                      <a title="telegram" href="#"
+                        ><i
+                          class="bi bi-telegram text-white foot-socials mr-3"
+                        ></i
+                      ></a>
+                      <a title="telegram" href="#"
+                        ><i
+                          class="bi bi-instagram text-white foot-socials m-3"
+                        ></i
+                      ></a>
+                      <a title="telegram" href="#"
+                    </div>
+                    <div class="col col-auto h-100">
+                      <a title="telegram" href="#"
+                        ><i
+                          class="bi bi-facebook text-white foot-socials mr-3"
+                        ></i
+                      ></a>
+                      <a title="telegram" href="#"
+                        ><i
+                          class="bi bi-youtube text-white foot-socials m-3"
+                        ></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid text-white text-center bg-dark fw-bold py-1">
+        &copy Netflex.com - 2023
+      </div>
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
