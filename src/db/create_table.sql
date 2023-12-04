@@ -16,18 +16,15 @@ create table `Account`
 
 create table `Admin`
 (
-	account_id int,
+	admin_id int auto_increment,
 	`name` varchar(255) character set utf8mb4,
     
-    constraint PK_account primary key (account_id),
-    constraint FK_Account_Admin
-    foreign key (account_id)
-    references `Account`(account_id)
+    constraint PK_account primary key (admin_id)
 );
 
 create table `User`
 (
-	account_id int,
+	user_id int auto_increment,
 	`name` varchar(255) character set utf8mb4,
     age int,
     birthday date,
@@ -35,11 +32,7 @@ create table `User`
     plan_id int not null,
     
     constraint PK_account_user
-    primary key (account_id),
-    
-    constraint FK_account_user
-    foreign key (account_id)
-    references Account(account_id),
+    primary key (user_id),
     
     constraint user_age
     check (age >= 0),
@@ -98,7 +91,7 @@ create table credit_card
     
     constraint FK_credit_user
     foreign key (user_id)
-    references `User`(account_id)
+    references `User`(user_id)
 );
 
 create table Bill
@@ -114,7 +107,7 @@ create table Bill
     
     constraint FK_bill_user
     foreign key (user_id)
-    references `User`(account_id)
+    references `User`(user_id)
 );
 
 create table Movie
@@ -127,9 +120,44 @@ create table Movie
     length int,
     country varchar(255) character set utf8mb4,
     director_id int,
+    backdrop_path varchar(255),
+    poster_path varchar(255),
+    isSeries int not null,
     
     constraint PK_Movie
-    primary key(movie_id)
+    primary key(movie_id),
+    
+    constraint Movie_isSeries
+    check (isSeries = 0 or isSeries = 1)
+);
+
+create table Season
+(
+	season_id int auto_increment,
+    `name` varchar(255) character set utf8mb4,
+    air_date date,
+    season_number int,
+    average_rating int,
+    poster_path varchar(255),
+    movie int,
+    
+    constraint PK_Season
+    primary key(season_id),
+    
+    constraint FK_Season_Movie
+    foreign key (movie) references Movie(movie_id)
+);
+
+create table Episode
+(
+	episode_id int auto_increment,
+    title varchar(255) character set utf8mb4,
+    overview varchar(255) character set utf8mb4,
+    length int,
+    rating int,
+    season int,
+    
+    
 );
 
 create table Actor
@@ -266,7 +294,7 @@ create table `Comment`
     primary key (`user`, movie, time_stamp),
     
     constraint FK_comment_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_comment_movie
     foreign key (movie) references Movie(movie_id)
@@ -281,7 +309,7 @@ create table WatchList
     primary key (`user`, movie, order_number),
     
     constraint FK_watch_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_watch_movie
     foreign key (movie) references Movie(movie_id)
@@ -292,11 +320,12 @@ create table WatchHistory
 	`user` int,
     movie int,
     time_stamp timestamp,
+    
     constraint PK_History
     primary key (`user`, movie, time_stamp),
     
     constraint FK_history_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_history_movie
     foreign key (movie) references Movie(movie_id)
