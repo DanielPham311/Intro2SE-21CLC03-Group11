@@ -16,30 +16,23 @@ create table `Account`
 
 create table `Admin`
 (
-	account_id int,
-	`name` varchar(255) character set utf8mb4,
+    admin_id int auto_increment,
+    `name` varchar(255) character set utf8mb4,
     
-    constraint PK_account primary key (account_id),
-    constraint FK_Account_Admin
-    foreign key (account_id)
-    references `Account`(account_id)
+    constraint PK_Admin primary key (admin_id)
 );
 
 create table `User`
 (
-	account_id int,
-	`name` varchar(255) character set utf8mb4,
+    user_id int auto_increment,
+    `name` varchar(255) character set utf8mb4,
     age int,
     birthday date,
     parental_mode int,
     plan_id int not null,
     
-    constraint PK_account_user
-    primary key (account_id),
-    
-    constraint FK_account_user
-    foreign key (account_id)
-    references Account(account_id),
+    constraint PK_User
+    primary key (user_id),
     
     constraint user_age
     check (age >= 0),
@@ -48,36 +41,36 @@ create table `User`
     check (parental_mode = 0 or parental_mode = 1)
 );
 
-create table Subcription
+create table Subscription
 (
-	subcription_id int auto_increment,
-    subcription_name varchar(10) unique,
+    subscription_id int auto_increment,
+    subscription_name varchar(10) unique,
     price_per_month decimal(10,2),
     resolution_cap int,
     
-    constraint PK_subcription 
-    primary key (subcription_id),
+    constraint PK_subscription 
+    primary key (subscription_id),
     
     constraint Subcription_name
-    check (subcription_name = 'Free' or subcription_name = 'Premium' or subcription_name = 'Signature'),
+    check (subscription_name = 'Free' or subscription_name = 'Premium' or subscription_name = 'Signature'),
     
     constraint resolution_cap
     check (resolution_cap = 720 or resolution_cap = 1080 or resolution_cap = 1440)
 );
 
-create table Subcription_plan
+create table Subscription_plan
 (
 	plan_id int auto_increment,
     start_date date,
     expired_date date,
-    subcription_id int,
+    subscription_id int,
     
     constraint PK_subcription_plan 
     primary key(plan_id),
     
-    constraint FK_subcription_plan 
-    foreign key (subcription_id) 
-    references Subcription(subcription_id)
+    constraint FK_subscription_plan 
+    foreign key (subscription_id) 
+    references Subscription(subscription_id)
 );
 
 alter table `User`
@@ -98,7 +91,7 @@ create table credit_card
     
     constraint FK_credit_user
     foreign key (user_id)
-    references `User`(account_id)
+    references `User`(user_id)
 );
 
 create table Bill
@@ -114,7 +107,7 @@ create table Bill
     
     constraint FK_bill_user
     foreign key (user_id)
-    references `User`(account_id)
+    references `User`(user_id)
 );
 
 create table Movie
@@ -127,9 +120,49 @@ create table Movie
     length int,
     country varchar(255) character set utf8mb4,
     director_id int,
+    backdrop_path varchar(255),
+    poster_path varchar(255),
+    isSeries int not null,
     
     constraint PK_Movie
-    primary key(movie_id)
+    primary key(movie_id),
+    
+    constraint Movie_isSeries
+    check (isSeries = 0 or isSeries = 1)
+);
+
+create table Season
+(
+    season_id int auto_increment,
+    `name` varchar(255) character set utf8mb4,
+    air_date date,
+    season_number int,
+    average_rating int,
+    poster_path varchar(255),
+    movie int,
+    
+    constraint PK_Season
+    primary key(season_id),
+    
+    constraint FK_Season_Movie
+    foreign key (movie) references Movie(movie_id)
+);
+
+create table Episode
+(
+    episode_id int auto_increment,
+    title varchar(255) character set utf8mb4,
+    overview varchar(255) character set utf8mb4,
+    length int,
+    rating int,
+    season int,
+    
+    constraint PK_Episode
+    primary key (episode_id),
+
+    constraint FK_Episode_Season
+    foreign key (season)
+    references Season(season_id)
 );
 
 create table Actor
@@ -266,7 +299,7 @@ create table `Comment`
     primary key (`user`, movie, time_stamp),
     
     constraint FK_comment_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_comment_movie
     foreign key (movie) references Movie(movie_id)
@@ -281,7 +314,7 @@ create table WatchList
     primary key (`user`, movie, order_number),
     
     constraint FK_watch_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_watch_movie
     foreign key (movie) references Movie(movie_id)
@@ -292,11 +325,12 @@ create table WatchHistory
 	`user` int,
     movie int,
     time_stamp timestamp,
+    
     constraint PK_History
     primary key (`user`, movie, time_stamp),
     
     constraint FK_history_user
-    foreign key (`user`) references `User`(account_id),
+    foreign key (`user`) references `User`(user_id),
     
     constraint FK_history_movie
     foreign key (movie) references Movie(movie_id)
@@ -306,10 +340,13 @@ create table WatchHistory
 CREATE INDEX idx_Account
 ON `Account` (username, `password`);
 
+CREATE INDEX idx_User
+ON `User` (`name`, age, birthday, parental_mode);
+
 -- more will come but I dont know which
 
 -- Init solid data
-insert into Subcription(subcription_name, price_per_month, resolution_cap)
+insert into Subscription(subscription_name, price_per_month, resolution_cap)
 values ('Free',108000.00,720),
 		('Premium', 220000.00, 1080),
         ('Signature', 260000.00, 1440);
@@ -323,3 +360,24 @@ values ('Golden Globe Awards'),
         ('Best Actress'),
         ('Best Picture'),
         ('Best Cinematography');
+        
+insert into Genre(genre_name)
+values ('Action'), 
+		('Adventure'), 
+        ('Animation'), 
+        ('Comedy'), 
+        ('Crime'), 
+        ('Documentary'), 
+        ('Drama'), 
+        ('Family'), 
+        ('Fantasy'), 
+        ('History'), 
+        ('Horror'), 
+        ('Music'), 
+        ('Mystery'), 
+        ('Romance'), 
+        ('Science Fiction'), 
+        ('Thriller'), 
+        ('TV Movie'), 
+        ('War'),
+        ('Western');
