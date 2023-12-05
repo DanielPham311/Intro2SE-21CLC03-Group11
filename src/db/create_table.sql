@@ -74,9 +74,9 @@ create table Subscription_plan
 );
 
 alter table `User`
-add constraint FK_User_subcription_plan
+add constraint FK_User_subscription_plan
 	foreign key (plan_id)
-    references Subcription_plan(plan_id);
+    references Subscription_plan(plan_id);
 
 create table credit_card
 (
