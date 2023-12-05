@@ -1,0 +1,51 @@
+body {
+    display:flexbox;
+}
+.header{
+    width: 450px;
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+    margin: 10px 370px;
+    color:goldenrod;
+    background-color: aqua;
+    border-radius: 10%;
+}
+.header:hover{
+    color: chartreuse;
+}
+.container {
+    text-transform: capitalize;
+    text-align:left;
+    color: firebrick;
+    width: 300px;
+    height: 100px;
+    margin: 10px 400px;
+    padding: 50px;
+    background-color: bisque;
+    border-radius: 50%;
+}
+.container:hover{
+    animation-duration: 10ms;
+    animation: alternate-reverse;
+}
+.circle{
+    margin: 30px 450px;
+    color: aquamarine;
+    border-color: orange;
+    border-radius: 100%;
+    width: 50x;
+    height: 25px;
+}
+div button{
+    width: 50x;
+    height: 25px;
+    border-radius: 10%;
+    border-color: blue;
+    color: coral;
+}
+div button:hover{
+    color: red;
+    width: 60px;
+    height: 35px;
+}
