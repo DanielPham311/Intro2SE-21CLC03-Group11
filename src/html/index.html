@@ -214,126 +214,404 @@
         </button>
       </div>
 
-      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter"><i class="bi bi-play-fill" id="play-title"></i>Unfinished Movies</h2>
+      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
+        <i class="bi bi-play-fill" id="play-title"></i>Unfinished Movies
+      </h2>
 
       <div id="unfinished" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#unfinished"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#unfinished"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#unfinished"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
+        </ol>
         <div class="carousel-inner" role="listbox">
-          <div class="carousel-item active d-flex justify-content-center bg-dark">
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/FNAF-caption.jpg"
-                class="card-img-top w-100"
-                alt="FNAF"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Horror</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text w-100">
-                  Five Nights At Freddy's
-                </p>
+          <div class="carousel-item active">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/FNAF-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Five Nights at Freddy's</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/PBlinders-caption.jpg"
-                class="card-img-top w-100"
-                alt="FNAF"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Crime/Drama</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Peaky Blinders
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/PBlinders-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Crime/Action
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Peaky Blinders</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/TSTET-caption.jpg"
-                class="card-img-top w-100"
-                alt="PB"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Story/Musical</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Taylor Swift: The Eras Tour
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/TSTET-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Musical/Story
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Taylor Swift The Eras Tour</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/spiderman-caption.jpg"
-                class="card-img-top w-100"
-                alt="TSET"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Adventure/Fantasy</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Spider-Man: No Way Home
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/spiderman-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Spider-Man: No Way Home</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item d-flex justify-content-center bg-dark">
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/FNAF-caption.jpg"
-                class="card-img-top w-100"
-                alt="FNAF"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Horror</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text w-100">
-                  Five Nights At Freddy's
-                </p>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/angels_and_demons_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Angels and Demons</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/PBlinders-caption.jpg"
-                class="card-img-top w-100"
-                alt="FNAF"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Crime/Drama</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Peaky Blinders
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/oppenheimer_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/History
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Oppenheimer</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/TSTET-caption.jpg"
-                class="card-img-top w-100"
-                alt="PB"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Story/Musical</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Taylor Swift: The Eras Tour
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/insidious_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Fantasy/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Insidious: The Red Door</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="../resources/spiderman-caption.jpg"
-                class="card-img-top w-100"
-                alt="TSET"
-              />
-              <div class="card-body text-white">
-                <h5 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1">Action/Adventure/Fantasy</h5>
-                <p class="d-block justify-content-start align-items-start"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></p>
-                <p class="card-text">
-                  Spider-Man: No Way Home
-                </p>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/marvels_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Marvels</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
               </div>
             </div>
           </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/talk_to_me_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Talk To Me</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/rick_and_morty_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Animated/TV Series
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Rick and Morty</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/breaking_bad_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Crime
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Breaking Bad</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/doctor_strange_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Doctor Strange in The Multiverse Of Madness</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <button
           class="carousel-control-prev"
           type="button"
@@ -353,6 +631,1261 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
+
+      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
+        <i class="bi bi-play-fill" id="play-title"></i>For You
+      </h2>
+
+      <div id="foryou" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#foryou"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#foryou"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#foryou"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/PBlinders-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Crime
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Peaky Blinders</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/TWD_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Walking Dead</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_unholy_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Horror/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Unholy</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/super_mario_captions.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Adventure/Animated
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Super Mario Bros Movie</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_marksman_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Gore
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Marksman</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/marvels_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Marvels</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_conjuring_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Gore/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Conjuring: The Devil Made Me Do It</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_exorcist_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Gore/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Exorcist: Believer</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/venom_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Venom: Let There Be Carnage</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/rick_and_morty_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Animated/TV Series
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Rick and Morty</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/loki_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Fantasy/Action
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Loki</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/GOT_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Game Of Thrones</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#foryou"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#foryou"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
+        <i class="bi bi-play-fill" id="play-title"></i>Cinema
+      </h2>
+
+      <div id="cinema" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#cinema"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#cinema"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#cinema"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/TSTET-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Musical/Story
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Taylor Swift The Eras Tour</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/oppenheimer_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/History
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Oppenheimer</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_unholy_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Horror/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Unholy</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/FNAF-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Adventure/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Five Nights At Freddy's</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/venom_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Venom: Let There Be Carnage</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/spiderman-caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Spider-Man: No Way Home</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/talk_to_me_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Fantasy/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Talk To Me</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_exorcist_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Gore/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Exorcist: Believer</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_nun_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Horror/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Nun II</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/wonder_woman_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Wonder Woman</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/doctor_strange_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Fantasy/Action
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Doctor Strange In The Multiverse Of Madness</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/angels_and_demons_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Angels and Demons</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#cinema"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#cinema"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
+        <i class="bi bi-play-fill" id="play-title"></i>TV Series
+      </h2>
+
+      <div id="tvseries" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+          <li
+            data-bs-target="#tvseries"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="First slide"
+          ></li>
+          <li
+            data-bs-target="#tvseries"
+            data-bs-slide-to="1"
+            aria-label="Second slide"
+          ></li>
+          <li
+            data-bs-target="#tvseries"
+            data-bs-slide-to="2"
+            aria-label="Third slide"
+          ></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/breaking_bad_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Crime
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Breaking Bad</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/GOT_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Game Of Thrones</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/loki_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Loki</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/rick_and_morty_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Animated/TV Series
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Rick and Morty</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/sex_education_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Story/TV Series
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Sex Education</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/ST_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Action/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Stranger Things</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/Supernatural_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Fantasy/Horror
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Supernatural</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_boys_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Gore/Action
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Boys</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="cards-wrapper d-flex bg-dark">
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/TWD_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    Horror/Action
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Walking Dead</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/AOT_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    TV Series/Fantasy
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Attack On Titan</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/the_good_doctor_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    TV Series/Medical
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">The Good Doctor</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+              <div class="card bg-black bg-opacity-50">
+                <img
+                  src="../resources/young_sheldon_caption.jpg"
+                  class="card-img-top w-100 h-100"
+                  alt="FNAF"
+                />
+                <div class="card-body text-white text-center">
+                  <h5
+                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                  >
+                    TV Series/Story
+                  </h5>
+                  <p class="d-block justify-content-start align-items-start">
+                    <i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i
+                    ><i class="bi bi-star-fill"></i>
+                  </p>
+                  <p class="card-text w-100">Young Sheldon</p>
+                  <a
+                    name="playMovie"
+                    id=""
+                    class="btn p-3 fw-bold play-btn text-white"
+                    href="#"
+                    role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#tvseries"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#tvseries"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
     </main>
     <footer>
       <!-- place footer here -->
