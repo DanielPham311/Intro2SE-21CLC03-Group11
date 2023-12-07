@@ -16,15 +16,17 @@ create table `Account`
 
 create table `Admin`
 (
-    admin_id int auto_increment,
+    admin_id int,
     `name` varchar(255) character set utf8mb4,
     
-    constraint PK_Admin primary key (admin_id)
+    constraint PK_Admin primary key (admin_id),
+    constraint FK_Admin_Account
+    foreign key (admin_id) references Account(account_id)
 );
 
 create table `User`
 (
-    user_id int auto_increment,
+    user_id int,
     `name` varchar(255) character set utf8mb4,
     age int,
     birthday date,
