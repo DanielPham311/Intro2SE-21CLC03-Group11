@@ -40,7 +40,10 @@ create table `User`
     check (age >= 0),
     
     constraint user_parentalMode
-    check (parental_mode = 0 or parental_mode = 1)
+    check (parental_mode = 0 or parental_mode = 1),
+    
+    constraint FK_User_Account
+    foreign key (user_id) references `Account`(account_id)
 );
 
 create table Subscription
