@@ -128,6 +128,7 @@ create table Movie
     backdrop_path varchar(255),
     poster_path varchar(255),
     isSeries int not null,
+    video_link varchar(80),
     
     constraint PK_Movie
     primary key(movie_id),
