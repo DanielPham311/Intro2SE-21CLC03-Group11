@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <link rel="shortcut icon" type="x-icon" href="ship.png"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflex</title>
+    <link rel="shortcut icon" type="image/jpg" href="../static/icon.png">
+</head>
+<body>
+    <div class="header">
+        <!-- <h3>Debuging: </h3>>
+        {% if movie_data.id %}
+            <p>The movie data has an `id` field.</p>
+        {% else %}
+            <p>The movie data does not have an `id` field.</p>
+        {% endif %} -->
+    
+        <h1>{{movie_data['title']}}</h1>
+        <img src="https://image.tmdb.org/t/p/original/{{ movie_data["poster_path"] }}" alt="{{ movie_data["title"] }} 
+            width="500" height="400">
+        <img src="https://image.tmdb.org/t/p/original/{{ movie_data["backdrop_path"] }}" alt="{{ movie_data["title"] }} 
+            width="500" height="400">
+        <!-- <video width="400" controls>
+            <source src="https://www.youtube.com/watch?v=7baFljzpa10" type="video/mp4">
+        </video> -->
+
+        <!-- {% for video in video_data['results'] %}
+            <iframe width="930" height="523" src="https://www.youtube.com/embed/{{ video["key"] }}" allowfullscreen>
+            </iframe>
+        {% endfor %} -->
+
+    
+        <iframe width="930" height="523" src={{vid_url}} allowfullscreen></iframe>
+        <!-- <p> DEBUG: {{ video_data }}</p> -->
+
+        {% for country_inf in movie_data['production_countries'] %}
+            <h3>Country: {{ country_inf['name'] }}</h3>
+        {% endfor %}
+        <h3> Release date: {{ movie_data["release_date"]}} </h3>
+        <h3>MOVIE OVERVIEW:</h3>
+        <p>{{ movie_data['overview'] }}</p>
+
+        <!-- <h3>JSON DATA: </h3>>
+        <p>{{ movie_data }} </p>> -->
+    </div>
+</body>
+</html>
