@@ -85,7 +85,7 @@ app.listen(3000, () => {
   console.log("data sample of a movie from MOVIE_DB api");
   callexternalapi("The Northman");
 
-  var sql = "select * from Genre";
+  var sql = "select * from Subscription";
   con.query(sql, function (err, result) {
     if (err) throw err;
     console.log(result);
