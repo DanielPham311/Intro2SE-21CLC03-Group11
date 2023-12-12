@@ -1,4 +1,4 @@
-const { Model } = require('sequelize');
+// const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     const Subscription = sequelize.define('Subscription', {
         subscription_id: {
