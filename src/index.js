@@ -1,18 +1,39 @@
 const express = require('express');
-const db = require('./models');
+const model = require('./models');
 const PORT = process.env.PORT || 8080;
 const app = express();
 
 // start connecting to database
-db.sequelize.sync().then(() => {
-    db.models.Subscription.findAll().then(res => {
-        console.log(res)
-    }).catch((error) => {
-        console.error('Failed to retrieve data : ', error);
-    });
-}).catch((error) => {
-    console.error('Unable to create table : ', error);
-});
+// model.sequelize.sync().then(() => {
+//     model.Account.findAll().then(res => {
+//         const dataValuesArray = res.map(account => account.dataValues);
+//         console.log(dataValuesArray);
+//     })
+
+//     model.Account.getAccountById(5).then(res => {
+//         const dataValuesArray = res.dataValues;
+//         console.log(dataValuesArray);
+//     })    
+// })
+
+model.Account.getAccountById(5).then(res =>{
+    const Acc = res.dataValues;
+    console.log("This is the id: " + Acc.account_id);
+    console.log("The account has username called: " + Acc.username);
+})
+
+model.Account.getAccountByUsername('austinmanning').then(res => {
+    console.log(res.dataValues);
+})
+
+// Account will automatically hash the password so dont worry
+model.Account.createAccount('dinhquangphong','password123','user','dinhquangphong365@gmail.com'); 
+
+// model.Account.updateAccount(11, {email: 'wearetheone@gmail.com'}); // update other stuff like username, email, role
+// model.Account.updateAccountPassword(11, 'we are the one'); // update password
+// model.Account.deleteAccount(11);
+
+
 
 
 //
