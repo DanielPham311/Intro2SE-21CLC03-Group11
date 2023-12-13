@@ -1,4 +1,3 @@
-
 const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class Account extends Model {
@@ -20,6 +19,16 @@ module.exports = (sequelize, DataTypes) => {
             });
 
             return newAccount;
+        }
+
+        static async verifyAccount(c_username, c_password){
+            const crypto = require('crypto');
+            const hash = crypto.createHash('sha256');
+            hash.update(c_password);
+            const digest = hash.digest('hex');
+            const account = await Account.getAccountByUsername(c_username);
+            if (account == null) return false;
+            return (digest == account.dataValues.password);
         }
 
         // READ operation (Retrieve all accounts)
