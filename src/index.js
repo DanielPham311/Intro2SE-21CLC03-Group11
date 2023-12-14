@@ -30,7 +30,7 @@ model.Award.findAll().then(res => {
     console.log(res.map(res => res.dataValues));
 })
 
-// model.User.createUser('Đinh Quang Phong', '2003-02-01', 1);
+model.User.createUser(11,'Đinh Quang Phong', '2003-02-01', 1);
 
 //
 app.use(express.static(__dirname+ '/static'));
