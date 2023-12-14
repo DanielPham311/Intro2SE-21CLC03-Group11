@@ -3,78 +3,85 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class SubscriptionPlan extends Model {
         static associate(models) {
-            // Define associations if any
+          // Define associations if any
         }
-        static async createSubscriptionPlan(c_start_date, c_expired_date, c_subscription_id) {
-            try {
-                const newSubscriptionPlan = await SubscriptionPlan.create({
-                    start_date: c_start_date,
-                    expired_date: c_expired_date,
-                    subscription_id: c_subscription_id
-                });
-                return newSubscriptionPlan;
-            } catch (error) {
-                throw new Error(`Error creating subscription plan: ${error.message}`);
+    
+        // CRUD Operations
+        static async createSubscriptionPlan(subscriptionPlanData) {
+          try {
+            return await SubscriptionPlan.create(subscriptionPlanData);
+          } catch (error) {
+            throw error;
+          }
+        }
+    
+        static async getSubscriptionPlanByUserId(userId) {
+          try {
+            return await SubscriptionPlan.findOne({
+              where: {
+                user_id: userId
+              }
+            });
+          } catch (error) {
+            throw error;
+          }
+        }
+    
+        static async updateSubscriptionPlan(userId, updatedData) {
+          try {
+            const subscriptionPlan = await SubscriptionPlan.getSubscriptionPlanByUserId(userId);
+            if (!subscriptionPlan) {
+              throw new Error('Subscription plan not found');
             }
+            return await subscriptionPlan.update(updatedData);
+          } catch (error) {
+            throw error;
+          }
         }
-
-        static async getAllSubscriptionPlans() {
-            try {
-                const allSubscriptionPlans = await SubscriptionPlan.findAll();
-                return allSubscriptionPlans;
-            } catch (error) {
-                throw new Error(`Error retrieving subscription plans: ${error.message}`);
+    
+        static async deleteSubscriptionPlan(userId) {
+          try {
+            const subscriptionPlan = await SubscriptionPlan.getSubscriptionPlanByUserId(userId);
+            if (!subscriptionPlan) {
+              throw new Error('Subscription plan not found');
             }
+            return await subscriptionPlan.destroy();
+          } catch (error) {
+            throw error;
+          }
         }
-
-        static async getSubscriptionPlanById(planId) {
-            try {
-                const subscriptionPlan = await SubscriptionPlan.findByPk(planId);
-                return subscriptionPlan;
-            } catch (error) {
-                throw new Error(`Error retrieving subscription plan by ID: ${error.message}`);
-            }
-        }
-
-        static async updateSubscriptionPlan(planId, newData) {
-            try {
-                const [updatedRowsCount] = await SubscriptionPlan.update(newData, {
-                    where: { plan_id: planId }
-                });
-                return updatedRowsCount > 0;
-            } catch (error) {
-                throw new Error(`Error updating subscription plan: ${error.message}`);
-            }
-        }
-
-        static async deleteSubscriptionPlan(planId) {
-            try {
-                const deletedRowCount = await SubscriptionPlan.destroy({
-                    where: { plan_id: planId }
-                });
-                return deletedRowCount > 0;
-            } catch (error) {
-                throw new Error(`Error deleting subscription plan: ${error.message}`);
-            }
-        }
-    }
-
-    SubscriptionPlan.init({
-        plan_id: {
+      }
+    
+      SubscriptionPlan.init(
+        {
+          user_id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true
+            references: {
+              model: 'User',
+              key: 'user_id'
+            }
+          },
+          subscription_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+          },
+          start_date: {
+            type: DataTypes.DATE
+          },
+          expired_date: {
+            type: DataTypes.DATE
+          }
         },
-        start_date: DataTypes.DATE,
-        expired_date: DataTypes.DATE,
-        subscription_id: DataTypes.INTEGER
-        // Define other attributes as needed
-    }, {
-        sequelize,
-        modelName: "SubscriptionPlan",
-        tableName: "Subscription_plan",
-        timestamps: false
-    });
+        {
+          sequelize,
+          modelName: 'SubscriptionPlan',
+          tableName: 'Subscription_plan',
+          createdAt: 'start_date',
+          updatedAt: false,
+          timestamps: true
+        }
+      );
 
     return SubscriptionPlan;
 };

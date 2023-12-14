@@ -31,7 +31,6 @@ create table `User`
     age int,
     birthday date,
     parental_mode int,
-    plan_id int not null,
     
     constraint PK_User
     primary key (user_id),
@@ -65,23 +64,18 @@ create table Subscription
 
 create table Subscription_plan
 (
-	plan_id int auto_increment,
+	user_id int,
+    subscription_id int not null,
     start_date date,
     expired_date date,
-    subscription_id int,
     
     constraint PK_subcription_plan 
-    primary key(plan_id),
+    primary key(user_id),
     
-    constraint FK_subscription_plan 
-    foreign key (subscription_id) 
-    references Subscription(subscription_id)
+    constraint FK_subscription_plan_user
+    foreign key (user_id)
+    references `User`(user_id)
 );
-
-alter table `User`
-add constraint FK_User_subscription_plan
-	foreign key (plan_id)
-    references Subscription_plan(plan_id);
 
 create table credit_card
 (
