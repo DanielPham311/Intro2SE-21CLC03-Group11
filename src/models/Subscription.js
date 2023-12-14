@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
        */
       static associate(models) {
         // define association here
+        Subscription.hasMany(models.SubscriptionPlan, {foreignKey: 'subscription_id'});
       }
     }
     Subscription.init(

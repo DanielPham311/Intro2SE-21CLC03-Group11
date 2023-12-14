@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     class SubscriptionPlan extends Model {
         static associate(models) {
           // Define associations if any
+          SubscriptionPlan.belongsTo(models.Subscription, {foreignKey: 'subscription_id'});
+          SubscriptionPlan.belongsTo(models.User, {foreignKey: 'user_id'});
         }
     
         // CRUD Operations
