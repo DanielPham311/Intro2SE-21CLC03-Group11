@@ -3,8 +3,6 @@ module.exports = (sequelize, DataTypes) => {
   class Movie extends Model {
     static associate(models) {
       // Define associations here if needed
-      Movie.belongsTo(models.Actor, { foreignKey: 'director_id' });
-      Movie.belongsToMany(models.Actor, { through: 'ActorMovie' });
       // You can add more associations based on your schema
     }
 
@@ -76,13 +74,6 @@ module.exports = (sequelize, DataTypes) => {
       country: {
         type: DataTypes.STRING(255),
         charset: 'utf8mb4'
-      },
-      director_id: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'Director', // Replace with actual model name for the Director table
-          key: 'director_id'
-        }
       },
       backdrop_path: {
         type: DataTypes.STRING(255)

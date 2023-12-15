@@ -118,7 +118,6 @@ create table Movie
     overview varchar(255) character set utf8mb4,
     length int,
     country varchar(255) character set utf8mb4,
-    director_id int,
     backdrop_path varchar(255),
     poster_path varchar(255),
     isSeries int not null,
@@ -164,42 +163,6 @@ create table Episode
     foreign key (season)
     references Season(season_id)
 );
-
-create table Actor
-(
-	actor_id int auto_increment,
-    `name` varchar(255) character set utf8mb4,
-    birthday date,
-    nationality varchar(100) character set utf8mb4,
-    age int,
-    
-    constraint PK_Actor
-    primary key (actor_id),
-    
-    constraint Actor_age
-    check (age >= 0)
-);
-
-alter table Movie
-add constraint FK_movie_director
-	foreign key (director_id)
-    references Actor(actor_id);
-    
-create table Actor_Movie
-(
-	actor int,
-    movie int,
-	role_name varchar(100) character set utf8mb4,
-    
-    constraint PK_actor_movie
-    primary key(actor, movie),
-    
-    constraint FK_actor_movie
-    foreign key (actor) references Actor(actor_id),
-    
-    constraint FK_movie_actor
-    foreign key (movie) references Movie(movie_id)
-);
     
 create table Award
 (
@@ -226,22 +189,6 @@ create table Award_Movie
     foreign key (movie_id) references Movie(movie_id)
 );
 
-create table Award_Actor
-(
-	award_id int ,
-    actor_id int,
-    award_date date,
-    
-    constraint PK_award_movie
-    primary key (award_id, actor_id, award_date),
-    
-    constraint FK_award_actor
-    foreign key (award_id) references Award(award_id),
-    
-    constraint FK_actor_award
-    foreign key (actor_id) references Actor(actor_id)
-);
-
 create table Genre
 (
 	genre_id int auto_increment,
@@ -264,18 +211,6 @@ create table Genre_Movie
     
     constraint FK_movie_genre
     foreign key (movie) references Movie(movie_id)
-);
-
-create table Image_actor
-(
-    actor int not null,
-    image_link varchar(255),
-    
-    constraint PK_image_actor
-    primary key (actor, image_link),
-    
-    constraint FK_image_actor
-    foreign key (actor) references Actor(actor_id)
 );
 
 create table MovieTrailer
