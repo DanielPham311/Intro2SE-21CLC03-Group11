@@ -7,8 +7,7 @@
 }
 
 body {
-    background-image: url('../resources/background2.jpg');
-    background-image: url('resources/background2.jpg');
+    background-image: url('images/background2.jpg');
     font-family: Arial, Helvetica, sans-serif;
     background-size: cover;
     background-color: #111;
@@ -169,4 +168,8 @@ body {
     display: flex;
     justify-content: space-between;
     width: 36.3%;  
+}
+
+#fp {
+    margin-left: 130px;
 }
