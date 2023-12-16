@@ -8,6 +8,7 @@
 
 body {
     background-image: url('../resources/background2.jpg');
+    background-image: url('resources/background2.jpg');
     font-family: Arial, Helvetica, sans-serif;
     background-size: cover;
     background-color: #111;
