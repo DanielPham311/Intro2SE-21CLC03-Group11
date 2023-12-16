@@ -63,10 +63,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         primaryKey: true
       },
-      content: {
-        type: DataTypes.STRING(255),
-        charset: 'utf8mb4'
-      }
+      content: DataTypes.TEXT
     },
     {
       sequelize,

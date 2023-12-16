@@ -61,8 +61,7 @@ module.exports = (sequelize, DataTypes) => {
         charset: 'utf8mb4'
       },
       overview: {
-        type: DataTypes.STRING(255),
-        charset: 'utf8mb4'
+        type: DataTypes.TEXT
       },
       length: {
         type: DataTypes.INTEGER
@@ -76,7 +75,9 @@ module.exports = (sequelize, DataTypes) => {
           model: 'Season', // Replace with actual model name for the Season table
           key: 'season_id'
         }
-      }
+      },
+      video_link: DataTypes.STRING(80),
+      episode_number: DataTypes.INTEGER
     },
     {
       sequelize,

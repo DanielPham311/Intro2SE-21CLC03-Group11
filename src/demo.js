@@ -1,14 +1,15 @@
+const model = require('./models');
 // demo use of Account model
-// model.Account.getAccountById(12).then(res =>{
-//     if (res == null)
-//     {
-//         console.log("No account with this id is found");
-//         return
-//     }
-//     const Acc = res.dataValues;
-//     console.log("This is the id: " + Acc.account_id);
-//     console.log("The account has username called: " + Acc.username);
-// })
+model.Account.getAccountById(12).then(res =>{
+    if (res == null)
+    {
+        console.log("No account with this id is found");
+        return
+    }
+    const Acc = res.dataValues;
+    console.log("This is the id: " + Acc.account_id);
+    console.log("The account has username called: " + Acc.username);
+})
 
 // model.Account.getAccountByUsername('austinmanning').then(res => {
 //     console.log(res.dataValues);

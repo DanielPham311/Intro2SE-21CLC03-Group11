@@ -64,10 +64,7 @@ module.exports = (sequelize, DataTypes) => {
       rating: {
         type: DataTypes.INTEGER
       },
-      overview: {
-        type: DataTypes.STRING(255),
-        charset: 'utf8mb4'
-      },
+      overview: DataTypes.TEXT,
       length: {
         type: DataTypes.INTEGER
       },

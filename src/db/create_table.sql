@@ -115,7 +115,7 @@ create table Movie
     title varchar(255) character set utf8mb4,
     release_date date,
     rating int,
-    overview varchar(255) character set utf8mb4,
+    overview text,
     length int,
     country varchar(255) character set utf8mb4,
     backdrop_path varchar(255),
@@ -151,10 +151,12 @@ create table Episode
 (
     episode_id int auto_increment,
     title varchar(255) character set utf8mb4,
-    overview varchar(255) character set utf8mb4,
+    overview text,
     length int,
     rating int,
     season int,
+    video_link varchar(80),
+    episode_number int not null,
     
     constraint PK_Episode
     primary key (episode_id),
@@ -228,7 +230,7 @@ create table `Comment`
 	`user` int,
     movie int,
     time_stamp timestamp,
-    content varchar(255) character set utf8mb4,
+    content text,
     
     constraint PK_comment
     primary key (`user`, movie, time_stamp),
@@ -316,3 +318,13 @@ values ('Action'),
         ('TV Movie'), 
         ('War'),
         ('Western');
+
+insert into Genre(genre_name)
+values ('Action & Adventure'),
+	   ('Kids'),
+       ('News'),
+       ('Reality'),
+       ('Sci-Fi & Fantasy'),
+       ('Soap'),
+       ('Talk'),
+       ('War & Politics');
