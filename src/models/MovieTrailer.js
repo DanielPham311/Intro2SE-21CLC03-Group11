@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
 
-    static async getMovieTrailer(movieId, trailerLink) {
+    static async getMovieTrailer(movieId) {
       try {
-        return await MovieTrailer.findOne({
-          where: { movie: movieId, trailer_link: trailerLink }
+        return await MovieTrailer.findAll({
+          where: { movie: movieId}
         });
       } catch (error) {
         throw error;
@@ -45,13 +45,15 @@ module.exports = (sequelize, DataTypes) => {
       movie: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        primaryKey: true,
         references: {
           model: 'Movie', // Replace with actual model name for the Movie table
           key: 'movie_id'
         }
       },
       trailer_link: {
-        type: DataTypes.STRING(255)
+        type: DataTypes.STRING(255),
+        primaryKey: true
       }
     },
     {

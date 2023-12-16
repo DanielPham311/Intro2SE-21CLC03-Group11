@@ -82,8 +82,9 @@ create table credit_card
 	card_id int auto_increment,
     card_number char(16) unique,
     cvv char(3),
-    valid_thru date,
+    valid_thru char(5),
     user_id int,
+    card_provider varchar(30),
     
     constraint PK_credit
     primary key (card_id),
@@ -229,7 +230,7 @@ create table `Comment`
 (
 	`user` int,
     movie int,
-    time_stamp timestamp,
+    time_stamp datetime,
     content text,
     
     constraint PK_comment
@@ -261,7 +262,7 @@ create table WatchHistory
 (
 	`user` int,
     movie int,
-    time_stamp timestamp,
+    time_stamp datetime,
     
     constraint PK_History
     primary key (`user`, movie, time_stamp),

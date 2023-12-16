@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     class Award extends Model {
         static associate(models) {
             // define association here
+            Award.belongsToMany(models.Movie, { through: models.AwardMovie, foreignKey: 'award_id' });
           }
         // Static method for creating an award
         static async createAward(awardData) {

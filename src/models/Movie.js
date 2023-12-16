@@ -4,6 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // Define associations here if needed
       // You can add more associations based on your schema
+      Movie.belongsToMany(models.Genre, { through: models.GenreMovie, foreignKey: 'movie' });
+      Movie.belongsToMany(models.Award, { through: models.AwardMovie, foreignKey: 'movie_id' });
     }
 
     static async createMovie(movieData) {

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
   class Genre extends Model {
     static associate(models) {
       // Define associations here if needed
-      Genre.belongsToMany(models.Movie, { through: 'GenreMovie' });
+      Genre.belongsToMany(models.Movie, { through: models.GenreMovie, foreignKey: 'genre' });
     }
 
     static async createGenre(genreData) {

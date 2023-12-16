@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class GenreMovie extends Model {
     static associate(models) {
       // Define associations here if needed
-      GenreMovie.belongsTo(models.Genre, {foreignKey: 'genre'});
-      GenreMovie.belongsTo(models.Movie, {foreignKey: 'movie'});
+      // GenreMovie.belongsTo(models.Genre, { foreignKey: 'genre_id' });
+      // GenreMovie.belongsTo(models.Movie, { foreignKey: 'movie_id' });
     }
 
     static async createGenreMovie(genreMovieData) {
@@ -16,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
 
-    static async getGenreMovie(genreId, movieId) {
+    static async getGenreOfMovie(movieId) {
       try {
-        return await GenreMovie.findOne({
-          where: { genre: genreId, movie: movieId }
+        return await GenreMovie.findAll({
+          where: { movie: movieId }
         });
       } catch (error) {
         throw error;
@@ -45,19 +45,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       genre: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Genre', // Replace with actual model name for the Genre table
-          key: 'genre_id'
-        }
+        primaryKey: true
       },
       movie: {
         type: DataTypes.INTEGER,
-        allowNull: false,
-        references: {
-          model: 'Movie', // Replace with actual model name for the Movie table
-          key: 'movie_id'
-        }
+        primaryKey: true
       }
     },
     {

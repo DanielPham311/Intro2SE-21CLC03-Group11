@@ -4,8 +4,8 @@ module.exports = (sequelize, DataTypes) => {
   class AwardMovie extends Model {
     static associate(models) {
       // Define associations here if needed
-      AwardMovie.belongsTo(models.Movie, {foreignKey: 'movie_id'});
-      AwardMovie.belongsTo(models.Award, {foreignKey: 'award_id'});
+      // AwardMovie.belongsTo(models.Movie, {foreignKey: 'movie_id'});
+      // AwardMovie.belongsTo(models.Award, {foreignKey: 'award_id'});
     }
 
     static async createAwardMovie(awardMovieData) {

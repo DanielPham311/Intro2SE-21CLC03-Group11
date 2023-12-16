@@ -63,7 +63,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.CHAR(3)
       },
       valid_thru: {
-        type: DataTypes.DATE
+        type: DataTypes.CHAR(5)
       },
       user_id: {
         type: DataTypes.INTEGER,
@@ -71,7 +71,8 @@ module.exports = (sequelize, DataTypes) => {
           model: 'User', // Replace with actual model name for the User table
           key: 'user_id'
         }
-      }
+      },
+      card_provider: DataTypes.STRING
     },
     {
       sequelize,

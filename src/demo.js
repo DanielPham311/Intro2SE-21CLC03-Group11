@@ -1,15 +1,16 @@
+const dbQuery = require('./services/dbQuery');
 const model = require('./models');
 // demo use of Account model
-model.Account.getAccountById(12).then(res =>{
-    if (res == null)
-    {
-        console.log("No account with this id is found");
-        return
-    }
-    const Acc = res.dataValues;
-    console.log("This is the id: " + Acc.account_id);
-    console.log("The account has username called: " + Acc.username);
-})
+// model.Account.getAccountById(12).then(res =>{
+//     if (res == null)
+//     {
+//         console.log("No account with this id is found");
+//         return
+//     }
+//     const Acc = res.dataValues;
+//     console.log("This is the id: " + Acc.account_id);
+//     console.log("The account has username called: " + Acc.username);
+// })
 
 // model.Account.getAccountByUsername('austinmanning').then(res => {
 //     console.log(res.dataValues);
@@ -37,6 +38,84 @@ model.Account.getAccountById(12).then(res =>{
 //     console.log(res);
 // })
 
-// model.Genre.getGenreById(2).then(res => {
-//     console.log(res.dataValues);
+// model.GenreMovie.getGenreOfMovie(10).then(res => {
+//     console.log(res.map(res => res.dataValues));
 // })
+
+// dbQuery.getGenreOfMovie(10).then(res => {
+//     console.log(res);
+// })
+
+// dbQuery.getAwardOfMovie(10).then(res => {
+//     console.log(res);
+// })
+
+// model.Movie.findAll().then(res => {
+//     console.log(res.map(res => res.dataValues));
+// })
+
+// model.Season.findAll().then(res => {
+//     console.log(res.map(res => res.dataValues));
+// })
+
+// model.MovieTrailer.getMovieTrailer(10).then(res => {
+//     console.log(res.map(res => res.dataValues));
+// })
+
+// ------------------------------TEST A BIT-------------------------
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+  
+  function askQuestion() {
+    readline.question('Please enter a number: ', (number) => {
+      if (number == 1) {
+        // model.Award.findAll().then(res => {
+        // console.log(res.map(res => res.dataValues));
+        // })
+        dbQuery.getFreeSubscriptionUsernames().then(res =>{
+        console.log(res);
+        })
+        model.Subscription.findAll().then(res => {
+            console.log(res.map(res => res.dataValues))
+        })
+
+      } else if (number == 2) {
+        // model.GenreMovie.getGenreOfMovie(10).then(res => {
+        //     console.log(res.map(res => res.dataValues));
+        // })
+        dbQuery.getGenreOfMovie(10).then(res => {
+        console.log(res);
+        })
+      } else if (number == 3){
+        dbQuery.getAwardOfMovie(10).then(res => {
+        console.log(res);
+        })
+      } else if (number == 4){
+        model.Movie.findAll().then(res => {
+        console.log(res.map(res => res.dataValues));
+        })
+      } else if (number == 5){
+        model.Season.findAll().then(res => {
+        console.log(res.map(res => res.dataValues));
+        })
+      } else if (number == 6){
+        model.Comment.findAll().then(res => {
+        console.log(res.map(res => res.dataValues));
+        })
+
+        model.WatchHistory.findAll().then(res => {
+            console.log(res.map(res => res.dataValues));
+        })
+
+        model.WatchList.findAll().then(res => {
+            console.log(res.map(res => res.dataValues));
+            })
+      } 
+      if (number != 0)
+        askQuestion(); // Ask the question again, recursively bruh
+    });
+  }
+  
+  askQuestion(); // Start the questioning loop
