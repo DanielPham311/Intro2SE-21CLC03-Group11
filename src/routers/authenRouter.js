@@ -2,10 +2,9 @@ const router = require('express').Router();
 const passport = require('passport');
 
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: 'login-success' }));
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login-failure', successRedirect: '/' }));
 
 router.post('/register', (req, res, next) => {
-
    res.redirect('/login');
 });
 

@@ -51,7 +51,7 @@ app.use(authenticateRoute);
 
 
 app.get('/', (req, res) =>{
-    res.sendFile(__dirname + '/static/html/index.html');
+    res.render('index');
 })
 
 app.listen(PORT, () => {
