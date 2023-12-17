@@ -1,23 +1,23 @@
 const express = require('express');
-const model = require('./models');
 const PORT = process.env.PORT || 8080;
 const app = express();
 const expressHbs = require('express-handlebars');
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-
-app.use(express.static(__dirname + '/static'));
+const passport = require('passport');
+const authenticateRoute = require('./routers/authenRouter');
 
 // set the view engine
-app.engine('hbs', expressHbs({
-    ext: 'hbs',
-    fileDefaultLayout: 'layout',
-    layoutDir: __dirname + '/views/layouts',
-    partialsDir: __dirname + '/views/partials',
+app.engine('hbs', expressHbs.engine({
+    layoutsDir: __dirname + "/views/layouts",
+    partialDir: __dirname + "/views/partials",
+    defaultLayout: "layout",
+    extname: "hbs",
 }));
 
 app.set('view engine', 'hbs');
 
+app.use(express.static(__dirname + '/static'));
 
 // Cau hinh cho phep doc du lieu gui len bang phuong thuc POST
 app.use(express.json());
@@ -35,10 +35,20 @@ app.use(
       cookie: {
         secure: false, // if true only transmit cookie over https
         httpOnly: true, // prevent client side js from reading the cooking
+        maxAge: 1000 * 60 * 60 // maximum age 1 hour
       }
     }
   )
 );
+
+/*
+PASSPORT AUTHENTICATION
+*/
+require('./config/passport');
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(authenticateRoute);
+
 
 app.get('/', (req, res) =>{
     res.sendFile(__dirname + '/static/html/index.html');

@@ -1,0 +1,33 @@
+<div class="registerBlock">
+  <div class="paddingBlock">
+    <div class="title">
+      <h1>Sign In</h1>
+    </div>
+
+    <div class="inputs">
+      <!-- Bootstrap Form -->
+      <form method="post" action="/login">
+        <div class="mb-3" >
+          <input type="text" class="form-control" required placeholder="Email or phone number" name="username"/>
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" required placeholder="Password" name="password"/>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="rememberMe" />
+          <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <div class="button text-center">
+          <button type="submit" class="btn btn-danger">Sign In</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="moreInfo">
+      <div>
+        <span class="isNew">New to Netflix?</span>
+        <a href="/register" class="btn btn-link">Sign up now.</a>
+      </div>
+    </div>
+  </div>
+</div>

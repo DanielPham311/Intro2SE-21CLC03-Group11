@@ -39,6 +39,7 @@ module.exports = (sequelize, DataTypes) => {
           hash.update(c_password);
           const digest = hash.digest('hex');
           const account = await Account.getAccountByUsername(c_username);
+          // console.log(account);
           if (account == null) return false;
           return (digest == account.dataValues.password);
       }

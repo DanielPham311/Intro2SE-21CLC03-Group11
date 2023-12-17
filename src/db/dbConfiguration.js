@@ -8,4 +8,4 @@ const dbConfig = {
   queueLimit: 0,
 };
 
-module.exports = {dbConfig};
+module.exports = { dbConfig };
