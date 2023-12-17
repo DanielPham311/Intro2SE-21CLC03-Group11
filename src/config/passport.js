@@ -20,7 +20,11 @@ const verifyCallback = async (username, password, callbackDone) => {
         const ad = await Auth.getAdminById(user.account_id);
         console.log(`Welcome administrator ${ad.name}`);
       }
-      else console.log("Welcome user");
+      else 
+      {
+        const client = await Auth.getUserById(user.account_id);
+        console.log(`Welcome user ${client.name}`);
+      }
       //----------------------------------------------
       callbackDone(null, await user);
     } else {
