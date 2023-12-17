@@ -1,6 +1,5 @@
 const { Account , User, Admin, SubscriptionPlan} = require('../models'); // adjust the path to your models
-const crypto = require('crypto'); // for some stuffs
-const hash = crypto.createHash('sha256');
+const crypto = require('crypto'); // create new hash object to avoid digest already called problem
 
 async function getAdminById(id) {
   try {
@@ -48,6 +47,7 @@ async function getAccountByEmail(c_email)
 
 async function verifyAccount(c_username, c_password)
 {
+  const hash = crypto.createHash('sha256'); // create new hash object to avoid digest already called problem
   hash.update(c_password);
   const digest = hash.digest('hex');
   const account = await getAccountByUsername(c_username);
