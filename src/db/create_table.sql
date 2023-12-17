@@ -4,9 +4,9 @@ create table `Account`
 (
 	account_id int auto_increment,
     username varchar(255) unique,
-    `password` char(64) not null,
+    `password` char(64),
     create_date date,
-    `role` varchar(5) ,
+    `role` varchar(5) not null,
     email varchar(255) unique,
     
     constraint PK_account primary key (account_id),

@@ -8,15 +8,6 @@ module.exports = (sequelize, DataTypes) => {
           SubscriptionPlan.belongsTo(models.User, {foreignKey: 'user_id'});
         }
     
-        // CRUD Operations
-        static async createSubscriptionPlan(subscriptionPlanData) {
-          try {
-            return await SubscriptionPlan.create(subscriptionPlanData);
-          } catch (error) {
-            throw error;
-          }
-        }
-    
         static async getSubscriptionPlanByUserId(userId) {
           try {
             return await SubscriptionPlan.findOne({

@@ -5,18 +5,6 @@ module.exports = (sequelize, DataTypes) => {
             User.belongsTo(models.Account, { foreignKey: 'user_id', onDelete: 'CASCADE' , hooks: true}); // cascade not working
             User.hasOne(models.SubscriptionPlan, { foreignKey: 'user_id', onDelete: 'CASCADE' , hooks: true}); // cascade not working
         }
-        static async createUser(UserData) {
-            const newUser = await User.create(UserData);
-            // first user account to be created will be create with Free Subscription Plan, they can upgrade later
-            const defaultPlan = await this.associations.SubscriptionPlan.target.createSubscriptionPlan(
-                {
-                    user_id: newUser.dataValues.user_id,
-                    subscription_id: 1
-                }
-            );
-            return newUser;
-        }
-
         static async getAllUsers() {
             try {
                 const allUsers = await User.findAll();

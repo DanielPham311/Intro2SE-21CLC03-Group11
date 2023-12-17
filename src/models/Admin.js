@@ -6,23 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       // Define associations here if needed
       Admin.belongsTo(models.Account, { foreignKey: 'admin_id' });
     }
-    // example: createAdmin({admin_id: 1, name: 'Dinh Quang Phong'})
-    static async createAdmin(adminData) {
-      try {
-        return await Admin.create(adminData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getAdminById(id) {
-      try {
-        return await Admin.findByPk(id);
-      } catch (error) {
-        throw error;
-      }
-    }
-
     static async updateAdmin(id, updatedData) {
       try {
         let admin = await Admin.findByPk(id);

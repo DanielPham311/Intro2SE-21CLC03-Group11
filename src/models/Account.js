@@ -18,12 +18,12 @@ module.exports = (sequelize, DataTypes) => {
         unique: true
       },
       password: {
-        type: DataTypes.CHAR(64),
-        allowNull: false
+        type: DataTypes.CHAR(64)
       },
       create_date: DataTypes.DATE,
       role: {
         type: DataTypes.STRING(5),
+        allowNull: false,
         validate: {
           isIn: [['admin', 'user', 'staff']]
         }

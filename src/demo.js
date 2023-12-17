@@ -3,9 +3,13 @@ const auth = require('./services/Authentication_Service');
 const model = require('./models');
 // demo use of Account model
 
-// model.Account.getAccountByUsername('austinmanning').then(res => {
-//     console.log(res.dataValues);
-// })
+// must put them into an async function to use
+const stuff = async () => {
+    let siu = await auth.getAllAccountInfo();
+    console.log(siu);
+}
+
+stuff();
 
 // Account will automatically hash the password so dont worry
 // model.Account.createAccount('dinhquangphong','password123','user','dinhquangphong365@gmail.com'); // there will be User account and Subscription Plan record for the user
@@ -53,8 +57,8 @@ const model = require('./models');
 //     console.log(res.map(res => res.dataValues));
 // })
 
-auth.createAccount('dinhquangphong','pass123','user','dinhquangphong365@gmail.com');
-
+// auth.createAccount('dinhquangphong',null,'user','dinhquangphong365@gmail.com'); // example of a account register using google account
+// auth.deleteAccount(101);
 // ------------------------------TEST A BIT-------------------------
 // const readline = require('readline').createInterface({
 //     input: process.stdin,
