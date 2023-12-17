@@ -3,7 +3,8 @@ const crypto = require('crypto'); // create new hash object to avoid digest alre
 
 async function getAdminById(id) {
   try {
-    return await Admin.findByPk(id);
+    const ad = await Admin.findByPk(id);
+    return ad.dataValues;
   } catch (error) {
     throw error;
   }
@@ -12,7 +13,7 @@ async function getAdminById(id) {
 async function getUserById(userId) {
   try {
       const user = await User.findByPk(userId);
-      return user;
+      return user.dataValues;
   } catch (error) {
       throw error;
   }

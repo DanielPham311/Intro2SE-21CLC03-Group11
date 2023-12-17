@@ -18,11 +18,13 @@ const verifyCallback = async (username, password, callbackDone) => {
       if (user.role == 'admin')
       {
         const ad = await Auth.getAdminById(user.account_id);
+        console.log(ad);
         console.log(`Welcome administrator ${ad.name}`);
       }
       else 
       {
         const client = await Auth.getUserById(user.account_id);
+        console.log(client);
         console.log(`Welcome user ${client.name}`);
       }
       //----------------------------------------------
