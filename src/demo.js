@@ -1,16 +1,7 @@
 const dbQuery = require('./services/dbQuery');
+const auth = require('./services/Authentication_Service');
 const model = require('./models');
 // demo use of Account model
-// model.Account.getAccountById(12).then(res =>{
-//     if (res == null)
-//     {
-//         console.log("No account with this id is found");
-//         return
-//     }
-//     const Acc = res.dataValues;
-//     console.log("This is the id: " + Acc.account_id);
-//     console.log("The account has username called: " + Acc.username);
-// })
 
 // model.Account.getAccountByUsername('austinmanning').then(res => {
 //     console.log(res.dataValues);
@@ -32,13 +23,6 @@ const model = require('./models');
 // model.Award.findAll().then(res => {
 //     console.log(res.map(res => res.dataValues));
 // })
-
-async function sup() {
-  let siu = await model.Account.verifyAccount('johnhayes','pass100');
-  console.log(siu);
-}
-
-sup();
 
 // const testFunc = require('./service/complexQuery');
 // testFunc.getFreeSubscriptionUsernames().then(res =>{
@@ -68,6 +52,8 @@ sup();
 // model.MovieTrailer.getMovieTrailer(10).then(res => {
 //     console.log(res.map(res => res.dataValues));
 // })
+
+auth.createAccount('dinhquangphong','pass123','user','dinhquangphong365@gmail.com');
 
 // ------------------------------TEST A BIT-------------------------
 // const readline = require('readline').createInterface({

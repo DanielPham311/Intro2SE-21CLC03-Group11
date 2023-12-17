@@ -1,6 +1,6 @@
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
-const Auth = require('../services/Authentication Service');
+const Auth = require('../services/Authentication_Service');
 
 const customFields = {
     usernameField: 'username',

@@ -21,7 +21,7 @@ create table `Admin`
     
     constraint PK_Admin primary key (admin_id),
     constraint FK_Admin_Account
-    foreign key (admin_id) references Account(account_id)
+    foreign key (admin_id) references Account(account_id) on delete cascade
 );
 
 create table `User`
@@ -42,7 +42,7 @@ create table `User`
     check (parental_mode = 0 or parental_mode = 1),
     
     constraint FK_User_Account
-    foreign key (user_id) references `Account`(account_id)
+    foreign key (user_id) references `Account`(account_id) on delete cascade
 );
 
 create table Subscription
@@ -72,9 +72,13 @@ create table Subscription_plan
     constraint PK_subcription_plan 
     primary key(user_id),
     
+    constraint FK_subscription
+    foreign key(subscription_id)
+    references Subscription(subscription_id) on delete cascade,
+    
     constraint FK_subscription_plan_user
     foreign key (user_id)
-    references `User`(user_id)
+    references `User`(user_id) on delete cascade
 );
 
 create table credit_card
@@ -91,7 +95,7 @@ create table credit_card
     
     constraint FK_credit_user
     foreign key (user_id)
-    references `User`(user_id)
+    references `User`(user_id) on delete cascade
 );
 
 create table Bill
@@ -107,7 +111,7 @@ create table Bill
     
     constraint FK_bill_user
     foreign key (user_id)
-    references `User`(user_id)
+    references `User`(user_id) on delete cascade
 );
 
 create table Movie
@@ -145,7 +149,7 @@ create table Season
     primary key(season_id),
     
     constraint FK_Season_Movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table Episode
@@ -164,7 +168,7 @@ create table Episode
 
     constraint FK_Episode_Season
     foreign key (season)
-    references Season(season_id)
+    references Season(season_id) on delete cascade
 );
     
 create table Award
@@ -186,10 +190,10 @@ create table Award_Movie
     primary key (award_id, movie_id, award_date),
     
     constraint FK_award
-    foreign key (award_id) references Award(award_id),
+    foreign key (award_id) references Award(award_id) on delete cascade,
     
     constraint FK_movie
-    foreign key (movie_id) references Movie(movie_id)
+    foreign key (movie_id) references Movie(movie_id) on delete cascade
 );
 
 create table Genre
@@ -210,10 +214,10 @@ create table Genre_Movie
     primary key (genre, movie),
     
     constraint FK_genre_movie
-    foreign key (genre) references Genre(genre_id),
+    foreign key (genre) references Genre(genre_id) on delete cascade,
     
     constraint FK_movie_genre
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table MovieTrailer
@@ -223,7 +227,7 @@ create table MovieTrailer
     
     constraint PK_MoviePoster primary key(movie, trailer_link),
     constraint FK_MovieTrailer
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table `Comment`
@@ -237,10 +241,10 @@ create table `Comment`
     primary key (`user`, movie, time_stamp),
     
     constraint FK_comment_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_comment_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table WatchList
@@ -252,10 +256,10 @@ create table WatchList
     primary key (`user`, movie, order_number),
     
     constraint FK_watch_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_watch_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table WatchHistory
@@ -268,10 +272,10 @@ create table WatchHistory
     primary key (`user`, movie, time_stamp),
     
     constraint FK_history_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_history_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 -- Speed enhancement
