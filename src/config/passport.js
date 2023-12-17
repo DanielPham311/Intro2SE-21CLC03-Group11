@@ -1,6 +1,6 @@
 const passport = require("passport");
 const localStrategy = require("passport-local").Strategy;
-const Account = require('../models').Account;
+const Auth = require('../services/Authentication Service');
 
 const customFields = {
     usernameField: 'username',
@@ -10,9 +10,10 @@ const customFields = {
 const verifyCallback = async (username, password, callbackDone) => {
     console.log(password);
   try {
-    let result = Account.verifyAccount(username, password);
+    let result = await Auth.verifyAccount(username, password);
+    console.log(result);
     if (result == true) {
-      const user = Account.getAccountByUsername(username);
+      const user = await Auth.getAccountByUsername(username);
       callbackDone(null, await user);
     } else {
       return callbackDone(null, false);

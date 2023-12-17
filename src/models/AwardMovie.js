@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       award_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        primaryKey: true,
         references: {
           model: 'Award', // Replace with actual model name for the Award table
           key: 'award_id'
@@ -53,14 +53,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       movie_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        primaryKey: true,
         references: {
           model: 'Movie', // Replace with actual model name for the Movie table
           key: 'movie_id'
         }
       },
       award_date: {
-        type: DataTypes.DATE
+        type: DataTypes.DATE,
+        primaryKey: true
       }
     },
     {

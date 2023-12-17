@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
         Account.hasOne(models.User, { foreignKey: 'user_id',onDelete: 'CASCADE' ,hooks: true}); // cascade not working dont know why
         Account.hasOne(models.Admin, { foreignKey: 'admin_id',onDelete: 'CASCADE' , hooks: true});
       }
-      // CREATE operation, role: 'admin','user','staff'
+      // CREATE operation, role: 'admin','user'
       static async createAccount(c_username, c_password, c_role, c_email) {
           const crypto = require('crypto');
           const hash = crypto.createHash('sha256');
@@ -32,29 +32,6 @@ module.exports = (sequelize, DataTypes) => {
             const newAdmin = await this.associations.Admin.target.createAdmin(newAccount.dataValues.account_id, '');
           }
           return newAccount;
-      }
-      static async verifyAccount(c_username, c_password){
-          const crypto = require('crypto');
-          const hash = crypto.createHash('sha256');
-          hash.update(c_password);
-          const digest = hash.digest('hex');
-          const account = await Account.getAccountByUsername(c_username);
-          // console.log(account);
-          if (account == null) return false;
-          return (digest == account.dataValues.password);
-      }
-      // READ operation (Retrieve all accounts)
-      static async getAllAccounts() {
-          const allAccounts = await Account.findAll();
-          return allAccounts;
-      }
-      static async getAccountByUsername(username) {
-          const account = await Account.findOne({
-              where: {
-                  username: username
-              }
-          });
-          return account;
       }
       // FIND by username
       static async getAccountById(accountId) {
