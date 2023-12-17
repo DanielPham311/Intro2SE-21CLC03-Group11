@@ -14,15 +14,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
 
-        static async getUserById(userId) {
-            try {
-                const user = await User.findByPk(userId);
-                return user;
-            } catch (error) {
-                throw new Error(`Error retrieving user by ID: ${error.message}`);
-            }
-        }
-
         static async updateUser(userId, newData) {
             try {
                 const [updatedRowsCount] = await User.update(newData, {

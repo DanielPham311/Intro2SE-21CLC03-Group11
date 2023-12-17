@@ -9,6 +9,15 @@ async function getAdminById(id) {
   }
 }
 
+async function getUserById(userId) {
+  try {
+      const user = await User.findByPk(userId);
+      return user;
+  } catch (error) {
+      throw error;
+  }
+}
+
 async function getAllAccountInfo()
 {
   const res = await Account.findAll();
@@ -160,6 +169,7 @@ module.exports = {
     getAccountByUsername: getAccountByUsername,
     getAccountByEmail: getAccountByEmail,
     getAdminById: getAdminById,
+    getUserById: getUserById,
     createAccount: createAccount,
     getAccountById: getAccountById,
     updateAccount: updateAccount,
