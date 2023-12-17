@@ -2,8 +2,8 @@ const { Model } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
     class User extends Model {
         static associate(models) {
-            User.belongsTo(models.Account, { foreignKey: 'user_id', onDelete: 'CASCADE' , hooks: true}); // cascade not working
-            User.hasOne(models.SubscriptionPlan, { foreignKey: 'user_id', onDelete: 'CASCADE' , hooks: true}); // cascade not working
+            User.belongsTo(models.Account, { foreignKey: 'user_id'}); 
+            User.hasOne(models.SubscriptionPlan, { foreignKey: 'user_id'});
         }
         static async getAllUsers() {
             try {

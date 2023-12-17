@@ -7,38 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       WatchList.belongsTo(models.User, { foreignKey: 'user' });
       WatchList.belongsTo(models.Movie, { foreignKey: 'movie' });
     }
-
-    static async createWatchList(watchListData) {
-      try {
-        return await WatchList.create(watchListData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getWatchList(user, movie, orderNumber) {
-      try {
-        return await WatchList.findOne({
-          where: { user: user, movie: movie, order_number: orderNumber }
-        });
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteWatchList(user, movie, orderNumber) {
-      try {
-        const watchList = await WatchList.findOne({
-          where: { user: user, movie: movie, order_number: orderNumber }
-        });
-        if (!watchList) {
-          throw new Error('WatchList association not found');
-        }
-        return await watchList.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   WatchList.init(

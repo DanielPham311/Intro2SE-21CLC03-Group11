@@ -1,11 +1,12 @@
-const dbQuery = require('./services/dbQuery');
 const auth = require('./services/Authentication_Service');
+const subs = require('./services/SubscriptionService');
+const movie = require('./services/MovieService');
 const model = require('./models');
 // demo use of Account model
 
 // must put them into an async function to use
 const stuff = async () => {
-    let siu = await auth.getAllAccountInfo();
+    let siu = await subs.getListOfSubscriptions(); // auth.getAllAccountInfo();
     console.log(siu);
 }
 

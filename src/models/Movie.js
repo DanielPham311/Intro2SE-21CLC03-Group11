@@ -7,46 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       Movie.belongsToMany(models.Genre, { through: models.GenreMovie, foreignKey: 'movie' });
       Movie.belongsToMany(models.Award, { through: models.AwardMovie, foreignKey: 'movie_id' });
     }
-
-    static async createMovie(movieData) {
-      try {
-        return await Movie.create(movieData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getMovieById(id) {
-      try {
-        return await Movie.findByPk(id);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async updateMovie(id, updatedData) {
-      try {
-        let movie = await Movie.findByPk(id);
-        if (!movie) {
-          throw new Error('Movie not found');
-        }
-        return await movie.update(updatedData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteMovie(id) {
-      try {
-        let movie = await Movie.findByPk(id);
-        if (!movie) {
-          throw new Error('Movie not found');
-        }
-        return await movie.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   Movie.init(

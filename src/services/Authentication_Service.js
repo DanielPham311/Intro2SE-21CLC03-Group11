@@ -10,6 +10,30 @@ async function getAdminById(id) {
   }
 }
 
+async function updateAdmin(id, updatedData) {
+  try {
+    let admin = await Admin.findByPk(id);
+    if (!admin) {
+      throw new Error('Admin not found');
+    }
+    return await admin.update(updatedData);
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function deleteAdmin(id) {
+  try {
+    let admin = await Admin.findByPk(id);
+    if (!admin) {
+      throw new Error('Admin not found');
+    }
+    return await admin.destroy();
+  } catch (error) {
+    throw error;
+  }
+}
+
 async function getUserById(userId) {
   try {
       const user = await User.findByPk(userId);
@@ -103,6 +127,7 @@ async function createAccount(c_username, c_password, c_role, c_email) {
   let digest = null;
   if (c_password != null)
   {
+    const hash = crypto.createHash('sha256');
     hash.update(c_password);
     digest = hash.digest('hex');
   }
@@ -165,6 +190,8 @@ async function deleteAccount(accountId) {
 }
 
 module.exports = {
+    updateAdmin: updateAdmin,
+    deleteAdmin: deleteAdmin,
     verifyAccount: verifyAccount,
     getAllAccountInfo: getAllAccountInfo,
     getAccountByUsername: getAccountByUsername,

@@ -7,38 +7,6 @@ module.exports = (sequelize, DataTypes) => {
       WatchHistory.belongsTo(models.User, { foreignKey: 'user' });
       WatchHistory.belongsTo(models.Movie, { foreignKey: 'movie' });
     }
-
-    static async createWatchHistory(watchHistoryData) {
-      try {
-        return await WatchHistory.create(watchHistoryData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getWatchHistory(user, movie, timeStamp) {
-      try {
-        return await WatchHistory.findOne({
-          where: { user: user, movie: movie, time_stamp: timeStamp }
-        });
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteWatchHistory(user, movie, timeStamp) {
-      try {
-        const watchHistory = await WatchHistory.findOne({
-          where: { user: user, movie: movie, time_stamp: timeStamp }
-        });
-        if (!watchHistory) {
-          throw new Error('WatchHistory association not found');
-        }
-        return await watchHistory.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   WatchHistory.init(

@@ -6,29 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       // Define associations here if needed
       Admin.belongsTo(models.Account, { foreignKey: 'admin_id' });
     }
-    static async updateAdmin(id, updatedData) {
-      try {
-        let admin = await Admin.findByPk(id);
-        if (!admin) {
-          throw new Error('Admin not found');
-        }
-        return await admin.update(updatedData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteAdmin(id) {
-      try {
-        let admin = await Admin.findByPk(id);
-        if (!admin) {
-          throw new Error('Admin not found');
-        }
-        return await admin.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   Admin.init(

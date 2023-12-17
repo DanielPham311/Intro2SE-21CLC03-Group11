@@ -5,46 +5,6 @@ module.exports = (sequelize, DataTypes) => {
       // Define associations here if needed
       Bill.belongsTo(models.User, { foreignKey: 'user_id' });
     }
-
-    static async createBill(billData) {
-      try {
-        return await Bill.create(billData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getBillById(id) {
-      try {
-        return await Bill.findByPk(id);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async updateBill(id, updatedData) {
-      try {
-        let bill = await Bill.findByPk(id);
-        if (!bill) {
-          throw new Error('Bill not found');
-        }
-        return await bill.update(updatedData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteBill(id) {
-      try {
-        let bill = await Bill.findByPk(id);
-        if (!bill) {
-          throw new Error('Bill not found');
-        }
-        return await bill.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   Bill.init(

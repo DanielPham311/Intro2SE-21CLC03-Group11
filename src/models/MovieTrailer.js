@@ -6,38 +6,6 @@ module.exports = (sequelize, DataTypes) => {
       // Define associations here if needed
       MovieTrailer.belongsTo(models.Movie, { foreignKey: 'movie' });
     }
-
-    static async createMovieTrailer(movieTrailerData) {
-      try {
-        return await MovieTrailer.create(movieTrailerData);
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async getMovieTrailer(movieId) {
-      try {
-        return await MovieTrailer.findAll({
-          where: { movie: movieId}
-        });
-      } catch (error) {
-        throw error;
-      }
-    }
-
-    static async deleteMovieTrailer(movieId, trailerLink) {
-      try {
-        const movieTrailer = await MovieTrailer.findOne({
-          where: { movie: movieId, trailer_link: trailerLink }
-        });
-        if (!movieTrailer) {
-          throw new Error('MovieTrailer association not found');
-        }
-        return await movieTrailer.destroy();
-      } catch (error) {
-        throw error;
-      }
-    }
   }
 
   MovieTrailer.init(
