@@ -4,9 +4,9 @@ create table `Account`
 (
 	account_id int auto_increment,
     username varchar(255) unique,
-    `password` char(64) not null,
+    `password` char(64),
     create_date date,
-    `role` varchar(5) ,
+    `role` varchar(5) not null,
     email varchar(255) unique,
     
     constraint PK_account primary key (account_id),
@@ -21,7 +21,7 @@ create table `Admin`
     
     constraint PK_Admin primary key (admin_id),
     constraint FK_Admin_Account
-    foreign key (admin_id) references Account(account_id)
+    foreign key (admin_id) references Account(account_id) on delete cascade
 );
 
 create table `User`
@@ -31,7 +31,6 @@ create table `User`
     age int,
     birthday date,
     parental_mode int,
-    plan_id int not null,
     
     constraint PK_User
     primary key (user_id),
@@ -43,7 +42,7 @@ create table `User`
     check (parental_mode = 0 or parental_mode = 1),
     
     constraint FK_User_Account
-    foreign key (user_id) references `Account`(account_id)
+    foreign key (user_id) references `Account`(account_id) on delete cascade
 );
 
 create table Subscription
@@ -65,38 +64,38 @@ create table Subscription
 
 create table Subscription_plan
 (
-	plan_id int auto_increment,
+	user_id int,
+    subscription_id int not null,
     start_date date,
     expired_date date,
-    subscription_id int,
     
     constraint PK_subcription_plan 
-    primary key(plan_id),
+    primary key(user_id),
     
-    constraint FK_subscription_plan 
-    foreign key (subscription_id) 
-    references Subscription(subscription_id)
+    constraint FK_subscription
+    foreign key(subscription_id)
+    references Subscription(subscription_id) on delete cascade,
+    
+    constraint FK_subscription_plan_user
+    foreign key (user_id)
+    references `User`(user_id) on delete cascade
 );
-
-alter table `User`
-add constraint FK_User_subscription_plan
-	foreign key (plan_id)
-    references Subscription_plan(plan_id);
 
 create table credit_card
 (
 	card_id int auto_increment,
     card_number char(16) unique,
     cvv char(3),
-    valid_thru date,
+    valid_thru char(5),
     user_id int,
+    card_provider varchar(30),
     
     constraint PK_credit
     primary key (card_id),
     
     constraint FK_credit_user
     foreign key (user_id)
-    references `User`(user_id)
+    references `User`(user_id) on delete cascade
 );
 
 create table Bill
@@ -112,7 +111,7 @@ create table Bill
     
     constraint FK_bill_user
     foreign key (user_id)
-    references `User`(user_id)
+    references `User`(user_id) on delete cascade
 );
 
 create table Movie
@@ -121,10 +120,9 @@ create table Movie
     title varchar(255) character set utf8mb4,
     release_date date,
     rating int,
-    overview varchar(255) character set utf8mb4,
+    overview text,
     length int,
     country varchar(255) character set utf8mb4,
-    director_id int,
     backdrop_path varchar(255),
     poster_path varchar(255),
     isSeries int not null,
@@ -151,60 +149,26 @@ create table Season
     primary key(season_id),
     
     constraint FK_Season_Movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table Episode
 (
     episode_id int auto_increment,
     title varchar(255) character set utf8mb4,
-    overview varchar(255) character set utf8mb4,
+    overview text,
     length int,
     rating int,
     season int,
+    video_link varchar(80),
+    episode_number int not null,
     
     constraint PK_Episode
     primary key (episode_id),
 
     constraint FK_Episode_Season
     foreign key (season)
-    references Season(season_id)
-);
-
-create table Actor
-(
-	actor_id int auto_increment,
-    `name` varchar(255) character set utf8mb4,
-    birthday date,
-    nationality varchar(100) character set utf8mb4,
-    age int,
-    
-    constraint PK_Actor
-    primary key (actor_id),
-    
-    constraint Actor_age
-    check (age >= 0)
-);
-
-alter table Movie
-add constraint FK_movie_director
-	foreign key (director_id)
-    references Actor(actor_id);
-    
-create table Actor_Movie
-(
-	actor int,
-    movie int,
-	role_name varchar(100) character set utf8mb4,
-    
-    constraint PK_actor_movie
-    primary key(actor, movie),
-    
-    constraint FK_actor_movie
-    foreign key (actor) references Actor(actor_id),
-    
-    constraint FK_movie_actor
-    foreign key (movie) references Movie(movie_id)
+    references Season(season_id) on delete cascade
 );
     
 create table Award
@@ -226,26 +190,10 @@ create table Award_Movie
     primary key (award_id, movie_id, award_date),
     
     constraint FK_award
-    foreign key (award_id) references Award(award_id),
+    foreign key (award_id) references Award(award_id) on delete cascade,
     
     constraint FK_movie
-    foreign key (movie_id) references Movie(movie_id)
-);
-
-create table Award_Actor
-(
-	award_id int ,
-    actor_id int,
-    award_date date,
-    
-    constraint PK_award_movie
-    primary key (award_id, actor_id, award_date),
-    
-    constraint FK_award_actor
-    foreign key (award_id) references Award(award_id),
-    
-    constraint FK_actor_award
-    foreign key (actor_id) references Actor(actor_id)
+    foreign key (movie_id) references Movie(movie_id) on delete cascade
 );
 
 create table Genre
@@ -266,22 +214,10 @@ create table Genre_Movie
     primary key (genre, movie),
     
     constraint FK_genre_movie
-    foreign key (genre) references Genre(genre_id),
+    foreign key (genre) references Genre(genre_id) on delete cascade,
     
     constraint FK_movie_genre
-    foreign key (movie) references Movie(movie_id)
-);
-
-create table Image_actor
-(
-    actor int not null,
-    image_link varchar(255),
-    
-    constraint PK_image_actor
-    primary key (actor, image_link),
-    
-    constraint FK_image_actor
-    foreign key (actor) references Actor(actor_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table MovieTrailer
@@ -291,24 +227,24 @@ create table MovieTrailer
     
     constraint PK_MoviePoster primary key(movie, trailer_link),
     constraint FK_MovieTrailer
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table `Comment`
 (
 	`user` int,
     movie int,
-    time_stamp timestamp,
-    content varchar(255) character set utf8mb4,
+    time_stamp datetime,
+    content text,
     
     constraint PK_comment
     primary key (`user`, movie, time_stamp),
     
     constraint FK_comment_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_comment_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table WatchList
@@ -320,26 +256,26 @@ create table WatchList
     primary key (`user`, movie, order_number),
     
     constraint FK_watch_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_watch_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 create table WatchHistory
 (
 	`user` int,
     movie int,
-    time_stamp timestamp,
+    time_stamp datetime,
     
     constraint PK_History
     primary key (`user`, movie, time_stamp),
     
     constraint FK_history_user
-    foreign key (`user`) references `User`(user_id),
+    foreign key (`user`) references `User`(user_id) on delete cascade,
     
     constraint FK_history_movie
-    foreign key (movie) references Movie(movie_id)
+    foreign key (movie) references Movie(movie_id) on delete cascade
 );
 
 -- Speed enhancement
@@ -387,3 +323,13 @@ values ('Action'),
         ('TV Movie'), 
         ('War'),
         ('Western');
+
+insert into Genre(genre_name)
+values ('Action & Adventure'),
+	   ('Kids'),
+       ('News'),
+       ('Reality'),
+       ('Sci-Fi & Fantasy'),
+       ('Soap'),
+       ('Talk'),
+       ('War & Politics');

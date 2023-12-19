@@ -10,7 +10,7 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>Netflex</title>
-    <link rel="stylesheet" href="styles/login.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg">
                 <div class="container-fluid">
                     <a class="navbar-brand mx-auto" href="#">
-                        <img src="resources/logo2.png" alt="logo" width="200">
+                        <img src="images/logo2.png" alt="logo" width="200">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -45,19 +45,22 @@
 
                 <div class="inputs">
                     <!-- Bootstrap Form -->
-                    <form>
+                    <form action="" id="formSubmit" method="get">
                         <div class="mb-3">
-                            <input type="text" class="form-control" required placeholder="Email or phone number" />
+                            <input type="text" class="form-control" name="username" required placeholder="Email or phone number" />
                         </div>
                         <div class="mb-3">
-                            <input type="password" class="form-control" required placeholder="Password" />
+                            <input type="password" class="form-control" name="password" required placeholder="Password" />
                         </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        <div class="mb-3 form-check d-inline-block">
+                            <input type="checkbox" class="form-check-input h-75" name ="rememberMe" id="rememberMe">
+                            <label class="form-check-label pt-3" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="mb-3 d-inline-block" id="fp">
+                            <a href="forgot.html" name="forgotPassword" class="btn btn-link text-white text-decoration-none">Forgot Password?</a>
                         </div>
                         <div class="button text-center">
-                            <button type="submit" class="btn btn-danger">Sign In</button>
+                            <button type="submit" class="btn btn-danger" form="formSubmit">Sign In</button>
                         </div>
                     </form>
                 </div>
@@ -65,7 +68,7 @@
                 <div class="moreInfo">
                     <div>
                         <span class="isNew">New to Netflix?</span>
-                        <a href="#" class="btn btn-link">Sign up now.</a>
+                        <a href="register.html" class="btn btn-link text-white text-decoration-none">Sign up now.</a>
                     </div>
                 </div>
             </div>
