@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require('passport');
 const authenticateRoute = require('./routers/authenRouter');
-
+const {isAuth, isAdmin} = require('./middlewares/authenticateMiddleware')
 // set the view engine
 app.engine('hbs', expressHbs.engine({
     layoutsDir: __dirname + "/views/layouts",
@@ -48,7 +48,7 @@ require('./config/passport');
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
-
+app.use(isAuth);
 
 app.get('/', (req, res) =>{
     res.render('index');
