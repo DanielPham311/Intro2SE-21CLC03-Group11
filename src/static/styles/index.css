@@ -98,3 +98,44 @@
   word-wrap: break-word;
 }
 
+.filters-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto); /* 5 columns */
+  grid-template-rows: repeat(3, auto); /* 3 rows */
+  gap: 8px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#movieName, #cast, #keywords {
+  border-radius: 5px;
+}
+
+.star-rating {
+  display: inline-block;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.star-rating label:before {
+  content: '\2605'; /* Unicode character for a star */
+}
+
+input[type="radio"]:checked ~ label:before {
+  color: orange; /* Change color of filled stars */
+}
+

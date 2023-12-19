@@ -1812,6 +1812,245 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+  <!-- Modal Body -->
+      <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+      <div
+        class="modal fade"
+        id="searchModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalTitleId"
+        aria-hidden="true"
+      >
+        <div
+          class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-lg"
+          role="document"
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title text-center fw-semibold" id="modalTitleId">
+                What movies are you looking for?
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form action="" method="get" id="search">
+                <input
+                  type="text"
+                  name="movieName"
+                  id="movieName"
+                  class="w-100 border-opacity-25 border-dark mb-3"
+                  placeholder="Search"
+                />
+                <div class="container-fluid d-grid">
+                  <div class="row">
+                    <div class="col-6 bg-white">
+                      <div class="searches">
+                        <p class="fw-semibold text-dark opacity-50">
+                          Popular Searches:
+                        </p>
+                        <!--Note the em tag, the keyword that the user entered will be there-->
+                        <a
+                          class="search_results fw-bold text-dark opacity-75 text-decoration-none d-block"
+                          href="#"
+                          ><i class="bi bi-search"></i> <em>The</em> Haunting of
+                          Hill House - Horror/Classical</a
+                        >
+                        <a
+                          class="search_results fw-bold text-dark opacity-75 text-decoration-none d-block"
+                          href="#"
+                          ><i class="bi bi-search"></i> <em>The</em> Boys - TV
+                          Series/Gore</a
+                        >
+                        <a
+                          class="search_results fw-bold text-dark opacity-75 text-decoration-none d-block"
+                          href="#"
+                          ><i class="bi bi-search"></i> <em>The</em> Walking
+                          Dead - TV Series/Horror</a
+                        >
+                        <a
+                          class="search_results fw-bold text-dark opacity-75 text-decoration-none d-block"
+                          href="#"
+                          ><i class="bi bi-search"></i> <em>The</em> Exorcist:
+                          Believer - Horror/Gore</a
+                        >
+                        <a
+                          class="search_results fw-bold text-dark opacity-75 text-decoration-none d-block"
+                          href="#"
+                          ><i class="bi bi-search"></i> <em>The</em> Incredibles
+                          - Animated/Superhero</a
+                        >
+                      </div>
+                      <div class="filters">
+                        <p class="fw-semibold text-dark opacity-50 mt-3">
+                          Filters:
+                        </p>
+                        <div class="filters-container">
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="tvSeries"
+                              name="tvSeries"
+                            />
+                            <label for="tvSeries" class="fw-semibold"
+                              >TV Series</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="cinematic"
+                              name="cinematic"
+                            />
+                            <label for="cinematic" class="fw-semibold"
+                              >Cinematic</label
+                            >
+                          </div>
+                          <!-- Add more checkbox items as needed -->
+                          <div class="filter-item">
+                            <input type="checkbox" id="action" name="action" />
+                            <label for="action" class="fw-semibold"
+                              >Action</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="animated"
+                              name="animated"
+                            />
+                            <label for="animated" class="fw-semibold"
+                              >Animated</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="adventure"
+                              name="adventure"
+                            />
+                            <label for="adventure" class="fw-semibold"
+                              >Adventure</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input type="checkbox" id="comedy" name="comedy" />
+                            <label for="comedy" class="fw-semibold"
+                              >Comedy</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input type="checkbox" id="drama" name="drama" />
+                            <label for="drama" class="fw-semibold">Drama</label>
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="fantasy"
+                              name="fantasy"
+                            />
+                            <label for="fantasy" class="fw-semibold"
+                              >Fantasy</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input type="checkbox" id="horror" name="horror" />
+                            <label for="horror" class="fw-semibold"
+                              >Horror</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="mystery"
+                              name="mystery"
+                            />
+                            <label for="mystery" class="fw-semibold"
+                              >Mystery</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="romance"
+                              name="romance"
+                            />
+                            <label for="romance" class="fw-semibold"
+                              >Romance</label
+                            >
+                          </div>
+                          <div class="filter-item">
+                            <input
+                              type="checkbox"
+                              id="thriller"
+                              name="thriller"
+                            />
+                            <label for="thriller" class="fw-semibold"
+                              >Thriller</label
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 bg-dark bg-opacity-25 text-center">
+                      <div class="other-criterias">
+                        <p class="fw-semibold text-dark opacity-75">
+                          Other Criterias
+                        </p>
+                        <input
+                          type="text"
+                          name="cast"
+                          id="cast"
+                          class="w-100 border-opacity-25 border-dark mb-3"
+                          placeholder="Actors/Actresses/Directors..."
+                        />
+                        <input
+                          type="text"
+                          name="keywords"
+                          id="keywords"
+                          class="w-100 border-opacity-25 border-dark my-3"
+                          placeholder="Keywords, eg: Superhero..."
+                        />
+                        <p class="fw-semibold text-dark opacity-75">Ratings</p>
+                        <div class="star-rating">
+                          <input type="radio" id="star5" name="rating" value="5">
+                          <label for="star5"></label>
+                          <input type="radio" id="star4" name="rating" value="4">
+                          <label for="star4"></label>
+                          <input type="radio" id="star3" name="rating" value="3">
+                          <label for="star3"></label>
+                          <input type="radio" id="star2" name="rating" value="2">
+                          <label for="star2"></label>
+                          <input type="radio" id="star1" name="rating" value="1">
+                          <label for="star1"></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary" form="search"> 
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 </main>
 <footer>
   <!-- place footer here -->
