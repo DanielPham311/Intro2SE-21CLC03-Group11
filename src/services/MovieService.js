@@ -1,4 +1,21 @@
 const { Account, User,Admin, SubscriptionPlan, Subscription, Bill, Episode, Season, Comment,CreditCard, MovieTrailer, WatchHistory,WatchList , Genre, Movie, Award} = require('../models'); // adjust the path to your models
+async function searchByTitle(movie_name)
+{
+  const Op = require('sequelize').Op;
+  try {
+    const movies = await Movie.findAll({
+        where: {
+            title: {
+                [Op.like]: '%' + movie_name + '%'
+            }
+        }
+    });
+    return movies.map(movies => movies.dataValues);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 async function addMovieTrailer(movieTrailerData) {
     try {
       return await MovieTrailer.create(movieTrailerData);
@@ -16,6 +33,32 @@ async function addMovieTrailer(movieTrailerData) {
       throw error;
     }
   }
+
+  async function CategorizeMovieByGenres(genreList) {
+    try {
+      // Query each movie in parallel and return many arrays, each arrays is a list of movies that belong to a specific genre in genreList
+      const results = await Promise.all(genreList.map(genreName =>
+        Movie.findAll({
+            attributes: ['title'],
+            include: [
+                {
+                    model: Genre,
+                    where: { genre_name: genreName },
+                    attributes: [],
+                    through: { attributes: [] }
+                }
+            ]
+        })
+    ));
+    // Find the intersection of the results and return
+    const intersection = results.reduce((a, b) => a.filter(c => b.some(d => d.title === c.title)));
+    // Extract movie titles from the intersection
+    return intersection.map((movie) => movie.title);
+  } catch (error) {
+      throw error;
+  }
+}
+
 
   async function deleteMovieTrailer(movieId, trailerLink) {
     try {
@@ -176,6 +219,8 @@ async function getGenreOfMovie(movieId) {
   }
 
 module.exports = {
+    CategorizeMovieByGenres: CategorizeMovieByGenres,
+    searchByTitle: searchByTitle,
     addMovieToUserWatchList: addMovieToUserWatchList,
     getUserWatchList: getUserWatchList,
     clearUserWatchList: clearUserWatchList,

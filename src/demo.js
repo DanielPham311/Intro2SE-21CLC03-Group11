@@ -2,11 +2,27 @@ const auth = require('./services/Authentication_Service');
 const subs = require('./services/SubscriptionService');
 const movie = require('./services/MovieService');
 const model = require('./models');
+const { realpath } = require('fs');
+// for user input
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
 // demo use of Account model
 
 // must put them into an async function to use
 const stuff = async () => {
-    let siu = await subs.getListOfSubscriptions(); // auth.getAllAccountInfo();
+    // let input = '';
+    // readline.question('Type in the movie name: ', async (res) => {
+    //     input = res
+    //     let siu = await subs.getListOfSubscriptions(); // auth.getAllAccountInfo();
+    //     siu = await movie.searchByTitle(input);
+    //     console.log(siu);
+    //     if (input != '') stuff();
+    // });
+    let siu = await movie.getMoviesByGenre(['Adventure','Action','Thriller']);
+    // let siu = await movie.getGenreOfMovie(1);
     console.log(siu);
 }
 

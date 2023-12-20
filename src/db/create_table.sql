@@ -283,7 +283,10 @@ CREATE INDEX idx_Account
 ON `Account` (username, `password`);
 
 CREATE INDEX idx_User
-ON `User` (`name`, age, birthday, parental_mode);
+ON `User` (`name`);
+
+CREATE INDEX idx_Movie
+ON Movie (title);
 
 -- more will come but I dont know which
 
