@@ -7,6 +7,7 @@ const session = require("express-session");
 const passport = require('passport');
 const authenticateRoute = require('./routers/authenRouter');
 const {isAuth, isAdmin} = require('./middlewares/authenticateMiddleware')
+const path = require('path');
 // set the view engine
 app.engine('hbs', expressHbs.engine({
     layoutsDir: __dirname + "/views/layouts",
@@ -17,7 +18,8 @@ app.engine('hbs', expressHbs.engine({
 
 app.set('view engine', 'hbs');
 
-app.use(express.static(__dirname + '/static'));
+// Serve static files from the 'public' folder
+app.use(express.static(path.join(__dirname, 'static')));
 
 // Cau hinh cho phep doc du lieu gui len bang phuong thuc POST
 app.use(express.json());

@@ -14,18 +14,27 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/login-success', (req, res, next) => {
-    res.send('<p>You successfully logged in. --> <a href="/protected-route">Go to protected route</a></p>');
+    res.redirect('/index');
 });
 
 router.get('/login-failure', (req, res, next) => {
-    res.send('You entered the wrong password.');
+    res.redirect('/login');
 });
 
 // Visiting this route logs the user out
 router.get('/logout', (req, res, next) => {
-    req.logout();
-    res.redirect('/protected-route');
+    req.logout((err) => {
+        if (err) {
+            return next(err);
+        }
+        // Additional cleanup or actions can be added here
+        res.redirect('/login');
+    });
 });
+
+router.get('/register', (req, res, next) => {
+    res.render('register')
+})
 
 
 module.exports = router;

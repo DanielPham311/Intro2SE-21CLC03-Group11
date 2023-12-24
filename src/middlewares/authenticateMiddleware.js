@@ -3,7 +3,7 @@ module.exports = {
         if(req.isAuthenticated()) {
             next();
         } else {
-            res.status(401).json({message: 'You are not authorized'});
+            res.redirect('/login')
         }
     },
     isAdmin: (req, res, next) => {

@@ -3,8 +3,8 @@
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg">
       <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="#">
-          <img src="resources/logo2.png" alt="logo" width="200" />
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img src="/resources/logo2.png" alt="logo" width="200" />
         </a>
         <button
           class="navbar-toggler"
@@ -30,47 +30,56 @@
       </div>
     </nav>
   </header>
-  <div class="registerBlock">
+  <div class="registerBlock2">
     <div class="paddingBlock">
       <div class="title">
-        <h1>Sign In</h1>
+        <h1>Register</h1>
       </div>
 
       <div class="inputs">
         <!-- Bootstrap Form -->
-        <form method="POST" action="/login">
+        <form action="" id="formSubmit" method="get">
           <div class="mb-3">
             <input
               type="text"
               class="form-control"
+              name="username"
               required
               placeholder="Email or phone number"
-              name="username"
             />
           </div>
           <div class="mb-3">
             <input
               type="password"
               class="form-control"
+              name="password"
               required
               placeholder="Password"
-              name="password"
             />
           </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="rememberMe" />
-            <label class="form-check-label" for="rememberMe">Remember me</label>
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-control"
+              name="confirmPassword"
+              required
+              placeholder="Confirm Password"
+            />
           </div>
           <div class="button text-center">
-            <button type="submit" class="btn btn-danger">Sign In</button>
+            <button type="submit" class="btn btn-danger" form="formSubmit">Sign
+              Up</button>
           </div>
         </form>
       </div>
 
       <div class="moreInfo">
         <div>
-          <span class="isNew">New to Netflix?</span>
-          <a href="/register" class="btn btn-link">Sign up now.</a>
+          <span class="isNew">Already have an account?</span>
+          <a
+            href="index.html"
+            class="btn btn-link text-white text-decoration-none"
+          >Sign in now.</a>
         </div>
       </div>
     </div>
