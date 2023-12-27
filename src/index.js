@@ -55,7 +55,12 @@ app.use(authenticateRoute);
 app.use(isAuth);
 
 app.get("/", (req, res) => {
-  res.render("index");
+  const carouselItems = ["Item 1", "Item 2", "Item 3"]; // Your carousel item
+  res.render("index", {
+    layout: "layout",
+    carouselItems: carouselItems,
+    isFirstItemActive: true,
+  });
 });
 
 app.listen(PORT, () => {
