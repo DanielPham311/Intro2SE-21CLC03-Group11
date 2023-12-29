@@ -16,7 +16,10 @@ const {
   Movie,
   Award,
 } = require("../models"); // adjust the path to your models
-async function searchByTitle(movie_name) {
+
+const MovieService = {};
+
+MovieService.searchByTitle = async (movie_name) => {
   const Op = require("sequelize").Op;
   try {
     const movies = await Movie.findAll({
@@ -30,17 +33,17 @@ async function searchByTitle(movie_name) {
   } catch (error) {
     console.error(error);
   }
-}
+};
 
-async function addMovieTrailer(movieTrailerData) {
+MovieService.addMovieTrailer = async (movieTrailerData) => {
   try {
     return await MovieTrailer.create(movieTrailerData);
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function getMovieTrailer(movieId) {
+MovieService.getMovieTrailer = async (movieId) => {
   try {
     return await MovieTrailer.findAll({
       where: { movie: movieId },
@@ -48,9 +51,9 @@ async function getMovieTrailer(movieId) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function CategorizeMovieByGenres(genreList) {
+MovieService.CategorizeMovieByGenres = async (genreList) => {
   try {
     // Query each movie in parallel and return many arrays, each arrays is a list of movies that belong to a specific genre in genreList
     const results = await Promise.all(
@@ -77,9 +80,9 @@ async function CategorizeMovieByGenres(genreList) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function deleteMovieTrailer(movieId, trailerLink) {
+MovieService.deleteMovieTrailer = async (movieId, trailerLink) => {
   try {
     const movieTrailer = await MovieTrailer.findOne({
       where: { movie: movieId, trailer_link: trailerLink },
@@ -91,25 +94,24 @@ async function deleteMovieTrailer(movieId, trailerLink) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function addMovieToDB(movieData) {
+MovieService.addMovieToDB = async (movieData) => {
   try {
     return await Movie.create(movieData);
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function getMovieById(id) {
+MovieService.getMovieById = async (id) => {
   try {
     return await Movie.findByPk(id);
   } catch (error) {
     throw error;
   }
-}
-
-async function updateMovie(id, updatedData) {
+};
+MovieService.updateMovie = async (id, updatedData) => {
   try {
     let movie = await Movie.findByPk(id);
     if (!movie) {
@@ -119,9 +121,9 @@ async function updateMovie(id, updatedData) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function deleteMovie(id) {
+MovieService.deleteMovie = async (id) => {
   try {
     let movie = await Movie.findByPk(id);
     if (!movie) {
@@ -131,8 +133,8 @@ async function deleteMovie(id) {
   } catch (error) {
     throw error;
   }
-}
-async function getGenreOfMovie(movieId) {
+};
+MovieService.getGenreOfMovie = async (movieId) => {
   try {
     const genres = await Genre.findAll({
       attributes: ["genre_name"],
@@ -151,9 +153,9 @@ async function getGenreOfMovie(movieId) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function getAwardOfMovie(movieId) {
+MovieService.getAwardOfMovie = async (movieId) => {
   try {
     const award = await Award.findAll({
       attributes: ["award_name"],
@@ -172,16 +174,16 @@ async function getAwardOfMovie(movieId) {
   } catch (error) {
     throw error;
   }
-}
-async function addUserWatchHistory(watchHistoryData) {
+};
+MovieService.addUserWatchHistory = async (watchHistoryData) => {
   try {
     return await WatchHistory.create(watchHistoryData);
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function getUserWatchHistory(userID) {
+MovieService.getUserWatchHistory = async (userID) => {
   try {
     return await WatchHistory.findOne({
       where: { user: userID },
@@ -189,9 +191,9 @@ async function getUserWatchHistory(userID) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function clearUserWatchHistory(userID) {
+MovieService.clearUserWatchHistory = async (userID) => {
   try {
     const watchHistory = await WatchHistory.findOne({
       where: { user: userID },
@@ -203,17 +205,17 @@ async function clearUserWatchHistory(userID) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function addMovieToUserWatchList(watchListData) {
+MovieService.addMovieToUserWatchList = async (watchListData) => {
   try {
     return await WatchList.create(watchListData);
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function getUserWatchList(userID) {
+MovieService.getUserWatchList = async (userID) => {
   try {
     return await WatchList.findOne({
       where: { user: userID },
@@ -221,9 +223,9 @@ async function getUserWatchList(userID) {
   } catch (error) {
     throw error;
   }
-}
+};
 
-async function clearUserWatchList(userID) {
+MovieService.clearUserWatchList = async (userID) => {
   try {
     const watchList = await WatchList.findOne({
       where: { user: userID },
@@ -235,24 +237,6 @@ async function clearUserWatchList(userID) {
   } catch (error) {
     throw error;
   }
-}
-
-module.exports = {
-  CategorizeMovieByGenres: CategorizeMovieByGenres,
-  searchByTitle: searchByTitle,
-  addMovieToUserWatchList: addMovieToUserWatchList,
-  getUserWatchList: getUserWatchList,
-  clearUserWatchList: clearUserWatchList,
-  addMovieToDB: addMovieToDB,
-  getMovieById: getMovieById,
-  deleteMovie: deleteMovie,
-  updatedMovie: updateMovie,
-  getGenreOfMovie: getGenreOfMovie,
-  getAwardOfMovie: getAwardOfMovie,
-  clearUserWatchHistory: clearUserWatchHistory,
-  addUserWatchHistory: addUserWatchHistory,
-  getUserWatchHistory: getUserWatchHistory,
-  addMovieTrailer: addMovieTrailer,
-  getMovieTrailer: getMovieTrailer,
-  deleteMovieTrailer: deleteMovieTrailer,
 };
+
+module.exports = MovieService;

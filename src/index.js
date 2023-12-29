@@ -8,6 +8,7 @@ const passport = require("passport");
 const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
+const AppRouter = require('./routers/AppRouter');
 
 // set the view engine
 app.engine(
@@ -52,16 +53,8 @@ require("./config/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
-app.use(isAuth);
+app.use(AppRouter);
 
-app.get("/", (req, res) => {
-  const carouselItems = ["Item 1", "Item 2", "Item 3"]; // Your carousel item
-  res.render("index", {
-    layout: "layout",
-    carouselItems: carouselItems,
-    isFirstItemActive: true,
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
