@@ -58,12 +58,18 @@ require("./config/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
-// app.use(isAuth)
+app.use(isAuth);
 app.use((req, res, next) => {
   const user = req.user;
-  res.locals.user = user;
+  res.locals.user = user || {
+    user_id: 999,
+    name: "Guest",
+    age: 18,
+    birthday: "2023-12-02",
+    parental_mode: 0,
+  };
   next();
-})
+});
 app.use(AppRouter);
 
 app.listen(PORT, () => {

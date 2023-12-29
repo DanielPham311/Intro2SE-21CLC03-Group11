@@ -9,7 +9,7 @@ const customFields = {
 };
 
 const verifyCallback = async (username, password, callbackDone) => {
-  console.log(password);
+  // console.log(password);
   try {
     let result = await Auth.verifyAccount(username, password);
     console.log(result);
