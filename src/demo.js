@@ -21,7 +21,7 @@ const stuff = async () => {
     //     console.log(siu);
     //     if (input != '') stuff();
     // });
-    let siu = await movie.getMoviesByGenre(['Adventure','Action','Thriller']);
+    let siu = await movie.CategorizeMovieByGenres(['Adventure','Action','Thriller']);
     // let siu = await movie.getGenreOfMovie(1);
     console.log(siu);
 }

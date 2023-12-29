@@ -36,12 +36,12 @@ MovieService.searchByTitle = async (movie_name) => {
 };
 
 MovieService.addMovieTrailer = async (movieTrailerData) => {
-  try {
-    return await MovieTrailer.create(movieTrailerData);
-  } catch (error) {
-    throw error;
+    try {
+      return await MovieTrailer.create(movieTrailerData);
+    } catch (error) {
+      throw error;
+    }
   }
-};
 
 MovieService.getMovieTrailer = async (movieId) => {
   try {
@@ -76,7 +76,7 @@ MovieService.CategorizeMovieByGenres = async (genreList) => {
       a.filter((c) => b.some((d) => d.title === c.title))
     );
     // Extract movie titles from the intersection
-    return intersection.map((movie) => movie.title);
+    return intersection.map((movie) => movie.dataValues);
   } catch (error) {
     throw error;
   }
