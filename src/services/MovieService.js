@@ -33,8 +33,43 @@ async function searchByTitle(movie_name) {
 }
 
 async function addMovieTrailer(movieTrailerData) {
-  try {
-    return await MovieTrailer.create(movieTrailerData);
+    try {
+      return await MovieTrailer.create(movieTrailerData);
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async function getMovieTrailer(movieId) {
+    try {
+      return await MovieTrailer.findAll({
+        where: { movie: movieId}
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  async function CategorizeMovieByGenres(genreList) {
+    try {
+      // Query each movie in parallel and return many arrays, each arrays is a list of movies that belong to a specific genre in genreList
+      const results = await Promise.all(genreList.map(genreName =>
+        Movie.findAll({
+            attributes: ['title'],
+            include: [
+                {
+                    model: Genre,
+                    where: { genre_name: genreName },
+                    attributes: [],
+                    through: { attributes: [] }
+                }
+            ]
+        })
+    ));
+    // Find the intersection of the results and return
+    const intersection = results.reduce((a, b) => a.filter(c => b.some(d => d.title === c.title)));
+    // Extract movie titles from the intersection
+    return intersection.map((movie) => movie.dataValues);
   } catch (error) {
     throw error;
   }
@@ -73,7 +108,7 @@ async function CategorizeMovieByGenres(genreList) {
       a.filter((c) => b.some((d) => d.title === c.title))
     );
     // Extract movie titles from the intersection
-    return intersection.map((movie) => movie.title);
+    return intersection.map((movie) => movie.dataValues);
   } catch (error) {
     throw error;
   }
