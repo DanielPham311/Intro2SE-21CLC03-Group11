@@ -6,15 +6,12 @@ const show = async (req, res) => {
 
     const recommendedMovie = await MovieService.findTopMovieRating(5);
 
-    console.log(recommendedMovie);
     const unfinishedList = [];
     const foryouList = [];
     const cinemaList = [];
   
     res.render("index", {
       layout: "layout",
-      carouselItems: carouselItems,
-      isFirstItemActive: true,
       recommendedMovie: recommendedMovie,
       unfinishedList: unfinishedList,
       foryouList: foryouList,

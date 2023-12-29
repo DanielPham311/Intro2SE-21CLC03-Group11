@@ -2,7 +2,7 @@
   <div id="recommended" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" role="listbox">
       {{#each recommendedMovie}}
-        <div class="carousel-item {{#if @first and @../isFirstItemActive}} active {{/if}}" id="{{movie_Id}}">
+        <div class="carousel-item {{#if @first }} active {{/if}}" id="{{movie_id}}">
           <div class="overlay"></div>
           <img
             src="{{backdrop_path}}"
@@ -25,9 +25,11 @@
               IMDb Rating:
               {{rating}}/10
               Genre:
-              <span class="highlight fs-4 fst-italic">{{#each movie.genres}}
-                  {{this}}{{#unless @last}}, {{/unless}}
-                {{/each}}</span>
+              <span class="highlight fs-4 fst-italic">
+                {{#each movie.genres}}
+                  {{this}} {{#unless @last}}, {{/unless}}
+                {{/each}}
+              </span>
             </p>
             <a
               name="playMovie"
@@ -87,7 +89,7 @@
     <div class="carousel-inner" role="listbox">
       <!--Here we have 3 unfinished list (3 carousel items), each has 4 movies (unfinishedMovie) = 12 movies total-->
       {{#each unfinishedList}} <!---For each carousel items (3)-->
-        <div class="carousel-item {{#if @first and isFirstItemActive}}active{{/if}}">
+        <div class="carousel-item {{#if @first }}active{{/if}}">
           <div class="cards-wrapper d-flex bg-dark">
             {{#each unfinishedMovie}} <!--For each movie in that carousel item (4)-->
               <div class="card bg-black bg-opacity-50">
@@ -172,7 +174,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each foryouList}} <!--For each carousel item (3)-->
-      <div class="carousel-item {{#if @first and isFirstItemActive}}active{{/if}}">
+      <div class="carousel-item {{#if @first }}active{{/if}}">
         <div class="cards-wrapper d-flex bg-dark">
           {{#each foryouMovie}}
           <div class="card bg-black bg-opacity-50">
@@ -257,7 +259,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each cinemaList}} <!--For each carousel item (3)-->
-      <div class="carousel-item {{#if @first and isFirstItemActive}}active{{/if}}">
+      <div class="carousel-item {{#if @first }}active{{/if}}">
         <div class="cards-wrapper d-flex bg-dark">
           {{#each cinemaMovie}}
           <div class="card bg-black bg-opacity-50">
@@ -342,7 +344,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each TVList}} <!--For each carousel item (3)-->
-      <div class="carousel-item {{#if @first and isFirstItemActive}}active{{/if}}">
+      <div class="carousel-item {{#if @first }}active{{/if}}">
         <div class="cards-wrapper d-flex bg-dark">
           {{#each tvSeries}}
             {{#if isSeries}}

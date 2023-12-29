@@ -8,7 +8,7 @@ const passport = require("passport");
 const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
-const AppRouter = require('./routers/AppRouter');
+const AppRouter = require("./routers/AppRouter");
 
 // set the view engine
 app.engine(
@@ -18,6 +18,10 @@ app.engine(
     partialDir: __dirname + "/views/partials",
     defaultLayout: "layout",
     extname: "hbs",
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true,
+    },
   })
 );
 
@@ -54,7 +58,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
 app.use(AppRouter);
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);

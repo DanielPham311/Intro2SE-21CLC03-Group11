@@ -185,7 +185,7 @@ MovieService.addUserWatchHistory = async (watchHistoryData) => {
 
 MovieService.getUserWatchHistory = async (userID) => {
   try {
-    return await WatchHistory.findOne({
+    return await WatchHistory.findAll({
       where: { user: userID },
     });
   } catch (error) {
@@ -217,7 +217,7 @@ MovieService.addMovieToUserWatchList = async (watchListData) => {
 
 MovieService.getUserWatchList = async (userID) => {
   try {
-    return await WatchList.findOne({
+    return await WatchList.findAll({
       where: { user: userID },
     });
   } catch (error) {
@@ -238,5 +238,17 @@ MovieService.clearUserWatchList = async (userID) => {
     throw error;
   }
 };
+
+MovieService.findTopMovieRating = async (k) => {
+  try {
+    const result = await Movie.findAll({
+      order: [['rating', 'DESC']],
+      limit: k
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+}
 
 module.exports = MovieService;
