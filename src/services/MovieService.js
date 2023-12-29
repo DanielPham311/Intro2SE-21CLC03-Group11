@@ -36,12 +36,12 @@ MovieService.searchByTitle = async (movie_name) => {
 };
 
 MovieService.addMovieTrailer = async (movieTrailerData) => {
-    try {
-      return await MovieTrailer.create(movieTrailerData);
-    } catch (error) {
-      throw error;
-    }
+  try {
+    return await MovieTrailer.create(movieTrailerData);
+  } catch (error) {
+    throw error;
   }
+};
 
 MovieService.getMovieTrailer = async (movieId) => {
   try {
@@ -242,13 +242,37 @@ MovieService.clearUserWatchList = async (userID) => {
 MovieService.findTopMovieRating = async (k) => {
   try {
     const result = await Movie.findAll({
-      order: [['rating', 'DESC']],
-      limit: k
+      order: [["rating", "DESC"]],
+      limit: k,
+      include: [{ model: Genre, through: "GenreMovie" }],
     });
     return result;
   } catch (error) {
     throw error;
   }
-}
+};
+
+MovieService.findAll = async (topK) => {
+  try {
+    const result = await Movie.findAll({
+      limit: topK,
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+MovieService.findAllFromTo = async (limit, offset) => {
+  try {
+    const result = await Movie.findAll({
+      limit: limit,
+      offset: offset
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 
 module.exports = MovieService;

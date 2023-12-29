@@ -46,7 +46,6 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((userID, done) => {
-  console.log(`Account_id ${userID}`);
   Account.findOne({
     where: {
       account_id: userID,

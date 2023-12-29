@@ -26,8 +26,8 @@
               {{rating}}/10
               Genre:
               <span class="highlight fs-4 fst-italic">
-                {{#each movie.genres}}
-                  {{this}} {{#unless @last}}, {{/unless}}
+                {{#each Genres}}
+                  {{genre_name}} {{#unless @last}}, {{/unless}}
                 {{/each}}
               </span>
             </p>
@@ -102,8 +102,8 @@
                   <h5
                     class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
                   >
-                    {{#each movie.genres}}
-                      {{this}}{{#unless @last}}/{{/unless}}
+                    {{#each Genres}}
+                      {{genre_name}}{{#unless @last}}/{{/unless}}
                     {{/each}}
                   </h5>
                   <p class="d-block justify-content-start align-items-start">
@@ -174,43 +174,43 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each foryouList}} <!--For each carousel item (3)-->
-      <div class="carousel-item {{#if @first }}active{{/if}}">
-        <div class="cards-wrapper d-flex bg-dark">
-          {{#each foryouMovie}}
-          <div class="card bg-black bg-opacity-50">
-            <img
-              src="{{poster_path}}"
-              class="card-img-top w-100 h-100"
-              alt="{{movie_id}}"
-            />
-            <div class="card-body text-white text-center">
-              <h5
-                class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
-              >
-                {{#each movie.genres}}
-                  {{this}}{{#unless @last}}/{{/unless}}
-                {{/each}}
-              </h5>
-              <p class="d-block justify-content-start align-items-start">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                  class="bi bi-star-fill"
-                ></i><i class="bi bi-star-fill"></i><i
-                  class="bi bi-star-fill"
-                ></i>
-              </p>
-              <p class="card-text w-100">{{title}}</p>
-              <a
-                name="playMovie"
-                id=""
-                class="btn p-3 fw-bold play-btn text-white"
-                href="#"
-                role="button"
-              ><i class="bi bi-play-fill"></i> Watch</a>
+        <div class="carousel-item {{#if @first }}active{{/if}}">
+          <div class="cards-wrapper d-flex bg-dark">
+            {{#each foryouMovie}}
+            <div class="card bg-black bg-opacity-50">
+              <img
+                src="{{poster_path}}"
+                class="card-img-top w-100 h-100"
+                alt="{{movie_id}}"
+              />
+              <div class="card-body text-white text-center">
+                <h5
+                  class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                >
+                  {{#each Genres}}
+                    {{genre_name}}{{#unless @last}}/{{/unless}}
+                  {{/each}}
+                </h5>
+                <p class="d-block justify-content-start align-items-start">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"
+                  ></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"
+                  ></i>
+                </p>
+                <p class="card-text w-100">{{title}}</p>
+                <a
+                  name="playMovie"
+                  id=""
+                  class="btn p-3 fw-bold play-btn text-white"
+                  href="#"
+                  role="button"
+                ><i class="bi bi-play-fill"></i> Watch</a>
+              </div>
             </div>
+            {{/each}}
           </div>
-          {{/each}}
         </div>
-      </div>
       {{/each}}
     </div>
     <button
@@ -272,8 +272,8 @@
               <h5
                 class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
               >
-                {{#each movie.genres}}
-                  {{this}}{{#unless @last}}/{{/unless}}
+                {{#each Genres}}
+                  {{genre_name}}{{#unless @last}}/{{/unless}}
                 {{/each}}
               </h5>
               <p class="d-block justify-content-start align-items-start">
@@ -344,45 +344,45 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       {{#each TVList}} <!--For each carousel item (3)-->
-      <div class="carousel-item {{#if @first }}active{{/if}}">
-        <div class="cards-wrapper d-flex bg-dark">
-          {{#each tvSeries}}
-            {{#if isSeries}}
-            <div class="card bg-black bg-opacity-50">
-              <img
-                src="{{poster_path}}"
-                class="card-img-top w-100 h-100"
-                alt="{{movie_id}}"
-              />
-              <div class="card-body text-white text-center">
-                <h5
-                  class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
-                >
-                  {{#each movie.genres}}
-                    {{this}}{{#unless @last}}/{{/unless}}
-                  {{/each}}
-                </h5>
-                <p class="d-block justify-content-start align-items-start">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"
-                  ></i><i class="bi bi-star-fill"></i><i
-                    class="bi bi-star-fill"
-                  ></i>
-                </p>
-                <p class="card-text w-100">{{title}}</p>
-                <a
-                  name="playMovie"
-                  id=""
-                  class="btn p-3 fw-bold play-btn text-white"
-                  href="#"
-                  role="button"
-                ><i class="bi bi-play-fill"></i> Watch</a>
-              </div>
-            </div>
-            {{/if}}
-          {{/each}}
+        <div class="carousel-item {{#if @first }}active{{/if}}">
+          <div class="cards-wrapper d-flex bg-dark">
+            {{#each tvSeries}}
+              {{#if isSeries}}
+                <div class="card bg-black bg-opacity-50">
+                  <img
+                    src="{{poster_path}}"
+                    class="card-img-top w-100 h-100"
+                    alt="{{movie_id}}"
+                  />
+                  <div class="card-body text-white text-center">
+                    <h5
+                      class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+                    >
+                      {{#each Genres}}
+                        {{genre_name}}{{#unless @last}}/{{/unless}}
+                      {{/each}}
+                    </h5>
+                    <p class="d-block justify-content-start align-items-start">
+                      <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"
+                      ></i><i class="bi bi-star-fill"></i><i
+                        class="bi bi-star-fill"
+                      ></i>
+                    </p>
+                    <p class="card-text w-100">{{title}}</p>
+                    <a
+                      name="playMovie"
+                      id=""
+                      class="btn p-3 fw-bold play-btn text-white"
+                      href="#"
+                      role="button"
+                    ><i class="bi bi-play-fill"></i> Watch</a>
+                  </div>
+                </div>
+              {{/if}}
+            {{/each}}
+          </div>
         </div>
-      </div>
       {{/each}}
     </div>
     <button

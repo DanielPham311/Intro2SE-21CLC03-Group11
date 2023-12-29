@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-const { createAccount } = require("../services/Authentication_Service");
+const AuthenService = require("../services/Authentication_Service");
 
 router.post(
   "/login",
@@ -12,7 +12,7 @@ router.post(
 
 router.post("/register", async (req, res, next) => {
   const { username, password } = req.body;
-  const Account = await createAccount(username, password, "user", username);
+  const Account = await AuthenService.createAccount(username, password, "user", username); // default user
   if (Account != undefined) {
     res.redirect("/login");
   }

@@ -9,6 +9,7 @@ const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
 const AppRouter = require("./routers/AppRouter");
+const { log } = require("console");
 
 // set the view engine
 app.engine(
@@ -57,6 +58,12 @@ require("./config/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
+// app.use(isAuth)
+app.use((req, res, next) => {
+  const user = req.user;
+  res.locals.user = user;
+  next();
+})
 app.use(AppRouter);
 
 app.listen(PORT, () => {
