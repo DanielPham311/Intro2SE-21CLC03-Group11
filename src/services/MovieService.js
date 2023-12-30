@@ -267,7 +267,7 @@ MovieService.findAllFromTo = async (limit, offset) => {
   try {
     const result = await Movie.findAll({
       limit: limit,
-      offset: offset
+      offset: offset,
     });
     return result;
   } catch (error) {
@@ -275,4 +275,64 @@ MovieService.findAllFromTo = async (limit, offset) => {
   }
 };
 
+MovieService.findAllCinema = async (userOptions) => {
+  const cLimit = userOptions.limit | 0;
+  const cOffset = userOptions.offset | 0;
+  try {
+    // Default options
+    const defaultOptions = {
+      offset: cOffset,
+      limit: cLimit,
+      where: {
+        // Your default where conditions go here
+        // For example, you can include a condition that filters out unfinished movies
+        isSeries: 0,
+      },
+      order: [["rating", "DESC"]],
+    };
+
+    // Merge user options with default options
+    const options = {
+      ...defaultOptions,
+    };
+
+    // Your Sequelize query here
+    const movies = await Movie.findAll(options);
+
+    return movies;
+  } catch (error) {
+    throw error;
+  }
+};
+
+MovieService.findAllSeries = async (userOptions) => {
+  const cLimit = userOptions.limit | 0;
+  const cOffset = userOptions.offset | 0;
+  try {
+    // Default options
+    const defaultOptions = {
+      offset: cOffset,
+      limit: cLimit,
+      where: {
+        // Your default where conditions go here
+        // For example, you can include a condition that filters out unfinished movies
+        isSeries: 1,
+      },
+      order: [["rating", "DESC"]],
+    };
+
+    // Merge user options with default options
+    const options = {
+      ...defaultOptions,
+      ...userOptions,
+    };
+
+    // Your Sequelize query here
+    const movies = await Movie.findAll(options);
+
+    return movies;
+  } catch (error) {
+    throw error;
+  }
+};
 module.exports = MovieService;

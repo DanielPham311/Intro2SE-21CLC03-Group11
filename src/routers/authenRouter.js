@@ -22,7 +22,7 @@ router.post("/register", async (req, res, next) => {
 
 // When you visit http://localhost:3000/login, you will see "Login Page"
 router.get("/login", (req, res) => {
-  res.render("login", { layout: "functional_layout" });
+  res.render("login", { layout: "functional_layout", css_file_name: "login" });
 });
 
 router.get("/login-success", (req, res, next) => {

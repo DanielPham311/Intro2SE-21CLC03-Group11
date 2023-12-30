@@ -9,6 +9,7 @@ const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
 const AppRouter = require("./routers/AppRouter");
+const MovieRouter = require('./routers/WatchMovieRouter')
 const { log } = require("console");
 
 // set the view engine
@@ -71,6 +72,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(AppRouter);
+app.use('/watch', MovieRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
