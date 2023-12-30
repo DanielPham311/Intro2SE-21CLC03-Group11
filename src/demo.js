@@ -21,9 +21,12 @@ const stuff = async () => {
     //     console.log(siu);
     //     if (input != '') stuff();
     // });
-    let siu = await movie.CategorizeMovieByGenres(['Adventure','Action','Thriller']);
-    // let siu = await movie.getGenreOfMovie(1);
-    console.log(siu);
+    // let siu = await movie.findTopMovieRating(5); // CategorizeMovieByGenres(['Adventure','Action','Thriller']);
+    let siu = await movie.searchByTitle("spider");
+    siu[0].MovieTrailers.forEach(trailer => {
+      console.log(trailer.dataValues);
+    });
+    // console.log(siu[0].MovieTrailers);
 }
 
 stuff();

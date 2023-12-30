@@ -19,6 +19,21 @@ const {
 
 const MovieService = {};
 
+MovieService.findTopMovieRating = async (limit) => {
+  try {
+    const topRatedMovies = await Movie.findAll({
+      limit: limit,
+      order: [['rating', 'DESC']],
+      // include: [{ model: Genre }] 
+    });
+    // return topRatedMovies;
+    return topRatedMovies.map((topRatedMovies) => topRatedMovies.dataValues);
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
 MovieService.searchByTitle = async (movie_name) => {
   const Op = require("sequelize").Op;
   try {
@@ -28,6 +43,10 @@ MovieService.searchByTitle = async (movie_name) => {
           [Op.like]: "%" + movie_name + "%",
         },
       },
+      include: [
+        { model: Genre },
+        { model: MovieTrailer }
+      ]
     });
     return movies.map((movies) => movies.dataValues);
   } catch (error) {

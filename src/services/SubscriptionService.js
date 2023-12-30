@@ -1,5 +1,7 @@
 const { Account , User, Admin, SubscriptionPlan, Subscription} = require('../models'); // adjust the path to your models
-async function getListUsernames_by_SubscriptionName(subscriptionName) {
+const SubscriptionService = {}
+
+SubscriptionService.getListUsernames_by_SubscriptionName = async (subscriptionName) => {
     const freeSubscriptionUsers = await Account.findAll({
         attributes: ['username'],
         include: [
@@ -26,8 +28,7 @@ async function getListUsernames_by_SubscriptionName(subscriptionName) {
     return freeSubscriptionUsers.map(account => account.username);
 }
 
-async function getListOfSubscriptions()
-{
+SubscriptionService.getListOfSubscriptions = async () => {
     try {
         const res = await Subscription.findAll();
         return res.map(res => res.dataValues);
@@ -36,7 +37,7 @@ async function getListOfSubscriptions()
       }
 }
 
-async function getUserSubscriptionPlan(userId) {
+SubscriptionService.getUserSubscriptionPlan = async (userId) => {
     try {
       const res = await SubscriptionPlan.findOne({
         where: {
@@ -49,7 +50,7 @@ async function getUserSubscriptionPlan(userId) {
     }
   }
 
-async function updateUserSubscriptionPlan(userId, updatedData) {
+SubscriptionService.updateUserSubscriptionPlan = async (userId, updatedData) => {
     try {
       const subscriptionPlan = await getUserSubscriptionPlan(userId);
       if (!subscriptionPlan) {
@@ -61,7 +62,7 @@ async function updateUserSubscriptionPlan(userId, updatedData) {
     }
   }
 
-async function deleteUserSubscriptionPlan(userId) {
+SubscriptionService.deleteUserSubscriptionPlan = async (userId) => {
     try {
       const subscriptionPlan = await SubscriptionPlan.getSubscriptionPlanByUserId(userId);
       if (!subscriptionPlan) {
@@ -74,10 +75,4 @@ async function deleteUserSubscriptionPlan(userId) {
   }
 
 
-module.exports = {
-    getListOfSubscriptions: getListOfSubscriptions,
-    getUserSubscriptionPlanByUserId: getUserSubscriptionPlan,
-    updateUserSubscriptionPlan: updateUserSubscriptionPlan,
-    deleteUserSubscriptionPlan: deleteUserSubscriptionPlan,
-    getListUsernames_by_SubscriptionName: getListUsernames_by_SubscriptionName,
-};
+module.exports = SubscriptionService;
