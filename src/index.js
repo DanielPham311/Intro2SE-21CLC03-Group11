@@ -24,6 +24,18 @@ app.engine(
       allowProtoPropertiesByDefault: true,
       allowProtoMethodsByDefault: true,
     },
+    helpers: {
+      half: function(a) {
+        return Math.round(a/2)
+      },
+      Array: function(len) {
+        let array = []
+        for (let i=0; i<len; ++i) {
+          array.push(i)
+        }
+        return array
+      }
+    }
   })
 );
 
