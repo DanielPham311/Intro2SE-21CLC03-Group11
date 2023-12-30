@@ -12,7 +12,12 @@ router.post(
 
 router.post("/register", async (req, res, next) => {
   const { username, password } = req.body;
-  const Account = await AuthenService.createAccount(username, password, "user", username); // default user
+  const Account = await AuthenService.createAccount(
+    username,
+    password,
+    "user",
+    username
+  ); // default user
   if (Account != undefined) {
     res.redirect("/login");
   }
@@ -46,6 +51,10 @@ router.get("/logout", (req, res, next) => {
 
 router.get("/register", (req, res, next) => {
   res.render("register", { layout: "functional_layout" });
+});
+
+router.get("/forgot", (req, res) => {
+  res.render("forgot", { layout: "functional_layout" });
 });
 
 module.exports = router;
