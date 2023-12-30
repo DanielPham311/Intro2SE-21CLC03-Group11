@@ -7,4 +7,8 @@ controller.movie_detail = async (req, res, next) => {
     });
 }
 
+controller.search = async (req, res) => {
+    res.json(req.user);
+}
+
 module.exports = controller;

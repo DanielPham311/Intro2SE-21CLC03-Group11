@@ -3,8 +3,8 @@
   }
   
   body {
-    background-image: url('../resources/bg_videoWatching.jpg');
-    background-image: url('images/bg.jpg');
+    background-image: url('/resources/bg_videoWatching.jpg');
+    background-image: url('/resources/bg.jpg');
     margin: 0;
   }
   
