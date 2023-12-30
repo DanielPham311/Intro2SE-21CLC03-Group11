@@ -138,4 +138,3 @@ input[type="radio"] {
 input[type="radio"]:checked ~ label:before {
   color: orange; /* Change color of filled stars */
 }
-
