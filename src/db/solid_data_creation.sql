@@ -1184,3 +1184,754 @@
 (41,'https://www.youtube.com/embed/ZfVYgWYaHmE');
 
   
+insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Invincible",'2021-03-25',8,"Mark Grayson is a normal teenager except for the fact that his father is the most powerful superhero on the planet. Shortly after his seventeenth birthday, Mark begins to develop powers of his own and enters into his father’s tutelage.",45,"United States of America","https://image.tmdb.org/t/p/original//dfmPbyeZZSz3bekeESvMJaH91gS.jpg","https://image.tmdb.org/t/p/original//dMOpdkrDC5dQxqNydgKxXjBKyAc.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (3,42),
+(24,42),
+(20,42),
+(7,42);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (42,'https://www.youtube.com/embed/-bfAVpuko5o'),
+(42,'https://www.youtube.com/embed/JuMiq7eg91M');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2021-03-25',1,8,'https://image.tmdb.org/t/p/original//yDWJYRAwMNKbIYT8ZB33qy84uzO.jpg',42),
+('Season 2','2023-11-02',2,7,'https://image.tmdb.org/t/p/original//8JP5hIv4iqc5Dr4Uzt0NkMVf7yW.jpg',42);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("IT'S ABOUT TIME","When Mark Grayson finally inherits powers from his superhero father, it’s a dream come true. But there’s more to being a hero than just choosing a name and costume.",51,8,37,null,1),
+("HERE GOES NOTHING","With his father out of action, Mark struggles to defend the city against an interdimensional invasion, joining forces with a team of teenage superheroes.",48,8,37,null,2),
+("WHO YOU CALLING UGLY?","Mark has to cut a study date short to help save Mount Rushmore from a crazed scientist. Robot deals with Action - Comic as he assembles a new team of world-saving superheroes.",45,7,37,null,3),
+("NEIL ARMSTRONG, EAT YOUR HEART OUT","It's two firsts for Mark: a first date and a first trip to another planet. At the same time, Nolan and Debbie revisit their own first vacation together.",48,7,37,null,4),
+("THAT ACTUALLY HURT","Feeling confident in his new abilities, Mark risks a team-up with a local villain to take down a crime lord, while simultaneously juggling school and a new relationship.",50,8,37,null,5),
+("YOU LOOK KINDA DEAD","Mark joins William and Amber on a campus visit to Upstate University, hoping to discover a new future for himself. Debbie makes her own disturbing discovery.",48,7,37,null,6),
+("WE NEED TO TALK","Feeling lost and confused, Mark looks for advice from Eve. At the same time, everyone's looking for him.",52,8,37,null,7),
+("WHERE I REALLY COME FROM","Mark must prove he's become the hero he's always wanted to be by stopping an unstoppable force.",48,8,37,null,8),
+("A LESSON FOR YOUR NEXT LIFE","In the aftermath of his father's betrayal, Mark struggles with his responsibilities as Invincible and encounters an unexpected enemy.",49,8,38,null,1),
+("IN ABOUT SIX HOURS I LOSE MY VIRGINITY TO A FISH","It's summer break for Mark and his friends, but supervillains don't take a vacation. Mark is forced to face the consequences of Omni-Man's double life.",50,7,38,null,2),
+("THIS MISSIVE, THIS MACHINATION!","Mark starts his college career, Debbie struggles with personal trauma, and Allen the Alien returns home to find a new threat facing the Coalition of Planets.",49,8,38,null,3),
+("IT'S BEEN A WHILE","Mark answers the call to save an alien species, but the mission has unexpected personal consequences.",47,8,38,null,4);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("進撃の巨人",'2013-04-07',8,"Several hundred years ago, humans were nearly exterminated by Titans. Titans are typically several stories tall, seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather than as a food source. A small percentage of humanity survived by walling themselves in a city protected by extremely high walls, even taller than the biggest Titans. Flash forward to the present and the city has not seen a Titan in over 100 years. Teenage boy Eren and his foster sister Mikasa witness something horrific as the city walls are destroyed by a Colossal Titan that appears out of thin air. As the smaller Titans flood the city, the two kids watch in horror as their mother is eaten alive. Eren vows that he will murder every single Titan and take revenge for all of mankind.",0,"Japan","https://image.tmdb.org/t/p/original//rqbCbjB19amtOtFQbb3K2lgm2zv.jpg","https://image.tmdb.org/t/p/original//hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (3,43),
+(24,43),
+(20,43);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (43,'https://www.youtube.com/embed/bT9csxkth8g'),
+(43,'https://www.youtube.com/embed/HJaUvV9Hwgs'),
+(43,'https://www.youtube.com/embed/luYOt2-c2TI');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2013-04-07',1,8,'https://image.tmdb.org/t/p/original//gC78bsXhdU2PwT3FkLcn8R5YcHb.jpg',43),
+('Season 2','2017-04-01',2,8,'https://image.tmdb.org/t/p/original//2fhK0wbFixskgRyuq6YvaMn75et.jpg',43),
+('Season 3','2018-07-23',3,8,'https://image.tmdb.org/t/p/original//2F3sYFneiKcrwboD0bOqb29cGET.jpg',43),
+('The Final Season','2020-12-07',4,8,'https://image.tmdb.org/t/p/original//iUsrnXfubNwhM8FRNEmzXmLfxB2.jpg',43);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("To You, in 2000 Years: The Fall of Shiganshina (1)","After one hundred years of peace, humanity is suddenly reminded of the terror of being at the Titans' mercy.",25,8,39,null,1),
+("That Day: The Fall of Shiganshina (2)","After the Titans break through the wall, the citizens of Shiganshina must run for their lives. However, those that do make it to safety find a harsh life waiting for them.",25,8,39,null,2),
+("A Dim Light Amid Despair: Humanity's Comeback (1)","Eren begins his training with the Cadet Corps, but questions about his painful past overwhelm him. When he struggles with a maneuvering exercise, Bertolt and Reiner offer kindly advice.",25,7,39,null,3),
+("The Night of the Closing Ceremony: Humanity's Comeback (2)","Two years pass and the time for the recruits' graduation approaches. Annie proves her skill in a sparring session, Jean dreams of serving alongside the King, and graduation day brings shocking revelations — along with the sudden appearance of an old foe.",25,8,39,null,4),
+("First Battle: The Struggle for Trost (1)","Five years have passed since the fall of Wall Maria and Eren faces off against the Colossal Titan after it appears out of nowhere once again, and knocks a strategic hole in the gate of Wall Rose. As Titans swarm the city, the newly graduated Cadets are called in to fight a brutal battle that won't be without casualties.",25,8,39,null,5),
+("The World the Girl Saw: The Struggle for Trost (2)","Armin tries to cope with the loss of his friends and allies after Titans massacre his squad. Elsewhere in the city, Mikasa manages to take out several of the monsters, which brings back tragic memories of her past and the first time she met Eren.",25,8,39,null,6),
+("Small Blade: The Struggle for Trost (3)","After the retreat bell sounds, many cadets find themselves without enough fuel to scale the wall back to safety. Mikasa begins to lose hope once she hears of the deaths in Armin's squad, but the appearance of a new type of Titan stokes her will to fight.",25,8,39,null,7),
+("I Can Hear His Heartbeat: The Struggle for Trost (4)","Armin comes up with a risky plan that pits Titan against Titan as the abandoned cadets attempt to take back their headquarters. Getting into the building might be possible, but getting out alive and refueled will mean facing more of the giants.",25,8,39,null,8),
+("Whereabouts of His Left Arm: The Struggle for Trost (5)","A miraculous return is met with anger and fear. Cannons are fixed on Eren as he struggles to remember what happened to him inside the belly of a Titan and how he ended up as humankind's enemy. One question is all that matters: is Eren human or Titan?",25,8,39,null,9),
+("Response: The Struggle for Trost (6)","Cadets respond to Eren's terrifying transformation with doubt and fear as he struggles to understand it himself. If Armin can’t talk the commander into using Eren’s newfound powers for the good of humankind, all hope of stopping the Titans might be lost.",25,7,39,null,10),
+("Idol: The Struggle for Trost (7)","Plans are made to use Eren's Titan powers to seal the hole in the wall in an attempt reclaim Trost. But with the government's bloodstained history and vocal dissenters in the military ranks, the biggest threat to humankind may not be the Titans.",25,7,39,null,11),
+("Wound: The Struggle for Trost (8)","The plan to reclaim Trost falls apart when Eren's newfound powers turn him into a mindless giant. As Titans continue to swarm the city, it's up to Armin and Mikasa to make sure the cadets massacred during the mission haven't died in vain.",25,7,39,null,12),
+("Primal Desire: The Struggle for Trost (9)","Jean takes desperate measures to replace his broken Maneuver Gear. Meanwhile, Eren is able to seal the hole in the wall thanks to the help of his fellow cadets, but the cost of humanity's first victory against the Titans will be enormous.",25,8,39,null,13),
+("Can't Look Into His Eyes Yet: Eve of the Counterattack (1)","A special military tribunal will decide Eren's fate. The Military Police calls for his execution while the Recon Corps argues that he is a powerful resource for humankind, and Mikasa is put on the spot when asked about the events of the Trost mission.",25,7,39,null,14),
+("Special Operations Squad: Eve of the Counterattack (2)","The Recon Corps moves Eren to an old abandoned castle where he will continue his training. Hange visits and reveals that she's been putting two captured Titans through a series of tests and trials — experiments that she wants Eren's help with.",25,7,39,null,15),
+("What Needs to be Done Now: Eve of the Counterattack (3)","Everyone is a suspect in the investigation to find out who killed the two test-subject Titans. Meanwhile, the cadets pick which military branch they'll be joining, but after the harrowing events in the Trost attack, many are uncertain which branch to choose.",25,7,39,null,16),
+("Female Titan: The 57th Exterior Scouting Mission (1)","As the Recon Corps begins its push toward Shiganshina, they encounter an intelligent Female Titan unlike any they've seen before. When Armin hypothesizes that it's really a human that's been turned into a Titan, he, Jean, and Reiner attempt to stop it.",25,8,39,null,17),
+("Forest of Giant Trees: The 57th Exterior Scouting Mission (2)","As the Female Titan continues to tear its way through the Recon Corps, Levi makes a bold decision to split the ranks and send Eren and the supply wagons through a huge forest. Is his strategy genius, or does it spell certain death for the scouts?",25,8,39,null,18),
+("Bite: The 57th Exterior Scouting Mission (3)","With the Female Titan still chasing after Levi's squad, Eren considers turning himself into his Titan form, but Levi tells him to choose to be either a monster or a member of the Recon Corps. As Eren remembers what he has learned from the squad, he realizes that the danger and sacrifice they all share is not what binds them — it is trust. Now it is up to Eren to make the decision of who he will trust.",25,8,39,null,19),
+("Erwin Smith: The 57th Exterior Scouting Mission (4)","With the help of Levi's squad, the Recon Corps has successfully captured the Female Titan. As Commander Erwin and Captain Levi begin preparations to extract whoever is inside the Titan, will the Recon Corps discover its true identity, or does the Female Titan have one last trick up its sleeve?",25,8,39,null,20),
+("Crushing Blow: The 57th Exterior Scouting Mission (5)","After a last act of desperation, the person inside the Female Titan has escaped from the Recon Corps and reverted to their human form. Now, disguised as a member of the Recon Corps and equipped with Maneuver Gear, they finally catch up to their prey — Levi's squad.",25,8,39,null,21),
+("The Defeated: The 57th Exterior Scouting Mission (6)","The Female Titan has captured Eren after ripping him out of his Titan body, but Mikasa and Captain Levi give chase. Elsewhere, the Recon Corps begins preparations for the journey back home to the Wall with their numerous dead in tow.",25,8,39,null,22),
+("Smile: Assault on Stohess (1)","Following the disastrous results of the 57th Expedition, Eren is to be brought to the King’s palace for a court martial. Armin, desperate to save Eren from certain execution, enlists the help of an old friend to assist with an escape plan.",25,8,39,null,23),
+("Mercy: Assault on Stohess (2)","With the identity of the Female Titan now revealed, Eren has reservations about fighting her. Mikasa, Armin, and the rest of the Recon Corps try to fight the Female Titan, hoping to distract her long enough to buy Eren time to come to terms with his feelings.",25,8,39,null,24),
+("Wall: Assault on Stohess (3)","Eren, spurred on by his promise to kill every single Titan, unleashes the full power of his Titan form in the fight with the Female Titan. As their bloody battle draws to a close, it seems humanity may finally have a chance at survival. However, with many mysteries still left unsolved, what will await Eren, Mikasa, and Armin?",25,8,39,null,25),
+("Beast Titan","Coupled with the military's cover-up of a previous incident, the shocking discovery inside the Walls causes a stir. Elsewhere, while the new Scout recruits are held for observation, a surprising threat appears.",25,8,40,null,1),
+("I'm Home","With the appearance of Titans within Wall Rose, Sasha and Connie ride as messengers to warn their villages of the impending threat.",25,8,40,null,2),
+("Southwestward","The Scouts search for a hole in the wall while Eren and the others learn that someone close may be hiding all the answers.",25,8,40,null,3),
+("Soldier","Unarmed and overwhelmed by the Titan assault on the castle, the only hope for the Scouts may lie in a promise and a secret.",25,8,40,null,4),
+("Historia","Utgard Castle comes crumbling down as Ymir desperately battles the Titans. Now, Christa must fulfill the promise they made long ago during winter training.",25,8,40,null,5),
+("Warrior","Following the battle, the Scouts regroup atop the wall only to find more questions than answers.",25,8,40,null,6),
+("Close Combat","With a new enemy revealed, Eren and the Scouts fight back using all the techniques at their disposal.",25,8,40,null,7),
+("The Hunters","Without a way to pursue the Titans, the Scouts have no choice but to recuperate as they wait for reinforcements. But do they still have faith in Eren?",25,8,40,null,8),
+("Opening","The Scouts rally and charge in pursuit, but Reiner is not quite himself while the group is trapped in the giant forest until nightfall.",25,7,40,null,9),
+("Children","When their group finally flees, Ymir wonders whether she should lie or stay true to herself, even if it means ruining the lives and future of those she cares about.",25,8,40,null,10),
+("Charge","The pursuit begins as the Recon Corps battles their way to Eren. But as the Scouts start to take numerous casualties, Erwin executes a risky strategy.",25,8,40,null,11),
+("Scream","The battle continues as Eren and the Scouts face many hard decisions. Who is the real enemy? What is the war really about? And what will the future hold for mankind?",25,8,40,null,12),
+("Smoke Signal","After barely surviving Eren's recovery, a rising threat from the shadows puts everyone's lives in danger again.",25,8,41,null,1),
+("Pain","The Scouts take a stand against a new enemy, but it's not just Titans they'll be fighting anymore.",25,8,41,null,2),
+("Old Story","Historia and Erwin look back on their past, revealing a shady government with a hidden agenda and inspiration for an uprising.",25,7,41,null,3),
+("Trust","On the run and running out of time, the Scouts must entrust their lives to others if they plan on surviving.",25,7,41,null,4),
+("Reply","Erwin pleads his case for the Scouts to be spared, but an unforeseen announcement puts the fate of humanity at risk.",25,8,41,null,5),
+("Sin","While sins of the past reveal new truths, both sides prepare for the upcoming showdown before they run out of time.",25,8,41,null,6),
+("Wish","As battle breaks out to prevent the ritual, Historia makes a shocking decision which leads to catastrophe.",25,8,41,null,7),
+("Outside the Walls of Orvud District","When everything falls apart, Eren must believe in himself to save his friends. But Eren alone may not be enough to stop the impending doom.",25,8,41,null,8),
+("Ruler of the Walls","The survey corps and the wall garrison must protect the Orvud District from the impending attack of Rod Reiss' titan.",25,8,41,null,9),
+("Friends","Kenny recalls the life which has brought him to death's door, but he gets to decide whether to live on or not.",25,8,41,null,10),
+("Bystander","Having seen a glimpse of his father's memories, Eren attempts to track down a man hoping they might shed some light on his father's secrets.",25,8,41,null,11),
+("Night of the Battle to Retake the Wall","The Scouts gather for a feisty feast before leaving to retake Wall Maria to uncover what's hidden in the basement once and for all.",25,8,41,null,12),
+("The Town Where Everything Began","The operation to retake Wall Maria commences in Shiganshina, the town where everything began. But when the Scouts arrive, something seems very wrong.",25,8,41,null,13),
+("Thunder Spears","Against a rush of enemies, the Scouts scramble to defend their horses. But despite falling into a trap, they have their own surprise for the Armored Titan.",25,8,41,null,14),
+("Descent","Though their Thunder Spears prove effective, the Scouts' celebration is short-lived as disaster descends upon Shiganshina.",25,8,41,null,15),
+("Perfect Game","While one front in the battle is rained on by flames, the other is battered by boulders. With no way out, the Scouts are forced to fight or die trying.",25,8,41,null,16),
+("Hero","As Erwin’s heroic charge buys Levi time to confront the Beast Titan, Armin comes up with a plan of his own that lays it all on the line.",25,8,41,null,17),
+("Midnight Sun","While picking up the pieces from the costly battle, tensions rise when deciding which of the wounded Scouts to use the single syringe on.",25,8,41,null,18),
+("The Basement","The Scouts reflect on all they have gained and lost in their mission. With their enemies gone, Eren and the Scouts finally enter the basement to uncover the truth that will change everything.",25,8,41,null,19),
+("That Day","A look into Grisha's memories shows Eren the many secrets his father was hiding, including one which led to his mother's demise.",25,8,41,null,20),
+("The Attack Titan","Eren learns the truth about his Titan powers, his Father and himself. The Survey Corps have a meeting that discusses the future of Eldia with all their new information.",25,8,41,null,21),
+("The Other Side of the Wall","Though it's met with hope and despair, the truth is made public. The Scouts then venture beyond the walls to see if it's everything they dreamed of.",25,8,41,null,22),
+("The Other Side of the Sea","As Marley battles the Mid-East Alliance to end a four-year war, a group of Warrior candidates on the front lines compete to be the successor of the Armored Titan.",23,8,42,null,1),
+("Midnight Train","Though glad the war is over, both the Eldian Warriors and Marley brass realize that neither have a future unless they finish the job of retaking the Founding Titan.",23,7,42,null,2),
+("The Door of Hope","Reiner reflects on his past, remembering what pushed him to become a Warrior and keep moving forward when all hope was lost.",23,8,42,null,3),
+("From One Hand to Another","A sudden visit from the Tybur family shakes up the Marleyan military. Meanwhile, Falco smuggles letters for a friend and helps two old comrades reunite.",23,8,42,null,4),
+("Declaration of War","While Willy Tybur reveals the truth in a shocking speech to the world, tensions rise behind the stage as Eren and Reiner meet face to face.",23,8,42,null,5),
+("The War Hammer Titan","Eren's rampage is thwarted by the War Hammer Titan whose tenacity leaves him stumped. With Marley's military joining the fight, he'll be hard-pressed to survive on his own.",23,8,42,null,6),
+("Assault","The forces of Paradis begin their assault, but the Warriors stand their ground. As Marley troops close in around them, Eren struggles to break the War Hammer's defenses.",23,8,42,null,7),
+("Assassin's Bullet","With no Titans left to threaten their escape, the Scouts retreat on the airship. Determined to make them pay for trampling on her home, Gabi chases after with gun in hand.",23,8,42,null,8),
+("Brave Volunteers","As Paradis deals with the aftermath of the raid on Liberio, Armin looks back in the past to meeting the volunteer soldiers who reshaped their world.",23,8,42,null,9),
+("A Sound Argument","Two years ago, Paradis welcomed their first visitor who was surprised to see one of their own. Obtaining their help will be critical in a three-part plan to protect Paradis.",23,8,42,null,10),
+("Deceiver","Trapped on the world's most dangerous island, Falco and Gabi will do anything to survive. Elsewhere, the public demands answers when they learn the savior of Paradis has been detained.",23,8,42,null,11),
+("Guides","While Hange and Pixis piece together Zeke's true intentions, tension builds outside HQ where Armin and Mikasa plead for permission to speak with Eren.",23,8,42,null,12),
+("Children of the Forest","Gabi and Falco seek out a fellow Marleyan who's surprised to see Warrior candidates. The truth of what happened at Ragako may shed some light on Zeke's secret plans.",23,8,42,null,13),
+("Savagery","Armin and Mikasa speak with Eren, but are astounded by what he says. In the forest, Levi considers feeding the Beast Titan to someone new, but Zeke has other plans in mind.",23,8,42,null,14),
+("Sole Salvation","A look into Zeke's past shows his struggle to become a Warrior. His plans to end the suffering of all Eldians stems from a chance friendship made in his youth.",23,8,42,null,15),
+("Above and Below","With the Yeagerists now in charge, Zeke's master plan is revealed. But before it is put in motion, Eren recruits help to flush out any invaders in their midst.",23,8,42,null,16),
+("Judgment","Caught off guard by Marley's surprise attack, Eren fends off their Titans alone. As the battle rages on above, the Scouts consider Eren's motives from the underground dungeons.",23,8,42,null,17),
+("Sneak Attack","The Beast Titan joins the fray, but General Magath is determined to take him down. Meanwhile, with the city in flames, Colt and Gabi rush to rescue Falco who's held captive by the Yeagerists.",23,8,42,null,18),
+("Two Brothers","Colt pleads with Zeke to not use his scream and turn Falco into a Titan. All the while, soldiers and Titans clash in battle as Eren struggles to make contact with his brother.",23,8,42,null,19),
+("Memories of the Future","Zeke takes Eren through Grisha's memories to show him how he's been brainwashed. But in doing so, Zeke discovers something about Eren that he never knew.",23,8,42,null,20),
+("From You, 2,000 Years Ago","For 2,000 years, the Founder Ymir has been waiting--a slave to those with royal blood. However, Eren's yearning for freedom gives her a choice that could shake things up.",23,8,42,null,21),
+("Thaw","With no walls left on the island and Shiganshina full of Titans, the Scouts must battle their former comrades. In the midst of it all, Gabi is determined to find and rescue Falco at whatever cost.",23,8,42,null,22),
+("Sunset","The rumbling is set in motion once all hardening is undone, but this also sets Annie free. As the Jaegerists take control of the island, Conny races towards Ragako to feed Falco to his Titan mother.",23,7,42,null,23),
+("Pride","Upon reaching Ragako, Conny hatches a plan to trick Falco into being eaten by his mother. Elsewhere, hero of the Eldian Empire, Jean, is to execute Yelena and Onyankopon for their crimes against humanity.",23,7,42,null,24),
+("Night of the End","Deep in the forest, an unlikely rabble of Marley stragglers and island fugitives attempt to set their hatred aside and talk around a campfire without killing each other.",23,7,42,null,25),
+("Traitor","The Azumabito's flying boat is guarded by a port full of Jaegerists, but the Scouts are reluctant to kill their former friends. If they wish to avoid bloodshed, they can't afford their plan to go wrong.",23,8,42,null,26),
+("Retrospective","For the flying boat to take off, the mechanics need half a day to service it. Knowing they'll never last that long with Jaegerist reinforcements on the way, the crew is forced to change their plans.",23,8,42,null,27),
+("The Dawn of Humanity","Regardless of where it all began, Eren commits to his path of destruction during the Scouts' first visit to the Marleyan mainland, leaving Mikasa to wonder if things could've been different.",23,8,42,null,28);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("The Last of Us",'2023-01-15',8,"Twenty years after modern civilization has been destroyed, Joel, a hardened survivor, is hired to smuggle Ellie, a 14-year-old girl, out of an oppressive quarantine zone. What starts as a small job soon becomes a brutal, heartbreaking journey, as they both must traverse the United States and depend on each other for survival.",0,"United States of America","https://image.tmdb.org/t/p/original//lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg","https://image.tmdb.org/t/p/original//uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (7,44);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (44,'https://www.youtube.com/embed/uLtkt8BonwM');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2023-01-15',1,7,'https://image.tmdb.org/t/p/original//pMfG5XIlmvCL9bQQiJKdTvmF2FW.jpg',44);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("When You're Lost in the Darkness","2003. As a parasitic fungal outbreak begins to ravage the country and the world, Joel Miller attempts to escape the escalating chaos with his daughter and brother. Twenty years later, a now hardened Joel and his partner Tess fight to survive under a totalitarian regime, while the insurgent Fireflies harbor a teenage girl with a unique gift.",81,8,43,null,1),
+("Infected","In 2003, an Indonesian scientist makes a devastating discovery. In 2023, now outside of the quarantine zone, Joel and Tess clash over Ellie's fate as they navigate a long-abandoned Boston overrun with Infected.",53,8,43,null,2),
+("Long, Long Time","Doomsday prepper Bill prepares to ride out the apocalypse alone...until a mysterious stranger upends his plans. Years later, Joel and Ellie seek Bill's guidance – and find themselves at a crossroads.",77,6,43,null,3),
+("Please Hold to My Hand","After a harrowing trek across a desolate United States, Joel and Ellie find themselves navigating a dangerous Kansas City on foot. Later, rebel leader Kathleen instigates a manhunt – one that pits her violent civilian militia against the world's best hope.",47,7,43,null,4),
+("Endure and Survive","On the streets of a newly free Kansas City, Henry fights to protect his brother Sam from rebel soldiers who will stop at nothing to appease their ruthless leader. As her manhunt continues, Kathleen doubles down on her quest for revenge, while Ellie forms a meaningful friendship.",60,8,43,null,5),
+("Kin","After months of traveling, Joel and Ellie receive a grave warning about what lies ahead. Later, Ellie learns more about Joel's past – while Joel tries his best to forget.",61,7,43,null,6),
+("Left Behind","As Joel fights to survive, Ellie’s struggle to save him stirs memories of her life in a FEDRA orphanage. Weeks before meeting Joel, Ellie recalls joining her best friend Riley for a night to remember… one that will change the course of both of their lives – and the fate of the world – forever.",57,6,43,null,7),
+("When We Are in Need","After crossing paths with a vengeful group of survivors, Ellie's fighting spirit draws unwanted attention from its leader. Still battling for his life, a weakened Joel faces off with a hunting party out for blood.",52,8,43,null,8),
+("Look for the Light","After being pursued by Infected, a pregnant Anna places her trust in a lifelong friend. Years later, Ellie is forced to grapple with the emotional toll of her journey, while Joel faces a devastating decision of his own.",46,8,43,null,9);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Primal",'2019-10-08',8,"A caveman forms a bond with a dinosaur as they struggle to survive in a hostile world.",23,"United States of America","https://image.tmdb.org/t/p/original//nGfjgUlES2WuYrHXNNF4fbGe2Eq.jpg","https://image.tmdb.org/t/p/original//mf12pRakr3eYdJtv6klQtoznnbU.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (20,45),
+(3,45),
+(7,45);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (45,'https://www.youtube.com/embed/V4UN616BFDA'),
+(45,'https://www.youtube.com/embed/0KFyVu514DY');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2019-10-08',1,8,'https://image.tmdb.org/t/p/original//9jIatSC61s5Y3d5Q63yIeZFvP7u.jpg',45),
+('Season 2','2022-07-22',2,8,'https://image.tmdb.org/t/p/original//4s2aUro8BNBJEumUslQes87WOVN.jpg',45);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Spear and Fang","Tragedy forces a caveman and a dinosaur to rely upon each other for their survival.",22,6,44,null,1),
+("River of Snakes","Man and beast are challenged to find a way to exist together.",21,7,44,null,2),
+("A Cold Death","In the harshness of the primordial winter a herd of woolly mammoths hunt for the murderers of one of their own.",23,8,44,null,3),
+("Terror Under the Blood Moon","The horrors of the red night challenges Spear and Fang for their very survival.",23,8,44,null,4),
+("Rage of the Ape-Men","An oasis of peace only leads to a brutal attack from a vicious tribe of ape-like men.",23,9,44,null,5),
+("Plague of Madness","A relentless dinosaur infected with a terrifying disease pursues Spear and Fang.",22,8,44,null,6),
+("Scent of Prey","Spear struggles to nurse Fang back to health and escape the scavengers of the primordial world.",23,9,44,null,7),
+("Coven of the Damned","A tribe of mysterious, primitive women seek to further their coven by using dark magic on Spear and Fang.",24,9,44,null,8),
+("The Night Feeder","A horrific unseen terror stalks the night as well as our heroes, Spear and Fang.",21,9,44,null,9),
+("Slave of the Scorpion","Spear and Fang are confronted by a far more developed human than they've ever encountered before.",23,9,44,null,10),
+("Sea of Despair","Spear and Fang venture into the unknown to rescue Mira from her captors.",22,9,45,null,1),
+("Shadow of Fate","Spear and Fang get separated in a strange new land.",23,9,45,null,2),
+("Dawn of Man","The quest to find Mira leads Spear and Fang to the village of fearsome warriors.",23,7,45,null,3),
+("The Red Mist","Spear and Fang fight to save Mira from the warrior clan who enslaved her.",24,9,45,null,4),
+("The Primal Theory","A night of horrors reveals the true nature of man's origin.",21,8,45,null,5),
+("Vidarr","Spear, Fang, and Mira are hunted by the last survivors of a village decimated by their carnage.",23,9,45,null,6),
+("The Colossaeus (1)","Spear, Fang, and Mira's journey home is threatened after encountering a mysterious threat at sea.",23,9,45,null,7),
+("The Colossaeus (2)","Spear and Fang are used as instruments of war for the tyrannical Queen of a formidable warship, the Colossaeus.",21,9,45,null,8),
+("The Colossaeus (3)","Spear, Fang and Mira lead a daring escape from the Colossaeus and the Queen bent on their destruction.",21,9,45,null,9),
+("Echoes of Eternity","An old vengeance returns to wreak havoc.",24,9,45,null,10);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("SPY×FAMILY",'2022-04-09',8,"World peace is at stake and secret agent Twilight must undergo his most difficult mission yet—pretend to be a family man. Posing as a loving husband and father, he’ll infiltrate an elite school to get close to a high-profile politician. He has the perfect cover, except his wife’s a deadly assassin and neither knows each other’s identity. But someone does, his adopted daughter who’s a telepath!",24,"Japan","https://image.tmdb.org/t/p/original//zNugnnR5KEmq9EzLcl0Me1UmHYk.jpg","https://image.tmdb.org/t/p/original//7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (3,46),
+(4,46),
+(20,46);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (46,'https://www.youtube.com/embed/JP6vBnazpWI'),
+(46,'https://www.youtube.com/embed/ofXigq9aIpo'),
+(46,'https://www.youtube.com/embed/Oqd2C3oZkBU'),
+(46,'https://www.youtube.com/embed/6sosTNRw_uQ');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2022-04-09',1,7,'https://image.tmdb.org/t/p/original//3r4LYFuXrg3G8fepysr4xSLWnQL.jpg',46),
+('Season 2','2023-10-07',2,7,'https://image.tmdb.org/t/p/original//f4PmYfliarqfMeFNdnK6NZ6AU5i.jpg',46);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("OPERATION STRIX","Twilight is an agent that works for WISE, Westalis's intelligence agency, and he is tasked with investigating Desmond, who is in Ostania and planning to start a war. Twilight disguises himself as the psychiatrist Loid Forger and adopts a girl named Anya so that he can enroll her into the prestigious Eden College to get closer to his target. Unbeknownst to him, Anya is actually a telepath who can read people's minds. One day, members of a mafia group that is after Twilight kidnaps Anya. Loid realizes that he needs to reconsider his priorities and...",24,8,46,null,1),
+("SECURE A WIFE","Civil servant Yor Briar has a secret identity: an assassin named the Thorn Princess. Lately, single women had been suspected of being spies, which was making Yor nervous. Meanwhile, Loid was searching for someone to play Anya's mother so they could attend the interview at Eden College. He just happens to run into Yor at a boutique. Anya reads Yor's mind and finds out that she's an assassin and tries to get Loid to ask Yor to play her mother.",24,8,46,null,2),
+("PREPARE FOR THE INTERVIEW","Yor moves in with Loid and Anya. Now that they are a family, they need to prepare for the interview. But Loid realizes with how Anya and Yor currently are, the interview probably won't go well. In order to make sure they all understand how an upper-class family should be, Loid decides that they should all go out as a family. They go to the theatre and a museum, but it's just not clicking with Anya and Yor. Twilight begins to lose hope, but...",24,7,46,null,3),
+("THE PRESTIGIOUS SCHOOL'S INTERVIEW","The day they had been preparing for has finally arrived! The Forgers are fully prepared and head to the interview. As soon as they enter the school grounds, Loid feels someone watching them. All of the applicants were being observed from the shadows by the instructors of the academy. The exam had already begun. Housemaster Henderson, who would be grading their performance, kept a keen eye on how the Forgers were acting and seeing if they were truly worthy of the prestigious Eden College.",24,8,46,null,4),
+("WILL THEY PASS OR FAIL?","The day that Eden College would announce the applicants that successfully got into the school had finally arrived, but Anya's number is not listed. The Forgers fall into the depths of despair but are greeted by Henderson. He praises them for their interview and tells them that Anya is at the top of the waiting list. Three days later, they find out that Anya got into the school! Franky comes over to celebrate with the Forgers and they all agree to reward Anya for working so hard. What Anya asks for...",24,7,46,null,5),
+("THE FRIENDSHIP SCHEME","Anya's uniform is finished. Loid has to go to a WISE strategy meeting, so he has Yor pick up the uniform as he heads to the safehouse. At the meeting, he finds out that Anya will have to receive 8 Stellar Stars and become an Imperial Scholar at Eden College in order for him to successfully complete Operation Strix. Meanwhile, Anya is very excited about getting her new uniform. But there are always criminals on the lookout for wealthy students from Eden College and Anya gets targeted by a group of hoodlums.",24,7,46,null,6),
+("THE TARGET'S SECOND SON","Anya ends up with a Tonitrus Bolt after she hit Damian Desmond. Sadly, this causes her to stand out for the wrong reasons in class which depresses her, but she ends up friends with Becky, and school becomes a little more fun. She also tries to apologize to Damian for hitting him, but just can't seem to get the words out. For the sake of Operation Strix, Loid disguises himself as someone who works at the school and tries to help Anya reconcile from the shadows, but...",24,7,46,null,7),
+("THE COUNTER-SECRET POLICE COVER OPERATION","Ostania's counterintelligence agency and national security bureau conducts spy hunts and keeps surveillance on its citizens to maintain peace within the country. They are also called the Secret Police and are feared. Yor's younger brother Yuri actually belongs to the Secret Police and is hunting down spies while keeping this a secret from Yor and others around him. One day, he suddenly shows up at the Forger residence. The Forgers, who are full of secrets, and Yuri, who has a secret identity, come face to face!",24,7,46,null,8),
+("SHOW OFF HOW IN LOVE YOU ARE","In order to prove to Yuri that they are actually a married couple, Loid and Yor are supposed to kiss. Loid is willing to get this done immediately for the sake of Operation Strix, but Yor can't do this sober, so she ends up downing a bunch of wine and gets drunk. Yuri sees his sister this way, also gets drunk, and is unable to make rational decisions anymore...",24,7,46,null,9),
+("THE GREAT DODGEBALL PLAN","A rumor spreads amongst the first graders at Eden College saying that if they do well in their next PE class, they will get rewarded with Stella Stars. Anya is determined to get a Stella Star, so she trains with Yor. Thus begins the dodgeball match between Cecile Hall and Wald Hall! Anya and her classmates are determined to win, but they are faced with the giant, Bill Watkins.",24,7,46,null,10),
+("STELLA","In order for parents to attend one of the social gatherings at Eden College, their children need to be Imperial Scholars, but Anya hating to study makes this rather difficult. Loid then comes up with a plan to get Anya to get Stella Stars by doing community service rather than with her academics. But when she ends up volunteering at a hospital, she continuously messes up. Later, she hears a child drowning in a pool with her telepathy and...",24,7,46,null,11),
+("PENGUIN PARK","Loid is burdened with one mission after another from WISE and comes home exhausted. He then hears neighbors gossiping that he's neglecting his family. Because he can't let anyone doubt them as a family for the sake of Operation Strix, he decides to take his family to the aquarium the next day they have off to show everyone that they get along. However, he is assigned another mission from WISE while he's there, and...",24,7,46,null,12),
+("PROJECT APPLE","The Forgers go look for a dog for Anya's reward for getting a Stella. In the middle of their outing, Loid ends up having to work a mission to stop a terrorist bombing attack planned against Westalis's foreign minister. Meanwhile, Anya is trying to pick out a dog, but then sees a vision of her family when she randomly reads the mind of a giant, mysterious, white dog. Anya becomes curious and chases after the dog, but she ends up accidentally wandering into the hideout of the terrorists!",24,7,46,null,13),
+("DISARM THE TIME BOMB","Anya meets a mysterious dog who can see into the future. They were able to escape from the terrorists with the dog's help, but eventually, they fall back into the hands of the terrorists again. And then Yor shows up and attacks the enemy! Soon after, the dog sees into the future again. The vision Anya saw through the dog's mind was Loid unconscious and buried under the remains of a building that had been bombed. In order to stop this future from happening, Anya and the dog head to the place where the incident happens!",24,7,46,null,14),
+("A NEW FAMILY MEMBER","Loid faces off with one of the enemy's bomb dogs, Anya secretly saves Loid, and Yor finds the leader of the terrorists who had been on the run. The whole family ends up involved in this terrorist bombing incident, but what will be its conclusion?! Also, they were supposed to go get a dog for Anya as a reward for her getting a Stella, but now, she says she wants to keep the mysterious, giant dog that she encounters in this incident. Loid knows the truth about this dog as well as the other dogs involved in the bombing incident and tells her no, but then Anya says she'll quit going to school if she can't have the dog and...",24,7,46,null,15),
+("YOR'S KITCHEN / THE INFORMANT'S GREAT ROMANCE PLAN","Why has Yor been coming home late every night, her hands covered in cuts? Why has Franky asked Loid to meet him under mysterious and urgent circumstances? These are two tales of misadventure while seeking happiness in Berlint.",24,7,46,null,16),
+("CARRY OUT THE GRIFFIN PLAN / FULLMETAL LADY / OMELET RICE♥","Anya and the rest of her class have an arts and crafts lesson where Anya is put in the same group as Damian. Sylvia goes about an ordinary work day. We learn the secret source of Yuri's strength.",24,7,46,null,17),
+("UNCLE THE PRIVATE TUTOR / DAYBREAK","Next week is Eden College's midterms. That week happens to include the new moon, the one day of the month Anya can't use her powers to cheat. But then, Yor suggests that Yuri should be her tutor...
+
+The midterms are over. Loid is nervous about Anya's test scores and heads to Eden College to alter the answers. However, there already seems to be another guy there with the same motive that's making himself insanely suspicious and obvious?!",24,7,46,null,18),
+("A REVENGE PLOT AGAINST DESMOND / MAMA BECOMES THE WIND","Damian does well on his midterms, so he earns a Stella. Everyone around him is now praising him, but for some reason, his classmate George seems to be looking at him begrudgingly. The reason being...
+
+After seeing Anya off to school, Yor finds Anya's gym clothes on top of her desk. At this rate, Anya will surely have trouble in her gym class. Yor runs to deliver the forgotten clothes!",24,7,46,null,19),
+("INVESTIGATE THE GENERAL HOSPITAL / DECIPHER THE PERPLEXING CODE","Anya has to write a report about an occupation she's interested in, so she ends up going to Loid's place of work, Berlint General Hospital. As soon as Loid was out of sight, Anya starts to explore!
+
+Anya becomes very interested in deciphering codes after seeing it done in her spy cartoon, so she makes her own code and sends Loid and the others secret messages. Will they be able to crack the codes?!",24,7,46,null,20),
+("NIGHTFALL / FIRST FIT OF JEALOUSY","Fiona, who works at Loid's hospital, happens to actually be the female WISE agent Nightfall. She is irritated that Operation Strix is facing delays, so she suggests that she becomes Mrs. Forger instead. She also decides to show up at the Forger household unannounced and comes face to face with Yor!
+
+Anya loves the penguin plushie that Loid got for her, and even sleeps with it. However, a pale shadow shoots jealous glares in the penguin's general direction...",24,7,46,null,21),
+("THE UNDERGROUND TENNIS TOURNAMENT: THE CAMPBELLDON","The secret files called the Zacharis Dossier may cause a war between the East and the West. In order to obtain a painting that is supposed to be the hiding spot for these files, Loid and Fiona enter an underground tennis tournament run by the owner of the painting, Campbell. If they win, the art piece they're after will be presented. Loid and Fiona enter as a married couple and play various skilled players including pro players!",24,7,46,null,22),
+("THE UNWAVERING PATH","The underground tennis tournament is finally heading to the final match. The Campbell siblings that Loid and Fiona are up against are playing dirty, as they have altered tennis rackets as well as the staff helping them out. But the spy pair from WISE overcome one obstacle after another and Loid deals the final blow! But right after the match, the State Security Service finds out about the dossier and infiltrates the tournament...",24,7,46,null,23),
+("THE ROLE OF A MOTHER AND WIFE / SHOPPING WITH FRIENDS","Yor becomes anxious about their pretend marriage after Fiona shows up. Loid notices this and thinks that Yor had started to develop romantic feelings towards him. For the sake of the mission, he flips on his Twilight mode.
+
+Becky takes Anya to the department store so they can buy Anya some cute clothes. She uses her rich girl powers and rents out a whole shop where they start their own little fashion show.",24,7,46,null,24),
+("FIRST CONTACT","A social gathering happens at Eden College once every half term. It is a strictly guarded event where only Imperial Scholars and their parents, the VIPs of Ostania, are allowed to go. Damian tells his brother that he'd like to see their father when he attends the event. Loid finds out about that and uses Damian to get close to his target.",24,7,46,null,25),
+("FOLLOW MAMA AND PAPA","Yor is shot in the butt while on a mission and looks miserable when she gets home. Loid mistakes her very apparent miserable mood as her being unhappy with their marriage of convenience and offers to take her out on a date.",24,7,47,null,1),
+("BOND'S STRATEGY TO STAY ALIVE / DAMIAN'S FIELD RESEARCH TRIP","Bond sees an ominous future and believes that it's Yor's food that's going to cause it. In order to change this fate, Bond leaves the house to search for Loid! Henderson orders Damian, Emil, and Ewen to go on a field research trip with Mr. Green.",24,6,47,null,2),
+("MISSION AND FAMILY / THE ELEGANT BONDMAN / THE HEART OF A CHILD / WAKING UP","Yuri is doing great at his job with the Secret Police. His assignment today is to investigate a former newspaper reporter suspected of selling articles slandering Ostania to Westalis. Anya's favorite cartoon hero Bondman shows off his elegant spy moves!!",24,6,47,null,3),
+("THE PASTRY OF KNOWLEDGE / THE INFORMANT'S GREAT ROMANCE PLAN II","Eden's legendary dessert finally appears! In order to obtain the macaroons that supposedly can make you into an Imperial Scholar if eaten, Anya and her friends race to get to them first.",24,6,47,null,4),
+("PLAN TO CROSS THE BORDER","On a mission as Thorn Princess and using her job as city hall as a cover, Yor is tasked with protecting the only survivors of the Gretcher family, Olka and her son, and helping them escape to a different country by traveling on a cruise ship.",24,8,47,null,5),
+("THE FEARSOME LUXURY CRUISE SHIP","After boarding the cruise ship, Yor began her duty as bodyguard to Olka and her son. Meanwhile, Yor's superior, Matthew, finds an assassin who is after Olka and her son.",24,8,47,null,6),
+("WHO IS THIS MISSION FOR?","Loid tries to pick out souvenirs that will make him look like a fun and happy dad so he can cheer Anya up. Meanwhile, Yor was facing off with Sickle-and-Chain Barnaby.",24,9,47,null,7),
+("THE SYMPHONY UPON THE SHIP","The deck is filled with passengers enjoying the fireworks show. Anya and Loid were also enjoying the fireworks. Meanwhile, Yor's mission finally reaches its climax. She tries to help Olka and the others escape, but they are surrounded by assassins!",24,8,47,null,8),
+("THE HAND THAT CONNECTS TO THE FUTURE","Due to the movements the State Security Service members were making, Loid finds out that there was a bomb on the ship. Loid leaves Anya at the daycare in a hurry then disguises himself as a State Security Service member to take care of the bomb.",24,8,47,null,9),
+("ENJOY THE RESORT TO THE FULLEST / BRAGGING ABOUT VACATION","The morning after the attack from the assassins and the bomb scare, the cruise ship arrives at the resort island. Loid and Anya meet up with Yor and the three enjoy a family vacation!",24,9,47,null,10),
+("BERLINT IN LOVE / NIGHTFALL'S DAILY LIFE","Becky is very excited about a romantic drama on TV, so she heads over to the Forgers' place to see Loid, who she fell in love with instantly after seeing his picture. Becky aggressively pursues Loid.",24,8,47,null,11),
+("PART OF THE FAMILY","As Bond is on a walk with Loid, he has a premonition of an accident, so he tries to stop it, but is scolded by Loid. He then sees a vision of a building going up in flames and a sobbing girl standing in front of it.",24,7,47,null,12);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Stranger Things",'2016-07-15',8,"When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",0,"United States of America","https://image.tmdb.org/t/p/original//56v2KjBlU4XaOv9rVYEQypROD7P.jpg","https://image.tmdb.org/t/p/original//49WJfeN0moxb9IPfGn8AIqMGskD.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (7,47),
+(24,47),
+(13,47);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (47,'https://www.youtube.com/embed/mnd7sFt5c3A'),
+(47,'https://www.youtube.com/embed/b9EkMc79ZSU');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2016-07-16',1,8,'https://image.tmdb.org/t/p/original//rbnuP7hlynAMLdqcQRCpZW9qDkV.jpg',47),
+('Stranger Things 2','2017-10-28',2,8,'https://image.tmdb.org/t/p/original//lXS60geme1LlEob5Wgvj3KilClA.jpg',47),
+('Stranger Things 3','2019-07-05',3,8,'https://image.tmdb.org/t/p/original//x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg',47),
+('Stranger Things 4','2022-05-29',4,8,'https://image.tmdb.org/t/p/original//zvGTZYDCoMSMIBkXExxRxLYimqN.jpg',47);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Chapter One: The Vanishing of Will Byers","On his way home from a friend's house, young Will sees something terrifying. Nearby, a sinister secret lurks in the depths of a government lab.",48,8,48,null,1),
+("Chapter Two: The Weirdo on Maple Street","Lucas, Mike and Dustin try to talk to the girl they found in the woods. Hopper questions an anxious Joyce about an unsettling phone call.",55,8,48,null,2),
+("Chapter Three: Holly, Jolly","An increasingly concerned Nancy looks for Barb and finds out what Jonathan's been up to. Joyce is convinced Will is trying to talk to her.",51,8,48,null,3),
+("Chapter Four: The Body","Refusing to believe Will is dead, Joyce tries to connect with her son. The boys give Eleven a makeover. Nancy and Jonathan form an unlikely alliance.",50,8,48,null,4),
+("Chapter Five: The Flea and the Acrobat","Hopper breaks into the lab while Nancy and Jonathan confront the force that took Will. The boys ask Mr. Clarke how to travel to another dimension.",52,8,48,null,5),
+("Chapter Six: The Monster","A frantic Jonathan looks for Nancy in the darkness, but Steve's looking for her, too. Hopper and Joyce uncover the truth about the lab's experiments.",46,8,48,null,6),
+("Chapter Seven: The Bathtub","Eleven struggles to reach Will, while Lucas warns that 'the bad men are coming.' Nancy and Jonathan show the police what Jonathan caught on camera.",42,8,48,null,7),
+("Chapter Eight: The Upside Down","Dr. Brenner holds Hopper and Joyce for questioning while the boys wait with Eleven in the gym. Back at Will's, Nancy and Jonathan prepare for battle.",54,8,48,null,8),
+("Chapter One: MADMAX","As the town preps for Halloween, a high-scoring rival shakes things up at the arcade, and a skeptical Hopper inspects a field of rotting pumpkins.",48,8,49,null,1),
+("Chapter Two: Trick or Treat, Freak","After Will sees something terrible on trick-or-treat night, Mike wonders whether Eleven's still out there. Nancy wrestles with the truth about Barb.",56,8,49,null,2),
+("Chapter Three: The Pollywog","Dustin adopts a strange new pet, and Eleven grows increasingly impatient. A well-meaning Bob urges Will to stand up to his fears.",51,8,49,null,3),
+("Chapter Four: Will the Wise","An ailing Will opens up to Joyce -- with disturbing results. While Hopper digs for the truth, Eleven unearths a surprising discovery.",46,8,49,null,4),
+("Chapter Five: Dig Dug","Nancy and Jonathan swap conspiracy theories with a new ally as Eleven searches for someone from her past. “Bob the Brain” tackles a difficult problem.",58,8,49,null,5),
+("Chapter Six: The Spy","Will's connection to a shadowy evil grows stronger, but no one's quite sure how to stop it. Elsewhere, Dustin and Steve forge an unlikely bond.",52,8,49,null,6),
+("Chapter Seven: The Lost Sister","Psychic visions draw Eleven to a band of violent outcasts and an angry girl with a shadowy past.",46,6,49,null,7),
+("Chapter Eight: The Mind Flayer","An unlikely hero steps forward when a deadly development puts the Hawkins Lab on lockdown, trapping Will and several others inside.",48,8,49,null,8),
+("Chapter Nine: The Gate","Eleven makes plans to finish what she started while the survivors turn up the heat on the monstrous force that's holding Will hostage.",62,8,49,null,9),
+("Chapter One: Suzie, Do You Copy?","Summer brings new jobs and budding romance. But the mood shifts when Dustin's radio picks up a Russian broadcast, and Will senses something is wrong.",51,7,50,null,1),
+("Chapter Two: The Mall Rats","Nancy and Jonathan follow a lead, Steve and Robin sign on to a secret mission, and Max and Eleven go shopping. A rattled Billy has troubling visions.",51,7,50,null,2),
+("Chapter Three: The Case of the Missing Lifeguard","With El and Max looking for Billy, Will declares a day without girls. Steve and Dustin go on a stakeout, and Joyce and Hopper return to Hawkins Lab.",50,7,50,null,3),
+("Chapter Four: The Sauna Test","A code red brings the gang back together to face a frighteningly familiar evil. Karen urges Nancy to keep digging, and Robin finds a useful map.",53,8,50,null,4),
+("Chapter Five: The Flayed","Strange surprises lurk inside an old farmhouse and deep beneath the Starcourt Mall. Meanwhile, the Mind Flayer is gathering strength.",52,7,50,null,5),
+("Chapter Six: E Pluribus Unum","Dr. Alexei reveals what the Russians have been building, and Eleven sees where Billy has been. Dustin and Erica stage a daring rescue.",60,8,50,null,6),
+("Chapter Seven: The Bite","With time running out -- and an assassin close behind -- Hopper's crew races back to Hawkins, where El and the kids are preparing for war.",56,8,50,null,7),
+("Chapter Eight: The Battle of Starcourt","Terror reigns in the food court when the Mind Flayer comes to collect. But down below, in the dark, the future of the world is at stake.",78,8,50,null,8),
+("Chapter One: The Hellfire Club","El is bullied at school. Joyce opens a mysterious package. A scrappy player shakes up D&D night.",79,8,51,null,1),
+("Chapter Two: Vecna's Curse","A plane brings Mike to California — and a dead body brings Hawkins to a halt. Nancy goes looking for leads. A shaken Eddie tells the gang what he saw.",78,8,51,null,2),
+("Chapter Three: The Monster and the Superhero","Murray and Joyce fly to Alaska, and El faces serious consequences. Robin and Nancy dig up dirt on Hawkins' demons. Dr. Owens delivers sobering news.",64,8,51,null,3),
+("Chapter Four: Dear Billy","Max is in grave danger... and running out of time. A patient at Pennhurst asylum has visitors. Elsewhere, in Russia, Hopper is hard at work.",79,8,51,null,4),
+("Chapter Five: The Nina Project","Owens takes El to Nevada, where she's forced to confront her past, while the Hawkins kids comb a crumbling house for clues. Vecna claims another victim.",75,8,51,null,5),
+("Chapter Six: The Dive","Behind the Iron Curtain, a risky rescue mission gets underway. The California crew seeks help from a hacker. Steve takes one for the team.",74,8,51,null,6),
+("Chapter Seven: The Massacre at Hawkins Lab","As Hopper braces to battle a monster, Dustin dissects Vecna's motives — and decodes a message from beyond. El finds strength in a distant memory.",100,8,51,null,7),
+("Chapter Eight: Papa","Nancy has sobering visions, and El passes an important test. Back in Hawkins, the gang gathers supplies and prepares for battle.",86,8,51,null,8),
+("Chapter Nine: The Piggyback","With selfless hearts and a clash of metal, heroes fight from every corner of the battlefield to save Hawkins — and the world itself.",143,8,51,null,9);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Wednesday",'2022-11-23',8,"Wednesday Addams is sent to Nevermore Academy, a bizarre boarding school where she attempts to master her psychic powers, stop a monstrous killing spree of the town citizens, and solve the supernatural mystery that affected her family 25 years ago — all while navigating her new relationships.",0,"United States of America","https://image.tmdb.org/t/p/original//iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg","https://image.tmdb.org/t/p/original//9PFonBhy4cQy7Jz20NpMygczOkv.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (24,48),
+(13,48),
+(4,48);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (48,'https://www.youtube.com/embed/Qa5kFRxBkNw');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2022-11-24',1,8,'https://image.tmdb.org/t/p/original//ajACh2JtjPOS2jJFhuD30gI1o8a.jpg',48),
+('Season 2','2000-01-22',2,0,'https://image.tmdb.org/t/p/original/None',48);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Wednesday's Child Is Full of Woe","When a deliciously wicked prank gets Wednesday expelled, her parents ship her off to Nevermore Academy, the boarding school where they fell in love.",60,8,52,null,1),
+("Woe Is the Loneliest Number","The sheriff questions Wednesday about the night's strange happenings. Later, Wednesday faces off against a fierce rival in the cutthroat Poe Cup race.",49,8,52,null,2),
+("Friend or Woe","Wednesday stumbles on a secret society. During Outreach Day, Nevermore's outcasts mingle with Jericho's normies in Pilgrim World. Fudge, anyone?",49,8,52,null,3),
+("Woe What a Night","Wednesday asks Xavier to the Rave'N dance, sparking Tyler's jealousy — but Thing's got something up his sleeve. Meanwhile, Eugene stakes out the cave.",50,8,52,null,4),
+("You Reap What You Woe","During Parents Weekend, Wednesday digs into her family's past — and accidentally gets her dad arrested. Enid feels the pressure to 'wolf out.'",53,8,52,null,5),
+("Quid Pro Woe","Wednesday's friends throw her a surprise birthday party. They mean well... but she'd much rather mark the miserable occasion by solving the murders.",51,8,52,null,6),
+("If You Don’t Woe Me by Now","Kooky Uncle Fester pays a visit and shares his theory about the monster. Wednesday begrudgingly agrees to a date with Tyler at Crackstone's crypt.",48,8,52,null,7),
+("A Murder of Woes","Wednesday lands in trouble with Principal Weems, but that's just the start of her problems. To fight an ancient evil, she'll need all her friends’ help.",53,8,52,null,8);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("The Good Doctor",'2017-09-25',8,"Shaun Murphy, a young surgeon with autism and savant syndrome, relocates from a quiet country life to join a prestigious hospital's surgical unit. Unable to personally connect with those around him, Shaun uses his extraordinary medical gifts to save lives and challenge the skepticism of his colleagues.",43,"United States of America","https://image.tmdb.org/t/p/original//xXRsKNJHTOGrs5wfYAxkbM2RiyT.jpg","https://image.tmdb.org/t/p/original//luhKkdD80qe62fwop6sdrXK9jUT.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (7,49);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (49,'https://www.youtube.com/embed/lnY9FWUTY84');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2017-09-25',1,7,'https://image.tmdb.org/t/p/original//hiNyjUSTFrbMv3Sc0CxNW2o39az.jpg',49),
+('Season 2','2018-09-24',2,7,'https://image.tmdb.org/t/p/original//sIq4SFloM0JSeRNAQVqb5g5zAng.jpg',49),
+('Season 3','2019-09-23',3,7,'https://image.tmdb.org/t/p/original//8QFssOwaWZ3eB60cGwDpfrZBscv.jpg',49),
+('Season 4','2020-11-02',4,6,'https://image.tmdb.org/t/p/original//6tfT03sGp9k4c0J3dypjrI8TSAI.jpg',49),
+('Season 5','2021-09-27',5,7,'https://image.tmdb.org/t/p/original//cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg',49),
+('Season 6','2022-10-03',6,7,'https://image.tmdb.org/t/p/original//luhKkdD80qe62fwop6sdrXK9jUT.jpg',49),
+('Season 7','2024-02-20',7,0,'https://image.tmdb.org/t/p/original/None',49);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Burnt Food","Dr. Shaun Murphy, a young surgeon with autism and savant syndrome, relocates from a quiet country life to join the prestigious St. Bonaventure hospital’s surgical unit. Alone in the world and unable to personally connect with those around him, his only advocate, Dr. Aaron Glassman, challenges the skepticism and prejudices of the hospital’s board and staff when he brings him in to join the team. Shaun will need to work harder than he ever has before, as he navigates his new environment and relationships to prove to his colleagues that his extraordinary medical gifts will save lives.",44,6,54,null,1),
+("Mount Rushmore","Dr. Shaun Murphy’s attention to detail complicates his first day at St. Bonaventure Hospital. Meanwhile, Dr. Claire Browne learns a valuable lesson about honesty when confronted with a difficult diagnosis for her patient.",43,7,54,null,2),
+("Oliver","Dr. Neil Melendez and Dr. Jared Kalu discover their patient isn’t being completely honest with them which may cost him his chance at a life-saving surgery. Meanwhile, Dr. Claire Browne must learn to communicate with Dr. Shaun Murphy as they race back to St. Bonaventure Hospital with a donated organ.",42,7,54,null,3),
+("Pipes","Dr. Neil Melendez and the team have to wade through legal waters when a husband and wife have to make a life-changing decision about their unborn child. Meanwhile, Dr. Shaun Murphy struggles to adjust to his new environment at home and makes a huge step forward with his colleagues.",43,7,54,null,4),
+("Point Three Percent","While in the exam area of St. Bonaventure Hospital, Dr. Shaun Murphy encounters a young patient who looks eerily similar to his deceased brother, Steve. After discovering his parents have hidden his diagnosis from him, Shaun struggles to understand why he doesn’t deserve to hear the truth about his own health. Meanwhile, the team can’t figure out what keeps triggering their patients’ increasingly severe allergic reactions and races to find the cause before the next one kills another patient.",43,7,54,null,5),
+("Not Fake","Dr. Shaun Murphy and Dr. Claire Browne devise an experimental procedure that can save the leg and life of a young groom, that is if his bride-to-be and parents can learn to work together. Meanwhile, Jared struggles to emotionally connect with his patient whose scars may prove too deep to overcome.",43,7,54,null,6),
+("22 Steps","Dr. Shaun Murphy has to confront prejudice from an unlikely source when he takes on the case of a patient with autism, and Dr. Jared Kalu has to learn to accept his limitations as a surgeon.",43,7,54,null,7),
+("Apple","During a robbery at the grocery mart Dr. Shaun Murphy is shopping at, his communication limitations puts lives at risk. Meanwhile, after Shaun's traumatic day, Dr. Aaron Glassman worries that he isn't doing enough to help Shaun.",43,7,54,null,8),
+("Intangibles","As part of St. Bonaventure hospital's international humanitarian program, the team takes on the case of a young boy from the Congo who has severe congenital heart anomalies. Dr. Neil Melendez has doubts about the safety of the procedure, while Dr. Shaun Murphy works out the best course of action. Meanwhile, Murphy's latest encounter with his neighbor Lea has him confused.",43,7,54,null,9),
+("Sacrifice","A charming young doctor puts a member of the surgical team in an awkward position at work; Dr. Glassman suggests that Dr. Shaun Murphy meet with a therapist.",43,7,54,null,10),
+("Islands (1)","Dr. Marcus Andrews enlists Dr. Neil Melendez on a very sensitive kidney transplant between a pair of twins; Dr. Shaun Murphy decides to take an impromptu trip with his friend Lea and leave his problems behind.",43,7,54,null,11),
+("Islands (2)","The twins suffer complications from their surgery forcing the team at San Jose Boneventure Hospital to make a life-changing decision. Meanwhile, Dr. Shaun Murphy returns to the hospital after his trip with Lea and decides he needs a more permanent change and gives Dr. Aaron Glassman his two weeks’ notice.",43,7,54,null,12),
+("Seven Reasons","Dr. Shaun Murphy suspects his patient is lying about the reason for her injury and makes a controversial assumption about her motives. Meanwhile, Dr. Neil Melendez’s personal life could be affecting his work and, ultimately, his patients lives.",43,7,54,null,13),
+("She","Dr. Shaun Murphy is surprised to learn that his young cancer patient identifies as a girl while being biologically male. Shaun must quickly learn to understand his patient, her medical needs and how to work with her family, who all feel they know what is best for her.",43,6,54,null,14),
+("Heartfelt","Dr. Shaun Murphy's teenage patient has been confined to her home her entire life due to a rare heart condition. Despite her condition, she has cultivated a large group of friends online and hopes that the surgical team can find a way to give her the life she has always dreamed of having. Meanwhile, a young patient's perfectly matched organ donor is causing a moral dilemma for the parents and the patient.",43,6,54,null,15),
+("Pain","When the team treats a patient who has to decide between a dangerous surgery that could change his life or remain the same, he asks Dr. Shaun Murphy what he would if he had that same choice.",43,6,54,null,16),
+("Smile","Dr. Shaun Murphy questions the need for an elective surgery that will allow his young patient to smile for the first time. Meanwhile, Dr. Claire Brown and Dr. Morgan Reznick discover that their patient lied about her identity.",43,7,54,null,17),
+("More","The team at St. Bonaventure needs to quickly discover the truth behind a young college student’s unexplained injuries before his condition worsens. Meanwhile, after losing his most prized possession, Shaun’s distraction during a surgical procedure may end up risking more than just his job.",43,7,54,null,18),
+("Hello","Shaun’s proposed treatment for a homeless patient puts him and Dr. Kalu in Dr. Andrews’ crosshairs. Claire tries to overcome Dr. Melendez’s reluctance to do a risky heart operation. Dr. Glassman faces a difficult decision about his health.",43,7,55,null,1),
+("Middle Ground","As Shaun pushes back against Dr. Melendez in order to treat a gravely ill hospital janitor, Dr. Lim risks a lawsuit to repair a teenage girl’s ritual circumcision. Dr. Glassman exercises demanding oversight in choosing a doctor for his brain surgery.",43,7,55,null,2),
+("36 Hours","Dr. Melendez, Dr. Brown and Dr. Park have given a young married couple two choices about their future: save the wife’s life or their future ability to start a family. Meanwhile, when Dr. Lim has to take care of some personal business, she leaves oversight of the emergency room to Dr. Murphy and Dr. Reznick; and Dr. Glassman’s post-op recovery leaves him struggling to get the rest he needs for recovery and also confronting his relationship with his daughter.",42,7,55,null,3),
+("Tough Titmouse","Shaun recalls his own past to help an intellectually disabled teenager face separation from his mother, while Claire is put between an injured teenage rock climber and her worried parents. Meanwhile, Glassman’s post-op hallucinations force him to confront a personal tragedy.",43,7,55,null,4),
+("Carrots","When a patient suffering from anorexia can’t gain the necessary weight needed to survive heart surgery, Claire suggests they perform an experimental surgery which Melendez strongly opposes. Shaun worries Glassman’s refusal to walk the hospital floor will keep him from being discharged and tries to persuade him to ambulate. Meanwhile, Shaun and Lea change the terms of their current relationship.",43,7,55,null,5),
+("Two-Ply (or Not Two-Ply)","Morgan and Shaun’s indecision on how to treat a young violinist who visits the ER with an infected finger could affect her future in more ways than one. Meanwhile, Lim, Claire and Park can’t figure out if their young patient is really ill or looking for attention.",43,7,55,null,6),
+("Hubert","Dr. Shaun Murphy and Dr. Morgan Reznick must contend with two brothers who are bargaining over life and death. Meanwhile, Dr. Claire Brown’s friend who is dying of cancer asks her for something she doesn’t think she can give her; and Dr. Aaron Glassman is dealing with the effects of his treatment.",43,7,55,null,7),
+("Stories","Dr. Shaun Murphy, Dr. Audrey Lim and Dr. Claire Brown’s E.R. patient is forced to reveal a secret to her husband after their treatment caused a complication. Meanwhile, Dr. Neil Melendez, Dr. Morgan Reznick and Dr. Alex Park struggle with a patient whose parents don’t believe in vaccinations.",43,7,55,null,8),
+("Empathy","Dr. Neil Melendez, Dr. Morgan Reznick and Dr. Claire Brown grapple with a patient’s wish to perform an operation that would keep him from acting on his pedophilic urges; and Dr. Shaun Murphy learns a lesson in empathy.",43,6,55,null,9),
+("Quarantine (1)","Dr. Shaun Murphy and Dr. Alex Park treat two patients who collapse at the local airport and whose symptoms point to an infection that may become airborne. The staff races to contain the infection before it spreads to the rest of the patients in the ER, resulting in a hospital quarantine during the holidays.",43,7,55,null,10),
+("Quarantine (2)","The hospital is still in quarantine as Dr. Shaun Murphy continues to be overwhelmed by the chaos and noise in the emergency room; Dr. Morgan Reznick struggles to keep her patients alive, and Dr. Audrey Lim fights for her life. Meanwhile, Dr. Neil Melendez and Dr. Claire Browne must find a way to complete their patient’s bone marrow transplant, despite the quarantine.",43,7,55,null,11),
+("Aftermath","In the aftermath of the quarantine, the staff tries to return to their normal routines. Meanwhile, as Dr. Lim recovers from the virus, she and Dr. Melendez navigate their new personal and working relationship, while Dr. Murphy and Dr. Glassman visit Lea.",43,7,55,null,12),
+("Xin","Dr. Shaun Murphy, Dr. Morgan Reznick and Dr. Audrey Lim treat a woman with autism and a delicate brain condition while navigating the complicated relationship she has with her roommate, who is also on the spectrum. Meanwhile, Lea and Shaun are still figuring out their friendship and roommate status.",43,7,55,null,13),
+("Faces","Dr. Andrews tries to convince a grieving family to donate their teenage daughter’s face to another young girl whose face was horribly disfigured in an accident.",43,7,55,null,14),
+("Risk and Reward","Shaun’s blunt honesty with a distraught mother of a critically ill newborn baby causes the new chief of Surgery to question keeping him on as a resident.",43,7,55,null,15),
+("Believe","The new chief of surgery, Dr. Jackson Han, believes Dr. Shaun Murphy is a liability more than an asset and works to keep him out of the operating room permanently.",43,7,55,null,16),
+("Breakdown","Dr. Shaun Murphy is desperate to join the team on a dangerous procedure involving a patient’s tumor removal. However, having been removed from the surgery team by Dr. Jackson Han, Shaun must use his talents to help figure out the cause of an infant’s injuries.",43,7,55,null,17),
+("Trampoline","As a barroom fight sends Dr. Shaun Murphy to seek treatment at St. Bonaventure’s, Dr. Alex Park and Dr. Audrey Lim disagree over an elderly woman’s post-operative symptoms. Meanwhile, Dr. Neil Melendez and Dr. Lim make their romance public, and Dr. Aaron Glassman continues to pursue a relationship with a good friend.",43,7,55,null,18),
+("Disaster","Dr. Shaun Murphy proposes a radical surgery to save a woman's life after what he believes was a disastrous first date with Carly. Meanwhile, after the new chief of surgery, Dr. Audrey Lim, announces that the residents can lead surgeries, Dr. Morgan Reznick and Dr. Alex Park compete for the chance to operate on an elderly patient who has been diagnosed with cancer.",43,6,56,null,1),
+("Debts","As Dr. Marcus Andrews vows to help a good Samaritan who was injured while stopping a sexual assault, Dr. Audrey Lim faces a difficult decision when a young patient’s parents suspect that Dr. Neil Melendez made a mistake. Meanwhile, Dr. Shaun Murphy fields advice following his disastrous date with Dr. Carly Lever; and Dr. Claire Browne gets a surprise visit from her mother.",43,7,56,null,2),
+("Claire","Dr. Claire Brown faces complications at home and work as she prepares to lead her first surgery. Meanwhile, a sports fishing accident challenges the rest of the staff as they look to treat the fisherman’s injuries without damaging his prize catch.",43,7,56,null,3),
+("Take My Hand","As a conspiracy theorist questions Dr. Neil Melendez’s diagnosis, Dr. Claire Brown treats a woman whose inability to feel pain is threatening both her marriage and her life. Meanwhile, Dr. Shaun Murphy and Dr. Aaron Glassman each face crises in their romantic relationships.",43,6,56,null,4),
+("First Case, Second Base","Dr. Shaun Murphy has been assigned his first surgery by Dr. Audrey Lim. However, Dr. Marcus Andrews questions whether he is really ready. Meanwhile, as Dr. Claire Brown continues to avoid her complicated emotions about her mother, she and Dr. Morgan Reznick have a patient whose diagnosis has them doubting his story.",43,7,56,null,5),
+("45-Degree Angle","While performing his first solo surgery, Dr. Shaun Murphy alienates a nurse, which puts his residency in jeopardy. Dr. Neil Melendez disagrees with Dr. Audrey Lim on a risky surgery. Dr. Claire Brown spirals into self-destructive behaviors, causing negative ramifications in the workplace.",43,7,56,null,6),
+("SFAD","Dr. Shaun Murphy’s unique ability to relate to a patient isolated by an immune deficiency yields an unexpected result. Meanwhile, Dr. Claire Browne, Dr. Morgan Reznick and Dr. Marcus Andrews treat a 12-year-old patient who is about to become blind, and tension builds between Dr. Neil Melendez and Dr. Audrey Lim.",43,7,56,null,7),
+("Moonshot","Carly’s attempts at increasing her intimacy with Shaun are becoming more of a frustration than either of them expected. Meanwhile, Lim and Melendez struggle in their relationship as they work to separate their work from their personal life.",43,6,56,null,8),
+("Incomplete","Shaun is ready for the next step in his relationship with Carly; however, he continues to struggle as they grow closer and more intimate, and is dealt some troubling news about a deeply personal issue. Meanwhile, a young patient must decide on a treatment that could save her life or possibly destroy her marriage.",43,6,56,null,9),
+("Friends and Family","Shaun visits his father on his deathbed and the family reunion reveals unexpected results. Melendez, Park, Reznick and Claire treat an injured star NFL player with severe spinal damage. Claire addresses her mental health.",43,6,56,null,10),
+("Fractured","Following his father's death, Shaun must deal with the effects his intimacy with Lea will have on his relationship with Carly; the team operates on a patient who is refusing all anesthesia during surgery for fear of relapsing.",43,7,56,null,11),
+("Mutations","The doctors must treat a 25-year-old runner who is suffering from severe swelling; two 16-year-old cancer patients are dating; Dr. Shaun Murphy and Dr. Carly Lever work toward intimacy.",43,7,56,null,12),
+("Sex and Death","A terminal cancer patient is determined to live the last few months of his life without inhibition; Dr. Reznik must confront her relationship with her mother when she comes in for a third opinion from Dr. Glassman.",43,7,56,null,13),
+("Influence","After Dr. Shaun Murphy treats a patient who is a social influencer, he deals with unwanted attention. Meanwhile, the team treats a woman who is in abdominal distress after an at-home fecal transplant; and Dr. Carly Lever’s efforts to separate Shaun from Lea are challenged.",43,7,56,null,14),
+("Unsaid","Despite everyone else’s doubts, Shaun is hopeful that Carly is truly fine with his friendship with Lea. The team treats a young boy born without a fully formed trachea and unable to speak, and who may be a good candidate for an experimental procedure.",43,7,56,null,15),
+("Autopsy","When Dr. Shaun Murphy makes an emotional confession, the result may not be as desired. Meanwhile, he becomes obsessed with performing an autopsy on a Jane Doe, which challenges his relationships at the hospital; and Dr. Claire Browne, Dr. Morgan Reznick and Dr. Marcus Andrews treat a male college student with a mysterious split personality disorder.",43,7,56,null,16),
+("Fixation","A patient with a mysterious and undiagnosed illness that has baffled other doctors for years forces Shaun and the team to take some big risks. Claire and Melendez continue to cautiously navigate their feelings for each other as colleagues and friends.",43,7,56,null,17),
+("Heartbreak","Claire and Shaun treat a patient with a rare form of dwarfism. Reznick, Lim and Park treat a young man who had both arms torn off in a previous farming accident. Shaun reacts to an emotional situation.",43,7,56,null,18),
+("Hurt (1)","The city of San Jose is rocked by a massive earthquake that puts the staff of St. Bonaventure Hospital on high alert as they race to assess the damage and account for the safety of their colleagues and friends. Meanwhile, Dr. Neil Melendez and Dr. Aaron Glassman are attending a charity event when their lives are threatened by the earthquake.",43,7,56,null,19),
+("I Love You (2)","The staff of St. Bonaventure Hospital works against time and their own personal safety to save the lives of those around them.",43,8,56,null,20),
+("Frontline (1)","Dr. Murphy treats a patient who has an illness that is not only unpredictable in nature, but also unlike anything he or the team has seen before. Dr. Claire Brown continues to work through her grief, still reeling from Dr. Neil Melendez's death.",43,6,57,null,1),
+("Frontline (2)","Shaun has a hard time balancing his fears and concerns about potentially jeopardizing Lea's health and wanting to be with the woman he loves. Claire looks for a way to grieve Melendez's death. Park and Mia discuss their future together.",43,7,57,null,2),
+("Newbies","With several candidates vying for residency at St. Bonaventure, Chief of Surgery Dr. Audrey Lim tasks Dr. Shaun Murphy, Dr. Claire Browne and Dr. Alex Park with mentoring the top first-year resident contenders. As their mentees shadow them for the day, Shaun and Park meet with Andrews to discuss a difficult surgery scheduled for a minor. Later, Shaun inadvertently insults Lea while discussing the pros and cons of the controversial surgery. And elsewhere, Dr. Morgan Reznick seeks out Claire and Lim’s help on a consult.",43,5,57,null,3),
+("Not the Same","Dr. Morgan Reznik and Dr. Shaun Murphy's pregnant patient with twins is having pain and they are forced to grapple with a decision no one wants to make. Meanwhile, Shaun asks Lea to move back in despite her reservations",43,6,57,null,4),
+("Fault","Dr. Shaun Murphy questions his decision to give the new residents autonomy when one of his intern's misdiagnosis of a patient has dire consequences. Meanwhile, Dr. Claire Browne, Dr. Alex Park and Dr. Jordan Allen treat a patient with a ruptured cyst affecting key functions of her brain. And elsewhere, Dr. Morgan Reznick and Park bond over failed relationships.",43,5,57,null,5),
+("Lim","As Chief of Surgery Dr. Audrey Lim struggles to cope with the residual emotional trauma of COVID-19, she encounters a young war veteran fighting debilitating PTSD. After discussing his case with the team, Dr. Claire Browne suggests a radical treatment to help him. Meanwhile, still reeling from the recent loss of his mentee’s patient, Dr. Shaun Murphy declares he doesn’t want to teach the new residents anymore. And elsewhere, an eccentric patient keeps the team entertained.",43,6,57,null,6),
+("The Uncertainty Principle","Dr. Morgan Reznick discovers her patient’s wealth and obsession with extending his life is a dangerous mix that could end up costing more than he can afford.",43,6,57,null,7),
+("Parenting","The team treats a teenage gymnast who experiences complications from her intensive training. Meanwhile, Shaun meets Lea's parents for the first time.",43,6,57,null,8),
+("Irresponsible Salad Bar Practices","Lim is challenged by the unique circumstances surrounding a pregnant patient with an aggressive tumor. Elsewhere, after misdiagnosing a patient, Claire makes a disconcerting discovery about certain practices at the hospital.",43,4,57,null,9),
+("Decrypt","When the hospital is hit with a cyberattack threatening to shut down life-saving machines, Lea rises to the challenge and looks to outsmart the hackers to prove herself. Meanwhile, the team treats an inspirational cancer survivor-turned-successful-philanthropist who harbors a dark secret.",43,6,57,null,10),
+("We're All Crazy Sometimes","After bringing in an incredibly unique and complicated spinal surgery, Dr. Aaron Glassman challenges the residents for an opportunity to join him in the operating room. Meanwhile, Shaun and Morgan disagree on how to treat a comatose patient with a cancerous tumor.",43,6,57,null,11),
+("Teeny Blue Eyes","When a renowned surgeon comes to St. Bonaventure for treatment, the team’s enthusiasm is quickly overshadowed by the doctor’s behavior. After studying his case, Dr. Shaun Murphy sees a pattern he recognizes. Meanwhile, Shaun and Lea are forced to make a life-changing decision that will alter the course of their relationship.",43,6,57,null,12),
+("Spilled Milk","Claire is blindsided when her absentee father shows up at her door. Meanwhile, Shaun feels disconnected from Lea, causing tension in their relationship.",43,7,57,null,13),
+("Gender Reveal","After finding out the gender of their unborn child, Lea's enthusiasm prompts Shaun to make an effort to be a more supportive partner. Meanwhile, the team treats a navy pilot whose previous doctor's misdiagnosis compromises her chances at a full recovery.",43,5,57,null,14),
+("Waiting","After a political protest turns violent, the team races to save two young gunshot victims.",43,6,57,null,15),
+("Dr. Ted","Shaun struggles with his role as Lea's partner after complications arise with the pregnancy and his instincts as a medical professional kick in. Meanwhile, Dr. Park, Dr. Andrews and Asher disagree on how to address an elderly patient's wishes.",43,6,57,null,16),
+("Letting Go","Dr. Claire Brown and the team must face hard truths about what lines they are willing to cross when one of Claire's idols becomes her patient.",43,5,57,null,17),
+("Forgive or Forget","Shaun and Lea go on a camping trip to distract themselves from their grief over their miscarriage. Meanwhile, Morgan and Park argue about the best course of treatment for their patient.",43,6,57,null,18),
+("Venga (1)","The St. Bonaventure team travels to Guatemala on a surgical mission to help patients at a rural hospital. Once there, the team faces a small community that is in desperate need of their help but are assigned the daunting task of identifying who they can help most. And while Shaun seems to be thriving in Guatemala, Lea is still struggling with the loss of her baby.",43,6,57,null,19),
+("Vamos (2)","Dr. Shaun Murphy must perform a risky surgery on a patient without electricity when the power suddenly goes out. Meanwhile Lim and Dr. Mateo Rendón Osma’s relationship deepens as they overcome difficulties during the surgery.",43,7,57,null,20),
+("New Beginnings","Shaun and Lea's upcoming engagement party has everyone in a festive mood; a young single mother learns her son may have contracted his cancer from a surprising source; Mateo finds out if his previous issues in America will be resolved.",43,7,58,null,1),
+("Piece of Cake","Dr. Shaun Murphy and the team race to save a pregnant woman's baby and find her current situation as a convicted felon complicates it even more than they realize. Meanwhile, the hospital takes on some unexpected changes that the staff are not prepared for.",43,7,58,null,2),
+("Measure of Intelligence","Shaun confronts Salen about the many changes she has implemented since coming on at St. Bonaventure. Glassman is forced to accept his new role at the hospital.",43,6,58,null,3),
+("Rationality","Dr. Shaun Murphy and the team treat a young girl whose father’s personal research complicates their treatment plans. Meanwhile, Dr. Park, Dr. Reznick and Dr. Lim’s patient refuses a life-saving lung transplant despite having a family donor.",43,7,58,null,4),
+("Crazytown","Dr. Park and Dr. Murphy treat an elderly Asian man brought to St. Bonaventure by his daughter after being the victim of a hate crime. In addition, Lea goes behind Shaun’s back to help raise his negative patient satisfaction scores.",43,6,58,null,5),
+("One Heart","Dr. Shaun Murphy and Dr. Alex Park must grapple with a life-and-death decision and decide between saving one patient over another. Meanwhile, Dr. Morgan Reznick goes a little too far in her attempt to win Salen’s favor.",43,7,58,null,6),
+("Expired","Shaun and Lea happen upon a terrible car accident and discover a young pregnant mother who has been badly injured and needs immediate medical attention. Dr. Glassman is apprehensive when a figure from his past reaches out for help.",43,8,58,null,7),
+("Rebellion","Now that Shaun has called off the wedding, he is forced to confront Lea about their relationship and determine what he really means to her. Meanwhile, the team debate their opinions on plastic surgery and Dr. Audrey Lim hopes to expose Salen’s cover-up over an infant’s death to take her down before it is too late.",43,7,58,null,8),
+("Yippee Ki-Yay","In an effort to please Salen, Andrews takes on a high-profile case and assigns Shaun and Allen to help perform a risky surgery to restore the voice of a famous pop star.",43,7,58,null,9),
+("Cheat Day","Salen takes extreme measures when she learns that the surgical staff have joined Lim's efforts against her. The team treats a liver transplant patient whose organ donor unwittingly gave him cancer.",43,7,58,null,10),
+("The Family","Dr. Shaun Murphy makes a personal connection with a precoious young patient which threatens his objectivity. Meanwhile, while volunteering at a long-term care facility, Dr. Morgan Reznick realizes she could help Dr. Aaron Glassman’s clinic by offering telemedicine services for nursing homes and care facilities.",43,8,58,null,11),
+("Dry Spell","Drs. Lim, Park and Wolke treat a woman with Valley fever and discover a secret she has been hiding from her fiancé. Meanwhile, Drs. Murphy, Allen and Andrews treat a 45-year-old virgin and help her make a big decision about her life.",43,7,58,null,12),
+("Growing Pains","While Drs. Lim, Murphy and Wolke help a teenage “biohacker” whose self- experiments begin to compromise his health, Drs. Morgan, Park, Jordan and Glassman treat a young woman who wants a controversial surgery to treat her depression and chronic pain. Additionally, Dr. Reznick looks to take the next step in her relationship with Dr. Park.",43,7,58,null,13),
+("Potluck","When someone mistakenly brings a hallucinogen-laced dish to the hospital's company potluck, much of the hospital staff and doctors are incapacitated -- leaving doctors Murphy, Glassman and Allen forced to take on all the hospital's cases, further exacerbating Dr. Murphy and Dr. Glassman's conflicting work styles.",43,7,58,null,14),
+("My Way","While Doctor Andrews treats a foster kid for injuries sustained at his group home, Shaun and team look to Lea's expertise with cars and auto repair to help a patient whose iron lung has broken. Meanwhile, the patient's niece, a documentarian, takes an interest in Shaun.",43,7,58,null,15),
+("The Shaun Show","As Shaun and Lea head toward their wedding day, a documentary film maker has chosen to follow their lives to showcase relationships and weddings of atypical couples.",43,7,58,null,16),
+("The Lea Show","Sophie takes Lea out for a day full of luxurious wedding planning. And after a near fatal oversight, Dr. Lim senses an underlying issue is behind nurse Villanueva's unprofessional behavior.",43,7,58,null,17),
+("Sons","Shaun and Lea make a big life decision and are pleasantly surprised by the support they receive from their friends at the hospital. Meanwhile, when Dr. Wolke's parents show up with a revelation, Asher struggles to accept that he and his father may never truly understand one another.",43,6,58,null,18),
+("Afterparty","Shaun and Lea’s long-awaited wedding reception is interrupted by a violent attack at the hospital and the entire team must mobilize to save the victims. Meanwhile, the trauma of seeing people he cares for in life-threatening situations is affecting Shaun in more ways than one.",43,8,59,null,1),
+("Change of Perspective","On their first day as surgical attendings, Dr. Shaun Murphy and Dr. Alex Park are introduced to the first year residents they will be overseeing, Dr. Danica Powell and Dr. Daniel Perez,who make quite the first impression. Meanwhile, Lim returns to work while facing her new reality and the emotions surrounding the changes.",43,6,59,null,2),
+("A Big Sign","The team treats a famous marriage counselor after she injures her ankle from falling, but when she offers relationship advice to them, Dr. Morgan Reznick quickly spots that their patient might be experiencing something far more serious. Meanwhile, Dr. Audrey Lim is determined to get to the bottom of what really happened in the OR during her surgery and sets off on her own internal investigation.",44,6,59,null,3),
+("Shrapnel","The team operates on a military reenactor whose attempt at authenticity has created an explosive predicament that even Dr. Shaun Murphy couldn’t predict. Meanwhile, Dr. Jordan Allen and Dr. Daniel Perez are on a race against time as they search for a severed foot.",42,7,59,null,4),
+("Growth Opportunities","Shaun, Asher and Powell treat a young patient on Halloween with a rare hereditary disease, sending them down an uncharted path. Meanwhile, Glassman and Shaun must overcome their differences to work together to try and find a solution for Lim’s paralysis.",44,7,59,null,5),
+("Hot and Bothered","In the midst of a heatwave, Dr. Shaun Murphy and Dr. Danica Powell are at odds when it comes to their patient’s surgery. Their heated stalemate tests Shaun’s patience and his willingness to compromise. Meanwhile, when the hospital loses power, Lea and Dr. Aaron Glassman are forced to come up with a quick solution or risk a total shutdown that could risk patients’ lives on the 100th episode.",44,7,59,null,6),
+("Boys Don't Cry","When a woman pregnant with sextuplets arrives at the hospital, Dr. Marcus Andrews must split the doctors into teams to ensure their health and safety following their high-risk delivery. Meanwhile, Shaun and Lea must face their own hurdles as they discuss starting a family.",43,8,59,null,7),
+("Sorry, Not Sorry","Drs. Shaun Murphy, Asher Wolke and Aaron Glassman meet a patient with an infected surgical sponge that was left in their abdomen. Meanwhile, Dr. Morgan Park must face her own past when she treats the victim of a sexual assault.",43,8,59,null,8),
+("Broken or Not","Dr. Shaun Murphy unknowingly creates a competition between Drs. Danica Powell and Daniel Perez when he introduces a new performance rating system; Dr. Morgan Reznick may have crossed a line with Dr. Alex Park.",43,7,59,null,9),
+("Quiet and Loud","Shaun and Lea soon learn that their surprise pregnancy may also come with additional complications. Meanwhile, Doctors Park, Reznick and Allen treat a teen with Gardner’s syndrome whose past surgical history jeopardizes the outcome of his current one.",44,8,59,null,10),
+("The Good Boy","On the way to their babymoon, Lea and Shaun get a quick lesson in parenting when they rush to aid an injured dog. Meanwhile, Dr. Danica Powell secretly performs an operation on a friend that could jeopardize her career.",43,7,59,null,11),
+("365 Degrees","Shaun invites Aaron to stay with him while he has exterminators at his house and Lea realizes both men have a lot more in common than she realized. Meanwhile, Dr. Morgan Reznick wrestles with a big decision about her career and her personal life.",43,4,59,null,12),
+("39 Differences","Shaun and Lea clash over their parenting styles and worry about what will happen to their relationship when their child is born. Meanwhile, Dr. Lim must find a way to save the damaged lungs that one of her long-time patients has been waiting for.",44,8,59,null,13),
+("Hard Heart","When a 3-year-old arrives at the ER, the team immediately recognizes he is having a stroke. However, Dr. Shaun Murphy’s diagnosis of the underlying cause doesn’t solve the problem which has Dr. Park search deeper.",42,7,59,null,14),
+("Old Friends","Dr. Jared Kalu makes a surprise return to San Jose’s St. Bonaventure Hospital with his billionaire patient. Meanwhile, Park must treat the man his wife had an affair with and try to find a way to forgive him.",44,8,59,null,15),
+("The Good Lawyer","Dr. Shaun Murphy seeks legal representation to help him win a case and puts his faith in a promising, young lawyer who has obsessive compulsive disorder.",44,9,59,null,16),
+("Second Chances and Past Regrets","Dr. Shaun Murphy must learn how to work with Dr. Jared Kalu again and remind him that he must start all over at St. Bonaventure. Meanwhile, Dr. Murphy treats a teenager suffering from neurological problems with a very high-risk procedure.",42,7,59,null,17),
+("A Blip","When a patient comes in with persistent and lingering COVID symptoms, the team discovers she may be dealing with something harder to treat. Andrews and Villanueva must contend with their hierarchy at the hospital and its effect on their relationship.",43,7,59,null,18),
+("Half Measures","Drs. Andrews and Lim clash over a patient split nearly in half, which also reveals her issues with Dr. Kalu’s return. Meanwhile, Dr. Glassman gives Dr. Murphy some fatherly advice as they await news about Glassman’s recent tests.",43,7,59,null,19),
+("Blessed","Dr. Marcus Andrews introduces some of the team to a patient whose optimism and faith seems to cause Dr. Asher Wolke the most skepticism in light of his own relationship with religion.",43,8,59,null,20),
+("A Beautiful Day","Dr. Glassman and Dr. Murphy's relationship may be irreparably damaged following a tense moment during surgery. While Dr. Reznick struggles during her parental leave, Dr. Park may just be the one she needs the most.",43,8,59,null,21),
+("Love's Labor","Shaun and Lea are heading to the delivery room and everyone from the hospital is also there, except for one very important person. Meanwhile, a tragic accident involving Drs. Perez and Kalu pulls everyone away, including Dr. Murphy.",43,8,59,null,22),
+("Episode 1","",0,0,60,null,1);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("The Boys",'2019-07-25',8,"A group of vigilantes known informally as “The Boys” set out to take down corrupt superheroes with no more than blue-collar grit and a willingness to fight dirty.",60,"United States of America","https://image.tmdb.org/t/p/original//thLAoL6VeZGmCyDpCOeoxLvA8yS.jpg","https://image.tmdb.org/t/p/original//7Ns6tO3aYjppI5bFhyYZurOYGBT.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (24,50),
+(20,50);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (50,'https://www.youtube.com/embed/tcrNsIaQkb4'),
+(50,'https://www.youtube.com/embed/CD46c08MsHg');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2019-07-25',1,8,'https://image.tmdb.org/t/p/original//g3HjUeFCwKOfBxlM97lv016mnol.jpg',50),
+('Season 2','2020-09-03',2,8,'https://image.tmdb.org/t/p/original//oFGMGn1ywvvYobxOcPKVytN3AQK.jpg',50),
+('Season 3','2022-06-02',3,7,'https://image.tmdb.org/t/p/original//7Ns6tO3aYjppI5bFhyYZurOYGBT.jpg',50),
+('Season 4','2000-01-22',4,9,'https://image.tmdb.org/t/p/original//ooAq1YJUvBnJubnpPTjP1uxHGHg.jpg',50);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("The Name of the Game","When a Supe kills the love of his life, A/V salesman Hughie Campbell teams up with Billy Butcher, a vigilante hell-bent on punishing corrupt Supes — and Hughie’s life will never be the same again.",61,8,61,null,1),
+("Cherry","The Boys get themselves a Superhero, Starlight gets payback, Homelander gets naughty, and a Senator gets naughtier.",60,8,61,null,2),
+("Get Some","It’s the race of the century. A-Train versus Shockwave, vying for the title of World’s Fastest Man. Meanwhile, the Boys are reunited and it feels so good.",56,8,61,null,3),
+("The Female of the Species","On a very special episode of The Boys… an hour of guts, gutterballs, airplane hijackings, madness, ghosts, and one very intriguing Female. Oh, and lots of heart — both in the sentimental sense, and in the gory literal sense.",58,8,61,null,4),
+("Good for the Soul","The Boys head to the “Believe” Expo to follow a promising lead in their ongoing war against the Supes. There might — MIGHT — be a homicidal infant, but you’ll have to see for yourself.",62,7,61,null,5),
+("The Innocents","SUPER IN AMERICA (2019). Vought Studios. Genre: Reality. Starring: Homelander, Queen Maeve, Black Noir, The Deep, A-Train, Starlight, Tara Reid, Billy Zane.",63,7,61,null,6),
+("The Self-Preservation Society","Never trust a washed-up Supe — the Boys learn this lesson the hard way. Meanwhile, Homelander digs into his past, Starlight discovers that love hurts, and if you’re ever in Sandusky, Ohio and a girl asks if she can touch your gills, say NO.",58,8,61,null,7),
+("You Found Me","Season Finale Time! Questions answered! Secrets revealed! Conflicts… conflicted! Characters exploded! And so much more!",67,8,61,null,8),
+("The Big Ride","Season 2! New and improved! Now with 50% more explosive decapitations, terrorists, S&M hookers, cults, and a new pine fresh scent! But wait, there’s more! 2X MORE blood, guts and gore than the other leading brands! This exclusive offer is available only on Amazon Prime Video! Don’t delay! Order now!",64,7,62,null,1),
+("Proper Preparation and Planning","The Boys get themselves a Super Terrorist, Starlight gets evidence against Vought, The Deep gets in touch with his feelings, and Homelander gets himself a family (sort of).  All that, and a hard-hitting exposé on why Super Suits don’t have pockets.",62,7,62,null,2),
+("Over the Hill with the Swords of a Thousand Men","Attention: If you or a loved one were exposed to Compound V, you may be entitled to financial compensation. Vought has given the drug to multiple victims, without their knowledge or consent. If you believe that you or a loved one were administered Compound V, call the law firm of Bremmer & Bremmer at 1-888-177-2774 for a free legal consultation. Know your rights!",60,8,62,null,3),
+("Nothing Like It in the World","Road trip! The Boys head to North Carolina to follow a lead on a mysterious Supe named Liberty. And did you know a person’s choice of candy bars might tell you if they’re a serial killer? Watch and learn the warning signs! This episode could save your life!",69,7,62,null,4),
+("We Gotta Go Now","VoughtStudios is pleased to announce that filming has begun on #DawnOfTheSeven. 12 years of VCU movies have led to this. If you like movies about One Hero, you’ll love a movie about Seven Heroes. Introducing newest member @RealStormfront! See how the legend began! In theaters Summer 2021!",62,8,62,null,5),
+("The Bloody Doors Off","The Sage Grove Center® is dedicated to caring for those struggling with mental illness. Our compassionate doctors and counselors provide personalized services to help patients live their best lives. If you or a loved one need help, call the Sage Grove Center today at 1-800-122-8585. A proud subsidiary of Global Wellness Services®, which is a proud subsidiary of Vought International®",66,8,62,null,6),
+("Butcher, Baker, Candlestick Maker","Congresswoman Victoria Neuman’s sham Congressional Hearing against Vought takes place in 3 DAYS. Are we going to let her criminalize Superheroes when we need them most? We have to stand up against such blatant partisan politics. Please join fellow Patriotic Americans and send $20 to VOUGHTPROMISE.COM to tell Neuman and her Kangaroo Court Cronies that they won’t win, “Not On Our Watch”™.",56,8,62,null,7),
+("What I Know","***SUPER VILLAIN ALERT*** YOU ARE RECEIVING THIS NOTIFICATION FROM THE DEPARTMENT OF HOMELAND SECURITY. A SUPER VILLAIN ALERT HAS BEEN ISSUED FOR YOUR AREA. PLEASE BE VIGILANT AND REPORT ANY SUSPICIOUS PERSONS OR ACTIVITY. IF YOU BELIEVE YOU HAVE SEEN A SUPER VILLAIN, DO NOT APPROACH OR ATTEMPT TO APPREHEND THEM. CONTACT LAW ENFORCEMENT IMMEDIATELY",70,8,62,null,8),
+("Payback","You and a guest are invited to the premiere of DAWN OF THE SEVEN this Tuesday at 7PM in Vought Tower’s Lamplighter Memorial Theater! Screening will be followed by a Q&A with director Adam Bourke and an after-party with Supe DJ Malchemical on the turntables! Join us for the greatest true origin story ever told about America’s number one Superhero team and see how the legend began!",61,7,63,null,1),
+("The Only Man in the Sky","Homelander. America’s greatest Superhero. Defending our shores from sea to shining sea. Today, America honors him on his birthday. And the Vought Shopping Network is celebrating by offering the exclusive Homelander Limited Birthday Edition Gold Coin for only $99.95 (plus tax and shipping) while supplies last. Vought Gold Commemorative Coins: An investment that lasts a lifetime.",60,8,63,null,2),
+("Barbary Coast","Tonight at 9/8C on Vought Plus, it’s the season finale of #AmericanHero! Three contestants remain, but only TWO will join #TheSeven! Will Starlight choose her old flame Supersonic? Or will someone else be moving into the Seven Tower? Tune in tonight for the SHOCKING final episode, brought to you by Lean Lady Frozen Dinners by Vought: Where slim tastes super!",61,8,63,null,3),
+("Glorious Five Year Plan","Tonight, streaming live exclusively for Supeporn.com Super-Subscribers, it’s the #ClashOfTheDildos! Which of The Seven-inspired dildos will crush the competition in this tip-to-tip challenge? Will it be the reigning champion Homelander Star-Spangled Banger or Starlight’s electrified Star-Brator? Join us as we put these pleasure-pounding penetrators through their paces! Only on Supeporn.com!",61,8,63,null,4),
+("The Last Time to Look on This World of Lies","Did you know chimpanzees are an endangered species largely because of human activity? But you can help by supporting construction costs for Crimson Countess’s Chimp Country! This beautiful refuge for chimpanzees will feature a banana plantation, four daily stunt shows, and a petting zoo! And when you donate, you’ll be entered to win a private video chat with Crimson Countess! Donate today!",61,7,63,null,5),
+("Herogasm","You’re invited to the 70th Annual Herogasm! You must present this invitation in order to be admitted! Same rules as always: no cameras, no non-Supe guests unless they sign an NDA and they’re DTF, and no telling any news media! It’s BYOD, but food, alcohol and lube will be provided! And please remember to RSVP so we can get an accurate headcount for the caterer!",60,8,63,null,6),
+("Here Comes a Candle to Light You to Bed","Did someone say birthday? Come celebrate at Buster Beaver’s with our new Deluxe VIP Birthday Package, with seating for up to 30 guests, ten large two-topping pizzas, and ten pitchers of your choice of soda! And of course, a special birthday play starring Buster Beaver and his cast of furry forest friends! All for only $199.99 + tax! Buster Beaver’s Pizza! Where Kids Make the Rules®!",64,7,63,null,7),
+("The Instant White-Hot Wild","Calling all patriots! Let’s show Homelander we’ve got his back and we’re not going to let Starlight and her Starlight House of Horrors get away with trafficking children and drinking their adrenaline! It’s time for real Americans to fight back! Join the Hometeamers and Stormchasers tomorrow at Vought Square! Stand back and stand by!",62,7,63,null,8),
+("Department of Dirty Tricks","",0,9,64,null,1),
+("Life Among the Septics","",0,0,64,null,2),
+("We'll Keep the Red Flag Flying Here","",0,0,64,null,3),
+("Wisdom of the Ages","",0,0,64,null,4),
+("Beware of the Jabberwock, My Son","",0,0,64,null,5),
+("Dirty Business","",0,0,64,null,6),
+("The Insider","",0,0,64,null,7),
+("Assassination Run","",0,0,64,null,8);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("House of the Dragon",'2022-08-21',8,"The Targaryen dynasty is at the absolute apex of its power, with more than 15 dragons under their yoke. Most empires crumble from such heights. In the case of the Targaryens, their slow fall begins when King Viserys breaks with a century of tradition by naming his daughter Rhaenyra heir to the Iron Throne. But when Viserys later fathers a son, the court is shocked when Rhaenyra retains her status as his heir, and seeds of division sow friction across the realm.",0,"United States of America","https://image.tmdb.org/t/p/original//Aa9TLpNpBMyRkD8sPJ7ACKLjt0l.jpg","https://image.tmdb.org/t/p/original//z2yahl2uefxDCl0nogcRBstwruJ.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (24,51),
+(7,51),
+(20,51);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (51,'https://www.youtube.com/embed/DotnJ7tTA34'),
+(51,'https://www.youtube.com/embed/Wg86eQkdudI');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2022-08-21',1,7,'https://image.tmdb.org/t/p/original//z2yahl2uefxDCl0nogcRBstwruJ.jpg',51),
+('Season 2','2000-01-22',2,0,'https://image.tmdb.org/t/p/original//izNNovcjVydp52dXJxxR68CTtR9.jpg',51);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("The Heirs of the Dragon","Viserys hosts a tournament to celebrate the birth of his second child. Rhaenyra welcomes her uncle Daemon back to the Red Keep.",66,7,65,null,1),
+("The Rogue Prince","Princess Rhaenyra dives deep into the prophecies about House Targaryen while confronting a realm that resists the idea of a woman on the Iron Throne, and Prince Daemon, embittered over being passed over as the heir to Westeros, prepares to go to war.",54,7,65,null,2),
+("Second of His Name","Daemon and the Sea Snake battle the Crabfeeder. The realm celebrates Aegon’s second nameday. Rhaenyra faces the prospect of marriage.",64,7,65,null,3),
+("King of the Narrow Sea","Daemon returns to court after the successful completion of the battle. Princess Rhaenyra must deal with potential suitors in order to keep her line of succession.",63,7,65,null,4),
+("We Light the Way","Daemon visits his wife in the Vale. Viserys and Rhaenyra broker agreements with the Valeryons. Alicent seeks the truth about the princess.",60,7,65,null,5),
+("The Princess and the Queen","Ten years later. Rhaenyra navigates Alicent’s continued speculation about her children, while Daemon and Laena weigh an offer in Pentos.",68,7,65,null,6),
+("Driftmark","As the families gather on Driftmark for a funeral, Viserys calls for an end to infighting and Alicent demands justice.",59,8,65,null,7),
+("The Lord of the Tides","Six years later. With the Driftmark succession suddenly critical, Rhaenyra attempts to strike a bargain with Rhaenys.",68,8,65,null,8),
+("The Green Council","While Alicent enlists Cole and Aemond to track down Aegon, Otto gathers the great houses of Westeros to affirm their allegiance.",58,7,65,null,9),
+("The Black Queen","Mourning a tragic death, Rhaenyra tries to hold the kingdom together and Daemon prepares for war.",60,8,65,null,10);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Peacemaker",'2022-01-13',8,"The continuing story of Peacemaker – a compellingly vainglorious man who believes in peace at any cost, no matter how many people he has to kill to get it – in the aftermath of the events of “The Suicide Squad.”",0,"United States of America","https://image.tmdb.org/t/p/original//ctxm191q5o3axFzQsvNPlbKoSYv.jpg","https://image.tmdb.org/t/p/original//hE3LRZAY84fG19a18pzpkZERjTE.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (20,52),
+(24,52),
+(7,52);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (52,'https://www.youtube.com/embed/O9DAiLI7Cn8'),
+(52,'https://www.youtube.com/embed/WHXq62VCaCM');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2022-01-13',1,7,'https://image.tmdb.org/t/p/original//hE3LRZAY84fG19a18pzpkZERjTE.jpg',52);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("A Whole New Whirled","After making a miraculous recovery, Peacemaker returns home–only to discover that his freedom comes at a price.",47,7,67,null,1),
+("Best Friends, For Never","After Peacemaker’s hazardous escape, tension and mistrust build within the team. Later, as Peacemaker grapples with his new assignment, he receives a surprise visitor.",41,7,67,null,2),
+("Better Goff Dead","On their first official mission to assassinate suspected “butterflies,” Economos and Murn bond, and Peacemaker and Harcourt reach an understanding. But the whole job goes sideways with the arrival of Judomaster.",40,7,67,null,3),
+("The Choad Less Traveled","Following a somewhat successful mission, Murn recruits Vigilante. Meanwhile, after learning that the team helped land his father in prison, Peacemaker confronts his complicated past.",47,7,67,null,4),
+("Monkey Dory","The team scouts the apparent hub for the aliens’ food supply, only to come face-to-face with a full-fledged invasion. Meanwhile, Auggie’s attempt to sell out his son to the police is complicated by Murn’s mysterious contact.",43,7,67,null,5),
+("Murn After Reading","Murn reveals his deepest secret. Auggie is set free. The botched arrest of Peacemaker sends alien Goff into an unexpected new host.",47,7,67,null,6),
+("Stop Dragon My Heart Around","Harcourt, Murn, and Adebayo find themselves surrounded by an alien force, while Peacemaker squares off against his father with help from Vigilante and Economos.",39,7,67,null,7),
+("It's Cow or Never","With Peacemaker and Adebayo at odds, can the team kill the cow once and for all – or will their fracture give the aliens the opening they need to complete its teleportation?",45,7,67,null,8);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Halo",'2022-03-24',8,"Depicting an epic 26th-century conflict between humanity and an alien threat known as the Covenant, the series weaves deeply drawn personal stories with action, adventure and a richly imagined vision of the future.",0,"United States of America","https://image.tmdb.org/t/p/original//1qpUk27LVI9UoTS7S0EixUBj5aR.jpg","https://image.tmdb.org/t/p/original//nJUHX3XL1jMkk8honUZnUmudFb9.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (20,53),
+(24,53);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (53,'https://www.youtube.com/embed/b4doITNi2RE'),
+(53,'https://www.youtube.com/embed/5KZ3MKraNKY'),
+(53,'https://www.youtube.com/embed/WZ2v5eMlcrY');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2022-03-24',1,6,'https://image.tmdb.org/t/p/original//nJUHX3XL1jMkk8honUZnUmudFb9.jpg',53),
+('Season 2','2024-02-08',2,0,'https://image.tmdb.org/t/p/original//ujlbbxlQdf9sBa47htuXtn24b1n.jpg',53);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Contact","In the year 2552, humans on the planet Madrigal have been fighting for independence from Earth, but a fatal encounter with the Alien Covenant complicates things. Master Chief John 117 and his super-soldier “Spartans” join the fight. After the battle, Master Chief heads to his home planet of Reach with a Madrigal survivor and a mysterious object he discovered on the planet. But a controversial order has John questioning his mission, and himself.",59,7,68,null,1),
+("Unbound","John takes Kwan to an old friend and learns more about the mystery object, which the Covenant and Makee are determined to steal. With the alien threat growing, Dr. Halsey has a plan to deal with John’s unpredictable behavior.",54,6,68,null,2),
+("Emergence","John meets his new partner, and he discovers secrets inside his own memory. Kwan wants to return to Madrigal to continue her people’s fight for independence, but Soren has other plans for her. Makee initiates her plan to retrieve the Madrigal object, with deadly consequences.",54,6,68,null,3),
+("Homecoming","Guided by his visions, John takes Halsey and Cortana back to where it all began, looking for answers from his past. With Soren along for protection, Kwan goes in search of an army. Meanwhile John’s behavior inspires another Spartan to begin a journey of self-discovery. And Miranda discovers a possible link between the artifact and something much larger.",55,6,68,null,4),
+("Reckoning","On the run and out of options, Kwan and Soren have a difference of opinion. With the possibility of finding the mysterious Halo on everyone’s minds, John makes a horrible discovery. And the war rears its ugly head.",40,7,68,null,5),
+("Solace","Survivors from battle return to Reach. John confronts Dr. Halsey, and the lies of his past. The new prisoner seems to know John better than he knows himself. Determined to understand more, John turns back to the mystery artifact, which shows him something truly startling.",48,6,68,null,6),
+("Inheritance","Kwan’s journey to uncover her family’s “true purpose” takes her deep into the deserts of Madrigal. Soren obsesses over unfinished business.",51,5,68,null,7),
+("Allegiance","John and Makee come to terms with their shared vision. Halsey has one last chance to save her mission, and herself. As things come to a head, everyone must choose a side.",48,6,68,null,8),
+("Transcendence","Beaten, battered, and betrayed, John 117 leads the Spartans on a suicide mission to find the Halo and save humanity. But at what price?",48,6,68,null,9),
+("Sanctuary","",0,0,69,null,1),
+("Episode 2","",0,0,69,null,2),
+("Episode 3","",0,0,69,null,3);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("The Witcher",'2019-12-20',8,"Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",0,"United States of America","https://image.tmdb.org/t/p/original//foGkPxpw9h8zln81j63mix5B7m8.jpg","https://image.tmdb.org/t/p/original//cZ0d3rtvXPVvuiX22sP79K3Hmjz.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (7,54),
+(20,54),
+(24,54);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (54,'https://www.youtube.com/embed/eb90gqGYP9c'),
+(54,'https://www.youtube.com/embed/ndl1W4ltcmg');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2019-12-20',1,7,'https://image.tmdb.org/t/p/original//uZsV5ZIZQMHekWDQQMsBwN0C3yA.jpg',54),
+('Season 2','2021-12-17',2,6,'https://image.tmdb.org/t/p/original//7vjaCdMw15FEbXyLQTVa04URsPm.jpg',54),
+('Season 3','2023-06-29',3,5,'https://image.tmdb.org/t/p/original//hVlNFW0wT2Ow0ilXlfPyps8pHvt.jpg',54);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("The End's Beginning","Hostile townsfolk and a cunning mage greet Geralt in the town of Blaviken. Ciri finds her royal world upended when Nilfgaard sets its sights on Cintra.",62,7,70,null,1),
+("Four Marks","Bullied and neglected, Yennefer accidentally finds a means of escape. Geralt's hunt for a so-called devil goes to hell. Ciri seeks safety in numbers.",62,7,70,null,2),
+("Betrayer Moon","Geralt takes on another Witcher's unfinished business in a kingdom stalked by a ferocious beast. At a brutal cost, Yennefer forges a magical new future.",68,7,70,null,3),
+("Of Banquets, Bastards and Burials","Against his better judgment, Geralt accompanies Jaskier to a royal ball. Ciri wanders into an enchanted forest. Yennefer tries to protect her charges.",63,7,70,null,4),
+("Bottled Appetites","Heedless of warnings, Yennefer looks for a cure to restore what she's lost. Geralt inadvertently puts Jaskier in peril. The search for Ciri intensifies.",60,7,70,null,5),
+("Rare Species","A mysterious man tries to entice Geralt to join a hunt for a rampaging dragon, a quest that attracts a familiar face. Ciri questions who she can trust.",60,7,70,null,6),
+("Before a Fall","With the Continent at risk from Nilfgaard's rising power, Yennefer revisits her past, while Geralt reconsiders his obligation to the Law of Surprise.",48,7,70,null,7),
+("Much More","A terrifying pack of foes lays Geralt low. Yennefer and her fellow mages prepare to fight back. A shaken Ciri depends on the kindness of a stranger.",60,8,70,null,8),
+("A Grain of Truth","Geralt sets off with Ciri on a journey that leads him to an old friend. After the Battle of Sodden, Tissaia shows no mercy in her search for information.",64,7,71,null,1),
+("Kaer Morhen","Seeking a safe place for Ciri, Geralt heads for home, but danger lurks everywhere — even Kaer Morhen. Yennefer's dreams could be the key to her freedom.",59,6,71,null,2),
+("What Is Lost","Impatient with Geralt's methods, Ciri braves major obstacles to prove her mettle. Scheming and suspicion amongst the Brotherhood make Yennefer a target.",60,6,71,null,3),
+("Redanian Intelligence","A guest at Kaer Morhen extends a guiding hand to Ciri — and an invitation to Geralt. On the run in Redania, Yennefer seeks safety below ground.",56,6,71,null,4),
+("Turn Your Back","As a powerful mage joins the hunt for Ciri, she cuts a deal with Vesemir over his extraordinary discovery. Geralt explores the mystery of the monoliths.",57,6,71,null,5),
+("Dear Friend...","A close friend is lost — and another found — as Geralt helps Ciri learn more about her power. Cahir warns Fringilla to focus on their primary mission.",58,6,71,null,6),
+("Voleth Meir","Geralt turns to the bard Jaskier for help, Yennefer realizes just how special Ciri is, and tensions rise on the eve of Emperor Emhyr's visit to Cintra.",55,6,71,null,7),
+("Family","Geralt faces off with a demon targeting his nearest and dearest while the most powerful players on the Continent ramp up their pursuit of Ciri.",56,6,71,null,8),
+("Shaerrawedd","Geralt, Yennefer and Ciri journey to the far reaches of the Continent in search of a safe haven. King Vizimir puts his charming younger brother to use.",63,6,72,null,1),
+("Unbound","A shocking discovery awaits Geralt after he obtains information on Rience. Ciri's sense of justice causes problems. Jaskier performs for a royal fan.",58,5,72,null,2),
+("Reunion","Geralt seeks magical help from a family friend as Ciri and Yennefer clash over plans for the future. Philippa and Dijkstra scheme to get Vizimir in line.",61,5,72,null,3),
+("The Invitation","Yennefer pitches a bold idea to the Brotherhood, Geralt strikes a dangerous deal with a ferryman, and Triss digs into the mystery of the missing novices.",55,5,72,null,4),
+("The Art of Illusion","Yennefer and Geralt step out arm in arm and dressed to kill at a lavish ball, but all is not as it seems during a night of revelry and revelations.",50,5,72,null,5),
+("Everybody Has a Plan 'til They Get Punched in the Face","Betrayal and bloodshed rock the conclave when the hunt for Ciri comes to a head. As sides are chosen and enemies unmasked, nothing will ever be the same.",48,6,72,null,6),
+("Out of the Fire, Into the Frying Pan","Haunted by faces from the past, Ciri endures the ultimate test of survival on a desperate journey under the harshest of conditions.",52,5,72,null,7),
+("The Cost of Chaos","After the fateful events at Aretuza, Geralt and Yennefer struggle to pick up the pieces and reunite their family as war comes to the Continent.",65,6,72,null,8);
+
+  
+  insert into Movie (title,release_date,rating ,overview ,length ,country ,backdrop_path ,poster_path ,isSeries ,video_link)
+  values ("Raised by Wolves",'2020-09-03',7,"After Earth is ravaged by a great religious war, an atheistic android architect sends two of his creations, Mother and Father, to start a peaceful, godless colony on the planet Kepler-22b. Their treacherous task is jeopardized by the arrival of the Mithraic, a deeply devout religious order of surviving humans.",50,"United States of America","https://image.tmdb.org/t/p/original//na2xUduK8HviOFT97TiFG2MkJmY.jpg","https://image.tmdb.org/t/p/original//f6Xg4mTARZi2YDqAh3WwZuebcHO.jpg",1,null);
+  
+  insert into Genre_Movie (genre, movie)
+  values (24,55),
+(7,55);
+
+  
+  insert into MovieTrailer (movie,trailer_link)
+  values (55,'https://www.youtube.com/embed/mRMVtm2voVA');
+
+  
+  insert into Season (`name`,air_date,season_number,average_rating,poster_path,movie)
+  values ('Season 1','2020-09-03',1,8,'https://image.tmdb.org/t/p/original//xPe0aPgMltRwhVWXRDJgw0p0OEs.jpg',55),
+('Season 2','2022-02-03',2,7,'https://image.tmdb.org/t/p/original//j10Ztxyfxp7zqYI6GvaWO3HFnxO.jpg',55);
+
+  
+  insert into Episode (title,overview,length,rating,season,video_link, episode_number)
+  values ("Raised by Wolves","After Earth is rendered uninhabitable, Androids Mother and Father start a new settlement and family with human embryos on the planet Kepler-22b. Twelve years later, only one child, Campion, remains, and the arrival of an Ark of surviving humans called the Mithraic presents a threat that Mother has no choice but to confront.",50,8,73,null,1),
+("Pentagram","After a confrontation with Marcus, Mother discovers and takes five Mithraic children (Hunter, Tempest, Paul, Holly and Vita) back to her settlement. While Mother, Father and Campion, adjust to living with a new group of Earth-born children, Marcus struggles to survive alone on Kepler-22b.",50,8,73,null,2),
+("Virtual Faith","After the Mithraic kids fall sick, Campion believes Mother is poisoning them and plans an escape. As Mother and Father attempt to prove otherwise, Marcus and Sue work to convince the other surviving Mithraic to mount a rescue of the children, desperate to get their son Paul back.",50,8,73,null,3),
+("Nature's Course","Father tries to teach the children how to hunt some of Kepler-22b’s mysterious creatures for food. Meanwhile, the Mithraic make a stunning discovery that potentially fulfills a Mithraic prophecy, and a debate about how to proceed ignites a conflict between Marcus and the Mithraic leader, Ambrose.",50,7,73,null,4),
+("Infected Memory","Marcus moves forward with a plan to rescue the Mithraic children, but first he has to find them. Back at the settlement, Campion and Paul bond while on a hunting expedition with Father, and Mother attempts to learn more about her origins.",50,8,73,null,5),
+("Lost Paradise","After rekindling her connection to her creator, Mother finds herself distracted by intense feelings she didn’t know she was capable of having, unaware that Marcus, Sue and the Mithraic are closing in on the settlement.",50,7,73,null,6),
+("Faces","Marcus’s decisions stress his relationship to his family as he struggles to maintain his clout as leader of the Mithraic. Mother is able to see Marcus for who he truly is, which threatens his power and puts Mother in a precarious situation she might not recover from. Meanwhile, Campion is faced with a choice that could result in dire consequences.",50,7,73,null,7),
+("Mass","As Marcus continues to embrace his Mithraic devotion, Sue worries he may no longer have her and Paul’s best interests at heart. Meanwhile, Mother experiences what she believes to be malfunctions, and Hunter works on a secret project with Father.",50,7,73,null,8),
+("Umbilical","Sue is determined to keep the children safe, and in doing so, struggles with whether or not she can trust Mother. Meanwhile, a new threat arises and an increasingly erratic Marcus causes the Mithraic to question their leader.",50,7,73,null,9),
+("The Beginning","Paul begins displaying troubling behavior not unlike that of Marcus, leading to a shocking discovery. Father struggles with human-like emotions. Mother and Father discover a startling secret about the planet they’re on, just as a new threat arrives on Kepler-22b.",50,7,73,null,10),
+("The Collective","While Mother, Father, and the children face hostility from their new atheist collective, Marcus sets out to fill the walls of an ancient church with Sol’s worshippers.",53,7,74,null,1),
+("Seven","While the collective is tasked with hunting down the serpent, Mother is left to reconcile complicated emotions. Convinced that it will aid his cause, Marcus sets out to find the creature before the atheists do.",50,7,74,null,2),
+("Good Creatures","Using his mysterious new powers, Marcus rescues a group of Mithraic prisoners, while Mother discovers the serpent is not a maneater but an herbivore. Father works through his frustration over Mother’s decision to spare the serpent’s life by engrossing himself in his work project, the regeneration of an ancient android.",50,7,74,null,3),
+("Control","After the Trust uses Paul to strike back against Marcus, Mother confronts the Trust and threatens a coup. Meanwhile, on the run from Mother, Marcus has to keep his followers from losing faith as his powers suddenly disappear.",50,8,74,null,4),
+("King","Mother struggles to keep the collective from falling apart as she struggles to lead while Sue resorts to prayer in her desperation to cure Paul. Meanwhile, Marcus and his followers are given new hope as they discover an ancient temple. But as Marcus investigates the temple’s secrets, Decima and the rest of his followers are made to answer for their sins.",50,7,74,null,5),
+("The Tree","As they try and fail to open the seed box, Sue and Paul realize they need Marcus’s help. Sue makes a plan to break Marcus out of the brig while Mother is distracted with the imminent birth of Tempest’s baby. But when Sue, Paul and Marcus finally open the seed box, they make a horrifying discovery.",50,7,74,null,6),
+("Feeding","A reeling Marcus and Paul join forces with Mother to disarm the newly weaponized serpent before it wreaks unimaginable havoc.",50,7,74,null,7),
+("Happiness","Grandmother reveals her own agenda, Marcus seeks revenge, and Mother sets out to neutralize the serpent – but is leveled by the fallout.",50,7,74,null,8);
+
+  
+  
