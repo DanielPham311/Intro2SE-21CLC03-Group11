@@ -8,7 +8,7 @@ const passport = require("passport");
 const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
-const AppRouter = require("./routers/AppRouter");
+const AppRouter = require("./routers/ApiRouter");
 const MovieRouter = require('./routers/WatchMovieRouter')
 const { log } = require("console");
 

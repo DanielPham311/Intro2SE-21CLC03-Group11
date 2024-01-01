@@ -1,5 +1,7 @@
 const { Account, User, Admin, SubscriptionPlan } = require("../models"); // adjust the path to your models
 const crypto = require("crypto"); // create new hash object to avoid digest already called problem
+const passwordGenerator = require("password-generator");
+
 const AuthenticationService = {};
 AuthenticationService.getAdminById = async (id) => {
   try {
@@ -8,7 +10,7 @@ AuthenticationService.getAdminById = async (id) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 AuthenticationService.updateAdmin = async (id, updatedData) => {
   try {
@@ -20,7 +22,7 @@ AuthenticationService.updateAdmin = async (id, updatedData) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 AuthenticationService.deleteAdmin = async (id) => {
   try {
@@ -32,7 +34,7 @@ AuthenticationService.deleteAdmin = async (id) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 AuthenticationService.getUserById = async (userId) => {
   try {
@@ -41,12 +43,12 @@ AuthenticationService.getUserById = async (userId) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 AuthenticationService.getAllAccountInfo = async () => {
   const res = await Account.findAll();
   return res.map((res) => res.dataValues);
-}
+};
 
 AuthenticationService.getAccountByUsername = async (c_username) => {
   const account = await Account.findOne({
@@ -59,7 +61,7 @@ AuthenticationService.getAccountByUsername = async (c_username) => {
     return null;
   }
   return account.dataValues;
-}
+};
 
 AuthenticationService.getAccountByEmail = async (c_email) => {
   const account = await Account.findOne({
@@ -72,7 +74,7 @@ AuthenticationService.getAccountByEmail = async (c_email) => {
     return null;
   }
   return account.dataValues;
-}
+};
 
 AuthenticationService.verifyAccount = async (c_username, c_password) => {
   const hash = crypto.createHash("sha256"); // create new hash object to avoid digest already called problem
@@ -81,7 +83,7 @@ AuthenticationService.verifyAccount = async (c_username, c_password) => {
   const account = await AuthenticationService.getAccountByUsername(c_username);
   if (account == null) return false;
   return digest == account.password;
-}
+};
 
 AuthenticationService.createAdmin = async (adminData) => {
   try {
@@ -89,7 +91,7 @@ AuthenticationService.createAdmin = async (adminData) => {
   } catch (error) {
     throw error;
   }
-}
+};
 
 AuthenticationService.createSubscriptionPlan = async (subscriptionPlanData) => {
   try {
@@ -97,8 +99,8 @@ AuthenticationService.createSubscriptionPlan = async (subscriptionPlanData) => {
   } catch (error) {
     throw error;
   }
-}
-AuthenticationService.createUser =async (UserData) => {
+};
+AuthenticationService.createUser = async (UserData) => {
   const newUser = await User.create(UserData);
   // first user account to be created will be create with Free Subscription Plan, they can upgrade later
   const defaultPlan = await createSubscriptionPlan({
@@ -106,10 +108,15 @@ AuthenticationService.createUser =async (UserData) => {
     subscription_id: 1,
   });
   return newUser;
-}
+};
 
 // CREATE operation, role: 'admin','user'
-AuthenticationService.createAccount = async (c_username, c_password, c_role, c_email) => {
+AuthenticationService.createAccount = async (
+  c_username,
+  c_password,
+  c_role,
+  c_email
+) => {
   if (c_role == null) {
     console.log("Role cannot be null");
     return null;
@@ -136,7 +143,7 @@ AuthenticationService.createAccount = async (c_username, c_password, c_role, c_e
     const newAdmin = await createAdmin(newAccount.dataValues.account_id, null);
   }
   return newAccount;
-}
+};
 
 // UPDATE operation
 AuthenticationService.updateAccount = async (accountId, newData) => {
@@ -144,14 +151,17 @@ AuthenticationService.updateAccount = async (accountId, newData) => {
     where: { account_id: accountId },
   });
   return updatedRowsCount > 0;
-}
+};
 
 AuthenticationService.getAccountById = async (accountId) => {
   const account = await Account.findByPk(accountId);
   return account;
-}
+};
 
-AuthenticationService.updateAccountPassword= async (accountId, newPassword) => {
+AuthenticationService.updateAccountPassword = async (
+  accountId,
+  newPassword
+) => {
   const crypto = require("crypto");
   const hash = crypto.createHash("sha256");
   hash.update(newPassword);
@@ -163,7 +173,7 @@ AuthenticationService.updateAccountPassword= async (accountId, newPassword) => {
     }
   );
   return updatedRowsCount > 0;
-}
+};
 
 // DELETE operation
 // you can use either userID or accountID here, they are the same
@@ -177,6 +187,18 @@ AuthenticationService.deleteAccount = async (accountId) => {
     where: { account_id: accountId },
   });
   return deletedAcc > 0;
-}
+};
+
+AuthenticationService.generateNewPassword = () => {
+  const passwordConfig = {
+    length: 12, // Set the length of the password
+    numbers: true, // Include numbers
+    symbols: true, // Include symbols
+    uppercase: true, // Include uppercase letters
+    lowercase: true, // Include lowercase letters
+  };
+
+  return passwordGenerator(passwordConfig);
+};
 
 module.exports = AuthenticationService;

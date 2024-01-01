@@ -23,9 +23,11 @@
     "express-session": "^1.17.3",
     "mysql": "^2.18.1",
     "mysql2": "^3.6.5",
+    "nodemailer": "^6.9.8",
     "nodemon": "^3.0.2",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
+    "password-generator": "^2.3.2",
     "sequelize": "^6.35.1"
   }
 }

@@ -36,7 +36,7 @@
         <h1 class="text-dark my-2">Forgot Password</h1>
       </div>
       <p class="text-dark">How would you like to reset your password?</p>
-      <form action="" method="get" id="forgotPassword">
+      <form action="" method="POST" id="forgotPassword">
         <div class="radioContainer d-flex flex-column">
           <div class="form-check form-check-inline">
             <input
@@ -66,6 +66,7 @@
         </p>
         <div class="mb-3">
           <input
+            id="user_input"
             type="text"
             class="form-control"
             name="credentials"
@@ -76,10 +77,10 @@
         </div>
       </form>
       <button
+        id="submitBtn"
         type="submit"
         class="btn btn-danger mt-3"
         form="forgotPassword"
-        onclick="resetPassword()"
       >
         Reset Password
       </button>
@@ -87,4 +88,4 @@
   </div>
 </div>
 
-<script src="/js/s_forgot.js"></script>
+<script defer src="/js/s_forgot.js"></script>
