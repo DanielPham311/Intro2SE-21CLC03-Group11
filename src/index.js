@@ -8,9 +8,9 @@ const passport = require("passport");
 const authenticateRoute = require("./routers/authenRouter");
 const { isAuth, isAdmin } = require("./middlewares/authenticateMiddleware");
 const path = require("path");
-const AppRouter = require("./routers/ApiRouter");
-const MovieRouter = require('./routers/WatchMovieRouter')
-const { log } = require("console");
+const AppRouter = require("./routers/AppRouter");
+const MovieRouter = require("./routers/WatchMovieRouter");
+const ApiRouter = require('./routers/ApiRouter');
 
 // set the view engine
 app.engine(
@@ -25,17 +25,17 @@ app.engine(
       allowProtoMethodsByDefault: true,
     },
     helpers: {
-      half: function(a) {
-        return Math.round(a/2)
+      half: function (a) {
+        return Math.round(a / 2);
       },
-      Array: function(len) {
-        let array = []
-        for (let i=0; i<len; ++i) {
-          array.push(i)
+      Array: function (len) {
+        let array = [];
+        for (let i = 0; i < len; ++i) {
+          array.push(i);
         }
-        return array
-      }
-    }
+        return array;
+      },
+    },
   })
 );
 
@@ -47,7 +47,6 @@ app.use(express.static(path.join(__dirname, "static")));
 // Cau hinh cho phep doc du lieu gui len bang phuong thuc POST
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
 app.use(cookieParser("COOKIE_SECRET"));
 
 // THiết lập sử dụng session và lưu trữ session trên redis
@@ -71,6 +70,7 @@ require("./config/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authenticateRoute);
+app.use(ApiRouter);
 app.use(isAuth);
 app.use((req, res, next) => {
   const user = req.user;
@@ -84,7 +84,7 @@ app.use((req, res, next) => {
   next();
 });
 app.use(AppRouter);
-app.use('/watch', MovieRouter);
+app.use("/watch", MovieRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);

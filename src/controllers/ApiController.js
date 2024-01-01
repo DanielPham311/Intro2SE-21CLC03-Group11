@@ -4,14 +4,14 @@ const MailService = require("../services/SendEmailService");
 const controller = {};
 
 controller.resetPasswordByEmail = async (req, res) => {
-  const data = JSON.parse(req.body).data || [];
-  if (data == []) {
-    res.status(401).json("Email is null");
+  const { type, data } = req.body;
+  if (data == null) {
+    res.status(401).json({ message: "Your email is not qualified" });
   }
 
   const user = await AccountService.getAccountByEmail(data);
   if (user == undefined) {
-    res.status(401).json("User not found");
+    return res.status(401).json({ message: "User not found" });
   }
 
   try {
@@ -22,14 +22,14 @@ controller.resetPasswordByEmail = async (req, res) => {
     // send email to user
     MailService.sendEmail(user.email, newPassword);
   } catch (err) {
-    res.status(501).json("Server error");
+    return res.status(501).json({ message: "Server error" });
   }
 
-  res.status(200).json(JSON.stringify("Password had been reset"));
+  return res.status(200).json({ message: "Password has been reset" });
 };
 
 controller.resetPasswordByPhoneNumbers = async (req, res) => {
-  res.status(200).json(JSON.stringify("hello world"));
+  res.status(200).json({ message: "TEST" });
 };
 
 module.exports = controller;

@@ -5,13 +5,13 @@ MailService.sendEmail = async (userEmail, newPassword) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "your-email@gmail.com",
-      pass: "your-email-password",
+      user: "chattingapplication21ktpm4@gmail.com",
+      pass: "testpassword123",
     },
   });
 
   const mailOptions = {
-    from: "your-email@gmail.com",
+    from: "chattingapplication21ktpm4@gmail.com",
     to: userEmail,
     subject: "Password Reset",
     text: `Your new password is: ${newPassword}`,
