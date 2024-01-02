@@ -3,7 +3,7 @@
     <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg">
       <div class="container-fluid">
-        <a class="navbar-brand mx-auto" href="#">
+        <a class="navbar-brand mx-auto" href="/login">
           <img src="/resources/logo2.png" alt="logo" width="200" />
         </a>
         <button
@@ -32,38 +32,74 @@
   </header>
   <div class="registerBlock2">
     <div class="paddingBlock">
-      <div class="title">
+      <div class="title text-center">
         <h1>Register</h1>
       </div>
 
       <div class="inputs">
         <!-- Bootstrap Form -->
         <form action="/register" id="formSubmit" method="POST">
+          <label for="name">Enter your name here</label>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              id="name"
+              required
+              placeholder="E.g: Daniel Naroditsky"
+            />
+          </div>
+          <label for="birthday">Enter your date of birth here</label>
+          <div class="mb-3">
+            <input
+              type="date"
+              class="form-control"
+              name="birthday"
+              id="birthday"
+              required
+            />
+          </div>
+          <label for="emailAddress">Email Address</label>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              name="emailAddress"
+              id="emailAddress"
+              required
+            />
+          </div>
+          <label for="username">Username</label>
           <div class="mb-3">
             <input
               type="text"
               class="form-control"
               name="username"
+              id="username"
               required
-              placeholder="Email or phone number"
             />
           </div>
+          <label for="password">Password</label>
           <div class="mb-3">
             <input
               type="password"
               class="form-control"
               name="password"
+              id="password"
               required
-              placeholder="Password"
+              placeholder="Your password should be 8-14 characters long"
             />
           </div>
+          <label for="confirmPassword">Confirm Password</label>
           <div class="mb-3">
             <input
               type="password"
               class="form-control"
               name="confirmPassword"
+              id="confirmPassword"
               required
-              placeholder="Confirm Password"
+              placeholder="Re-enter your password"
             />
           </div>
           <div class="button text-center">
