@@ -11,18 +11,29 @@ router.post(
 );
 
 router.post("/register", async (req, res, next) => {
-  const { username, password } = req.body;
-  const Account = await AuthenService.createAccount(
-    username,
-    password,
-    "user",
-    username
-  ); // default user
-  if (Account != undefined) {
-    res.redirect("/login");
+  const { username, password, name, birthday, emailAddress } = req.body;
+  try {
+    const Account = await AuthenService.createAccount(
+      username,
+      password,
+      "user",
+      emailAddress,
+      {
+        name: name,
+        birthday: birthday,
+      }
+    ); // default user
+    if (Account != undefined) {
+      res.status(200).json({
+        message: "Account created",
+      });
+    }
+  } catch (err) {
+    const message = err.message;
+    res.status(401).json({
+      message: message,
+    });
   }
-
-  res.render("/register", { layout: "functional_layout" });
 });
 
 // When you visit http://localhost:3000/login, you will see "Login Page"

@@ -1,4 +1,10 @@
-const { Account, User, Admin, SubscriptionPlan } = require("../models"); // adjust the path to your models
+const {
+  Account,
+  User,
+  Admin,
+  SubscriptionPlan,
+  sequelize,
+} = require("../models"); // adjust the path to your models
 const crypto = require("crypto"); // create new hash object to avoid digest already called problem
 const passwordGenerator = require("password-generator");
 
@@ -93,20 +99,26 @@ AuthenticationService.createAdmin = async (adminData) => {
   }
 };
 
-AuthenticationService.createSubscriptionPlan = async (subscriptionPlanData) => {
+AuthenticationService.createSubscriptionPlan = async (
+  subscriptionPlanData,
+  transaction
+) => {
   try {
-    return await SubscriptionPlan.create(subscriptionPlanData);
+    return await SubscriptionPlan.create(subscriptionPlanData, transaction);
   } catch (error) {
     throw error;
   }
 };
-AuthenticationService.createUser = async (UserData) => {
-  const newUser = await User.create(UserData);
+AuthenticationService.createUser = async (UserData, transaction) => {
+  const newUser = await User.create(UserData, transaction);
   // first user account to be created will be create with Free Subscription Plan, they can upgrade later
-  const defaultPlan = await createSubscriptionPlan({
-    user_id: newUser.dataValues.user_id,
-    subscription_id: 1,
-  });
+  const defaultPlan = await AuthenticationService.createSubscriptionPlan(
+    {
+      user_id: newUser.dataValues.user_id,
+      subscription_id: 1,
+    },
+    transaction
+  );
   return newUser;
 };
 
@@ -115,7 +127,8 @@ AuthenticationService.createAccount = async (
   c_username,
   c_password,
   c_role,
-  c_email
+  c_email,
+  user_data
 ) => {
   if (c_role == null) {
     console.log("Role cannot be null");
@@ -127,22 +140,52 @@ AuthenticationService.createAccount = async (
     hash.update(c_password);
     digest = hash.digest("hex");
   }
-  const newAccount = await Account.create({
-    username: c_username,
-    password: digest,
-    role: c_role,
-    email: c_email,
-  });
-  if (c_role == "user") {
-    // insert into User table
-    const newUser = await AuthenticationService.createUser({
-      user_id: newAccount.dataValues.account_id,
-    });
-  } else if (c_role == "admin") {
-    // insert into Admin table
-    const newAdmin = await createAdmin(newAccount.dataValues.account_id, null);
+
+  const t = await sequelize.transaction();
+  try {
+    const newAccount = await Account.create(
+      {
+        username: c_username,
+        password: digest,
+        role: c_role,
+        email: c_email,
+      },
+      {
+        transaction: t,
+      }
+    );
+    if (c_role == "user") {
+      const input = {
+        user_id: newAccount.dataValues.account_id,
+        name: user_data.name,
+        birthday: user_data.birthday,
+        parental_mode: 1,
+      }
+      // insert into User table
+      const newUser = await AuthenticationService.createUser(
+        input,
+        { transaction: t }
+      );
+    } else if (c_role == "admin") {
+      // insert into Admin table
+      const newAdmin = await createAdmin(
+        newAccount.dataValues.account_id,
+        null
+      );
+    }
+    await t.commit();
+    return newAccount;
+  } catch (error) {
+    console.log(error);
+    let errorMessage = "An error occurred. Please try again.";
+
+    if (error.errors && error.errors.length > 0) {
+      errorMessage = error.errors[0].message;
+    }
+    await t.rollback();
+    throw new Error(errorMessage);
   }
-  return newAccount;
+  return null;
 };
 
 // UPDATE operation
@@ -190,7 +233,8 @@ AuthenticationService.deleteAccount = async (accountId) => {
 };
 
 AuthenticationService.generateNewPassword = (length) => {
-  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@";
+  const charset =
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@";
   let password = "";
 
   for (let i = 0; i < length; i++) {
