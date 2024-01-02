@@ -76,7 +76,7 @@ AuthenticationService.getAccountByEmail = async (c_email) => {
     },
   });
   if (account == null) {
-    console.log("Username not exist");
+    console.log("User not exist");
     return null;
   }
   return account.dataValues;

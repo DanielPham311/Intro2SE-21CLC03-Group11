@@ -3,16 +3,23 @@ const MailService = require("../services/SendEmailService");
 
 const controller = {};
 
+controller.isValidEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+  return emailRegex.test(email);
+}
+
 controller.resetPasswordByEmail = async (req, res) => {
   const DEFAULT_PASSWORD_LENGTH = 12;
   const { type, data } = req.body;
-  if (data == null) {
-    res.status(401).json({ message: "Your email is not qualified" });
+  if (data == null || !controller.isValidEmail(data)) {
+    res.status(400).json({ message: "Your email is not qualified" });
+    return;
   }
 
   const user = await AccountService.getAccountByEmail(data);
-  if (user == undefined) {
-    return res.status(401).json({ message: "User not found" });
+  if (user == undefined || user == null) {
+    return res.status(400).json({ message: "User not found" });
   }
 
   try {

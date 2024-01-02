@@ -1,10 +1,8 @@
 var submitBtn = document.querySelector("#submitBtn");
 submitBtn.addEventListener("click", async (event) => {
   event.preventDefault();
-  var resetMethod = document.querySelector(
-    'input[name="method"]:checked'
-  ).value;
-  var userInput = document.getElementById("user_input").value;
+  var resetMethod = "email";
+  var userInput = document.getElementById("emailInput").value;
   console.log(userInput);
 
   // get detail spot
@@ -31,8 +29,19 @@ submitBtn.addEventListener("click", async (event) => {
       });
 
       if (!response.ok) {
-        
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        let errorMessage = "An error occurred. Please try again.";
+
+            try {
+                // Attempt to parse the response body as JSON
+                const errorBody = await response.json();
+                if (errorBody.message) {
+                    errorMessage = errorBody.message.toUpperCase();
+                }
+            } catch (parseError) {
+                console.error("Error parsing JSON:", parseError);
+            }
+
+            throw new Error(errorMessage);
       }
 
       // Assuming the response body is in JSON format
@@ -48,8 +57,8 @@ submitBtn.addEventListener("click", async (event) => {
         // The result object contains information about the user's interaction
         if (result.isConfirmed) {
           // Perform your custom action here
-          console.log('Custom action triggered!');
-          window.location.href = '/login'; //redirect to login
+          console.log("Custom action triggered!");
+          window.location.href = "/login"; //redirect to login
         }
       });
       // Handle the result as needed
@@ -60,11 +69,8 @@ submitBtn.addEventListener("click", async (event) => {
       Swal.fire({
         icon: "error", // or 'error', 'warning', 'info'
         title: "Error",
-        text: "Your reset request in not handled. Please try again", // Assuming there is a 'message' property in the response body
+        text: error.message, // Assuming there is a 'message' property in the response body
       });
     }
-  } else if (resetMethod === "sms") {
-    // Password reset via SMS logic (for demo purposes)
-    console.log("Resetting password via SMS");
   }
 });
