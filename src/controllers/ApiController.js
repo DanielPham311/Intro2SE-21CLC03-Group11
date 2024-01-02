@@ -4,6 +4,7 @@ const MailService = require("../services/SendEmailService");
 const controller = {};
 
 controller.resetPasswordByEmail = async (req, res) => {
+  const DEFAULT_PASSWORD_LENGTH = 12;
   const { type, data } = req.body;
   if (data == null) {
     res.status(401).json({ message: "Your email is not qualified" });
@@ -16,7 +17,8 @@ controller.resetPasswordByEmail = async (req, res) => {
 
   try {
     // generate new password
-    const newPassword = AccountService.generateNewPassword();
+    const newPassword = AccountService.generateNewPassword(DEFAULT_PASSWORD_LENGTH);
+    console.log('New Password: [', newPassword, ']');
     // reset password
     await AccountService.updateAccountPassword(user.account_id, newPassword);
     // send email to user

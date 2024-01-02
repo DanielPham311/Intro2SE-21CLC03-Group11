@@ -34,11 +34,33 @@ submitBtn.addEventListener("click", async (event) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      console.log(response);
+      // Assuming the response body is in JSON format
+      const responseBody = await response.json();
+      console.log(responseBody);
+
+      // Use SweetAlert2 to show a notification
+      Swal.fire({
+        icon: "success", // or 'error', 'warning', 'info'
+        title: "Success",
+        text: responseBody.message, // Assuming there is a 'message' property in the response body
+      }).then((result) => {
+        // The result object contains information about the user's interaction
+        if (result.isConfirmed) {
+          // Perform your custom action here
+          console.log('Custom action triggered!');
+          window.location.href = '/login'; //redirect to login
+        }
+      });
       // Handle the result as needed
     } catch (error) {
       console.error("Error:", error);
       // Handle errors
+
+      Swal.fire({
+        icon: "error", // or 'error', 'warning', 'info'
+        title: "Error",
+        text: "Your reset request in not handled. Please try again", // Assuming there is a 'message' property in the response body
+      });
     }
   } else if (resetMethod === "sms") {
     // Password reset via SMS logic (for demo purposes)

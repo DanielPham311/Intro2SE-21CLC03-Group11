@@ -135,7 +135,7 @@ AuthenticationService.createAccount = async (
   });
   if (c_role == "user") {
     // insert into User table
-    const newUser = await createUser({
+    const newUser = await AuthenticationService.createUser({
       user_id: newAccount.dataValues.account_id,
     });
   } else if (c_role == "admin") {
@@ -189,16 +189,16 @@ AuthenticationService.deleteAccount = async (accountId) => {
   return deletedAcc > 0;
 };
 
-AuthenticationService.generateNewPassword = () => {
-  const passwordConfig = {
-    length: 12, // Set the length of the password
-    numbers: true, // Include numbers
-    symbols: true, // Include symbols
-    uppercase: true, // Include uppercase letters
-    lowercase: true, // Include lowercase letters
-  };
+AuthenticationService.generateNewPassword = (length) => {
+  const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@";
+  let password = "";
 
-  return passwordGenerator(passwordConfig);
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset.charAt(randomIndex);
+  }
+
+  return password;
 };
 
 module.exports = AuthenticationService;

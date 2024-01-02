@@ -6,12 +6,12 @@ MailService.sendEmail = async (userEmail, newPassword) => {
     service: "gmail",
     auth: {
       user: "chattingapplication21ktpm4@gmail.com",
-      pass: "testpassword123",
+      pass: "ehdd vajo acyl npos",
     },
   });
 
   const mailOptions = {
-    from: "chattingapplication21ktpm4@gmail.com",
+    from: "noreply.netflex@gmail.com",
     to: userEmail,
     subject: "Password Reset",
     text: `Your new password is: ${newPassword}`,
