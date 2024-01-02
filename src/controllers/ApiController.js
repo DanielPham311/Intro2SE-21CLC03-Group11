@@ -7,7 +7,7 @@ controller.isValidEmail = (email) => {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
   return emailRegex.test(email);
-}
+};
 
 controller.resetPasswordByEmail = async (req, res) => {
   const DEFAULT_PASSWORD_LENGTH = 12;
@@ -24,8 +24,10 @@ controller.resetPasswordByEmail = async (req, res) => {
 
   try {
     // generate new password
-    const newPassword = AccountService.generateNewPassword(DEFAULT_PASSWORD_LENGTH);
-    console.log('New Password: [', newPassword, ']');
+    const newPassword = AccountService.generateNewPassword(
+      DEFAULT_PASSWORD_LENGTH
+    );
+    console.log("New Password: [", newPassword, "]");
     // reset password
     await AccountService.updateAccountPassword(user.account_id, newPassword);
     // send email to user

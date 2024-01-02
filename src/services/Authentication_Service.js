@@ -160,12 +160,11 @@ AuthenticationService.createAccount = async (
         name: user_data.name,
         birthday: user_data.birthday,
         parental_mode: 1,
-      }
+      };
       // insert into User table
-      const newUser = await AuthenticationService.createUser(
-        input,
-        { transaction: t }
-      );
+      const newUser = await AuthenticationService.createUser(input, {
+        transaction: t,
+      });
     } else if (c_role == "admin") {
       // insert into Admin table
       const newAdmin = await createAdmin(

@@ -31,17 +31,17 @@ submitBtn.addEventListener("click", async (event) => {
       if (!response.ok) {
         let errorMessage = "An error occurred. Please try again.";
 
-            try {
-                // Attempt to parse the response body as JSON
-                const errorBody = await response.json();
-                if (errorBody.message) {
-                    errorMessage = errorBody.message.toUpperCase();
-                }
-            } catch (parseError) {
-                console.error("Error parsing JSON:", parseError);
-            }
+        try {
+          // Attempt to parse the response body as JSON
+          const errorBody = await response.json();
+          if (errorBody.message) {
+            errorMessage = errorBody.message.toUpperCase();
+          }
+        } catch (parseError) {
+          console.error("Error parsing JSON:", parseError);
+        }
 
-            throw new Error(errorMessage);
+        throw new Error(errorMessage);
       }
 
       // Assuming the response body is in JSON format

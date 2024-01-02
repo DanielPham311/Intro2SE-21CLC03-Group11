@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ApiController = require("../controllers/ApiController");
 
 router.post("/resetPassword", async (req, res) => {
-  const {type, data} = req.body;
+  const { type, data } = req.body;
   if (type == "email") {
     ApiController.resetPasswordByEmail(req, res);
   }
