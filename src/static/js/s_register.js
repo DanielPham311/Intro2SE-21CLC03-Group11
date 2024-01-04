@@ -33,7 +33,7 @@ document
       Swal.fire({
         icon: "error", // or 'error', 'warning', 'info'
         title: "Error",
-        text: "confirm password is not the same as password", // Assuming there is a 'message' property in the response body
+        text: "Confirm password does not match password", // Assuming there is a 'message' property in the response body
       });
       return;
     }
