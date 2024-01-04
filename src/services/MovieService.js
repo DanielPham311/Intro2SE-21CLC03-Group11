@@ -47,7 +47,7 @@ MovieService.searchByTitle = async (movie_name) => {
         { model: Genre },
         { model: MovieTrailer }
       ],
-      limit: 15
+      limit: 7
     });
     return movies.map((movies) => movies.dataValues);
   } catch (error) {
@@ -79,7 +79,6 @@ MovieService.searchMovieByGenres = async (genreList) => {
     const results = await Promise.all(
       genreList.map((genreName) =>
         Movie.findAll({
-          attributes: ["title"],
           include: [
             {
               model: Genre,
@@ -96,7 +95,7 @@ MovieService.searchMovieByGenres = async (genreList) => {
       a.filter((c) => b.some((d) => d.title === c.title))
     );
     // Extract movie titles from the intersection
-    const limitedIntersection = intersection.slice(0, 15);
+    const limitedIntersection = intersection.slice(0, 7);
     // Extract movie titles from the limited intersection
     return limitedIntersection.map((movie) => movie.dataValues);
     // return intersection.map((movie) => movie.dataValues);
