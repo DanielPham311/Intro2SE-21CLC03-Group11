@@ -1,5 +1,6 @@
 const { Account, User,Admin, SubscriptionPlan, Subscription, Bill, Episode, Season, Comment,CreditCard, MovieTrailer, WatchHistory,WatchList , Genre, Movie, Award} = require('../models'); // adjust the path to your models
-async function addCreditCard(creditCardData) {
+const PaymentService = {};
+PaymentService.addCreditCard = async (creditCardData) => {
     try {
       return await CreditCard.create(creditCardData);
     } catch (error) {
@@ -7,7 +8,7 @@ async function addCreditCard(creditCardData) {
     }
   }
 
-  async function getCreditCardById(id) {
+  PaymentService.getCreditCardById = async (id) => {
     try {
       return await CreditCard.findByPk(id);
     } catch (error) {
@@ -15,7 +16,7 @@ async function addCreditCard(creditCardData) {
     }
   }
 
-  async function updateCreditCard(id, updatedData) {
+  PaymentService.updateCreditCard = async (id, updatedData) => {
     try {
       let creditCard = await CreditCard.findByPk(id);
       if (!creditCard) {
@@ -27,7 +28,7 @@ async function addCreditCard(creditCardData) {
     }
   }
 
-  async function deleteCreditCard(id) {
+  PaymentService.deleteCreditCard = async (id) => {
     try {
       let creditCard = await CreditCard.findByPk(id);
       if (!creditCard) {
@@ -39,7 +40,7 @@ async function addCreditCard(creditCardData) {
     }
   }
 
-async function createInvoice(billData) {
+PaymentService.createInvoice = async (billData) => {
     try {
       return await Bill.create(billData);
     } catch (error) {
@@ -47,7 +48,7 @@ async function createInvoice(billData) {
     }
   }
 
-  async function getInvoiceById(id) {
+  PaymentService.getInvoiceById = async (id) => {
     try {
       return await Bill.findByPk(id);
     } catch (error) {
@@ -55,7 +56,7 @@ async function createInvoice(billData) {
     }
   }
 
-  async function updateInvoice(id, updatedData) {
+  PaymentService.updateInvoice = async (id, updatedData) => {
     try {
       let bill = await Bill.findByPk(id);
       if (!bill) {
@@ -67,7 +68,7 @@ async function createInvoice(billData) {
     }
   }
 
-  async function deleteInvoice(Bill_id) {
+  PaymentService.deleteInvoice = async (Bill_id) => {
     try {
       let bill = await Bill.findByPk(Bill_id);
       if (!bill) {
@@ -79,9 +80,4 @@ async function createInvoice(billData) {
     }
   }
 
-module.exports = {
-    createInvoice: createInvoice,
-    getInvoiceById: getInvoiceById,
-    updateInvoice: updateInvoice,
-    deleteInvoice: deleteInvoice,
-}
+module.exports = PaymentService;

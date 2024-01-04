@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     class Account extends Model {
       static associate(models) {
         // define association here
-        Account.hasOne(models.User, { foreignKey: 'user_id',onDelete: 'CASCADE' ,hooks: true}); // cascade not working dont know why
+        Account.hasOne(models.User, { foreignKey: 'user_id',onDelete: 'CASCADE' ,hooks: true});
         Account.hasOne(models.Admin, { foreignKey: 'admin_id',onDelete: 'CASCADE' , hooks: true});
       }
     }

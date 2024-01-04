@@ -155,11 +155,15 @@ AuthenticationService.createAccount = async (
       }
     );
     if (c_role == "user") {
+      const now = new Date();
+      const userBirthday = new Date(user_data.birthday);
+      const c_age = now.getFullYear() - userBirthday.getFullYear();
       const input = {
         user_id: newAccount.dataValues.account_id,
         name: user_data.name,
+        age: c_age,
         birthday: user_data.birthday,
-        parental_mode: 1,
+        parental_mode: 0,
       };
       // insert into User table
       const newUser = await AuthenticationService.createUser(input, {

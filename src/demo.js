@@ -22,13 +22,15 @@ const stuff = async () => {
     //     if (input != '') stuff();
     // });
     // let siu = await movie.findTopMovieRating(5); // CategorizeMovieByGenres(['Adventure','Action','Thriller']);
-    let siu = await movie.searchByTitle("spider");
-    siu[0].MovieTrailers.forEach(trailer => {
-      console.log(trailer.dataValues);
-    });
+
+    // let siu = await movie.searchByTitle("spider");
+    // siu[0].MovieTrailers.forEach(trailer => {
+    //   console.log(trailer.dataValues);
+    // });
+
     // console.log(siu[0].MovieTrailers);
 }
-
+auth.createAccount('wtfisgoingon','siuu','user',null,{name: 'let me go', birthday: '2003-02-01'});
 stuff();
 
 // Account will automatically hash the password so dont worry
