@@ -1,4 +1,4 @@
-const { move } = require('../routers/WatchMovieRouter');
+// const { move } = require('../routers/WatchMovieRouter');
 const MovieService = require('../services/MovieService')
 
 const controller = {};
@@ -20,8 +20,32 @@ controller.movie_detail = async (req, res) => {
 }
 
 controller.search = async (req, res) => {
-    
-    res.json(req.user);
+    const movieName = req.body.movieName;
+    console.log(movieName);
+    try {
+        const movie = await MovieService.searchByTitle(movieName);
+        console.log(movie);
+        res.render('movieSearchResult', {
+            layout: 'layout',
+            unfinishedList: movie
+         });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+controller.searchByGenre = async (req, res) => {
+    const genreList = req.body.genres;
+    try {
+        const movie = await MovieService.CategorizeMovieByGenres(genreList);
+        console.log(movie);
+        res.render('movieSearchResult', {
+            layout: 'layout',
+            unfinishedList: movie
+         });
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 module.exports = controller;

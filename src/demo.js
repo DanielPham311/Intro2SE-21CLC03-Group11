@@ -23,14 +23,14 @@ const stuff = async () => {
     // });
     // let siu = await movie.findTopMovieRating(5); // CategorizeMovieByGenres(['Adventure','Action','Thriller']);
 
-    // let siu = await movie.searchByTitle("spider");
+    let siu = await movie.searchByTitle("spider");
+    console.log(siu);
     // siu[0].MovieTrailers.forEach(trailer => {
     //   console.log(trailer.dataValues);
     // });
 
     // console.log(siu[0].MovieTrailers);
 }
-auth.createAccount('wtfisgoingon','siuu','user',null,{name: 'let me go', birthday: '2003-02-01'});
 stuff();
 
 // Account will automatically hash the password so dont worry

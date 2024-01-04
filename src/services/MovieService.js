@@ -46,7 +46,8 @@ MovieService.searchByTitle = async (movie_name) => {
       include: [
         { model: Genre },
         { model: MovieTrailer }
-      ]
+      ],
+      limit: 15
     });
     return movies.map((movies) => movies.dataValues);
   } catch (error) {
@@ -72,7 +73,7 @@ MovieService.getMovieTrailer = async (movieId) => {
   }
 };
 
-MovieService.CategorizeMovieByGenres = async (genreList) => {
+MovieService.searchMovieByGenres = async (genreList) => {
   try {
     // Query each movie in parallel and return many arrays, each arrays is a list of movies that belong to a specific genre in genreList
     const results = await Promise.all(
@@ -95,7 +96,10 @@ MovieService.CategorizeMovieByGenres = async (genreList) => {
       a.filter((c) => b.some((d) => d.title === c.title))
     );
     // Extract movie titles from the intersection
-    return intersection.map((movie) => movie.dataValues);
+    const limitedIntersection = intersection.slice(0, 15);
+    // Extract movie titles from the limited intersection
+    return limitedIntersection.map((movie) => movie.dataValues);
+    // return intersection.map((movie) => movie.dataValues);
   } catch (error) {
     throw error;
   }
