@@ -21,7 +21,7 @@
       <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
           <li class="nav-item m-2">
-            <a class="nav-link active" href="#" aria-current="page">Home
+            <a class="nav-link active" href="/" aria-current="page">Home
               <span class="visually-hidden">(current)</span></a>
           </li>
           <li class="nav-item m-2">
@@ -64,103 +64,46 @@
 
 <main>
   <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
-    <i class="bi bi-play-fill" id="play-title"></i>Unfinished Movies
+    <i class="bi bi-play-fill" id="play-title"></i> Search results
   </h2>
+  <div class="d-flex flex-row bg-dark pt-5">
+    {{#unless result }}
+      <h2 class="text-white fs-2 fw-bold ps-5 ms-5 pb-5 mb-5"> No result found </h2>
+    {{/unless}}
+    {{#each result}} <!--For each movie in that carousel item (4)-->
+    <div class="card bg-black bg-opacity-50">
+      <img
+        src="{{poster_path}}"
+        class="card-img-top w-100 h-100"
+        alt="{{movie_id}}"
+      />
+      <div class="card-body text-white text-center">
+        <h5
+          class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
+        >
+          {{#each Genres}}
+            {{genre_name}}{{#unless @last}}/{{/unless}}
+          {{/each}}
+        </h5>
+        <p class="d-block justify-content-start align-items-start">
 
-  <div id="unfinished" class="carousel slide" data-bs-ride="carousel">
-    <ol class="carousel-indicators">
-      <li
-        data-bs-target="#unfinished"
-        data-bs-slide-to="0"
-        class="active"
-        aria-current="true"
-        aria-label="First slide"
-      ></li>
-      <li
-        data-bs-target="#unfinished"
-        data-bs-slide-to="1"
-        aria-label="Second slide"
-      ></li>
-      <li
-        data-bs-target="#unfinished"
-        data-bs-slide-to="2"
-        aria-label="Third slide"
-      ></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-      <!--Here we have 3 unfinished list (3 carousel items), each has 4 movies (unfinishedMovie) = 12 movies total-->
-      {{#each unfinishedList}} <!---For each carousel items (3)-->
-        <div class="carousel-item {{#if @first }}active{{/if}}">
-          <div class="cards-wrapper d-flex bg-dark">
-            {{#each unfinishedMovie}} <!--For each movie in that carousel item (4)-->
-              <div class="card bg-black bg-opacity-50">
-                <img
-                  src="{{poster_path}}"
-                  class="card-img-top w-100 h-100"
-                  alt="{{movie_id}}"
-                />
-                <div class="card-body text-white text-center">
-                  <h5
-                    class="card-title d-inline-flex justify-content-start align-items-start ps-2 pe-2 pt-1 pb-1"
-                  >
-                    {{#each Genres}}
-                      {{genre_name}}{{#unless @last}}/{{/unless}}
-                    {{/each}}
-                  </h5>
-                  <p class="d-block justify-content-start align-items-start">
-
-                    {{#each (Array (half rating))}}
-                      <i class="bi bi-star-fill"></i>
-                    {{/each}}
-                    
-                  </p>
-                  <p class="card-text w-100">{{title}}</p>
-                  <a
-                    name="playMovie"
-                    id="movie_{{movie_id}}"
-                    class="btn p-3 fw-bold play-btn text-white"
-                    href="/watch/{{movie_id}}"
-                    role="button"
-                  ><i class="bi bi-play-fill"></i> Watch</a>
-                </div>
-              </div>
-            {{/each}}
-          </div>
-        </div>
-      {{/each}}
+          {{#each (Array (half rating))}}
+            <i class="bi bi-star-fill"></i>
+          {{/each}}
+          
+        </p>
+        <p class="card-text w-100">{{title}}</p>
+        <a
+          name="playMovie"
+          id="movie_{{movie_id}}"
+          class="btn p-3 fw-bold play-btn text-white"
+          href="/watch/{{movie_id}}"
+          role="button"
+        ><i class="bi bi-play-fill"></i> Watch</a>
+      </div>
     </div>
-    <button
-      class="carousel-control-prev"
-      type="button"
-      data-bs-target="#unfinished"
-      data-bs-slide="prev"
-    >
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button
-      class="carousel-control-next"
-      type="button"
-      data-bs-target="#unfinished"
-      data-bs-slide="next"
-    >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  {{/each}}
   </div>
-
-  <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
-    <i class="bi bi-play-fill" id="play-title"></i>For You
-  </h2>
-  
-
-  <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
-    <i class="bi bi-play-fill" id="play-title"></i>Cinema
-  </h2>
-
-  <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
-    <i class="bi bi-play-fill" id="play-title"></i>TV Series
-  </h2>
 
   <!-- Modal Body -->
   <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
@@ -219,52 +162,52 @@
                     </p>
                     <div class="filters-container">
                       <div class="filter-item">
-                        <input type="checkbox" id="TV Movie" name="TV Movie" />
+                        <input type="checkbox" id="TV Movie" name="TV Movie" value="off" />
                         <label for="tvSeries" class="fw-semibold">TV Movie</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="History" name="History" />
+                        <input type="checkbox" id="History" name="History" value="off" />
                         <label for="cinematic" class="fw-semibold">History</label>
                       </div>
                       <!-- Add more checkbox items as needed -->
                       <div class="filter-item">
-                        <input type="checkbox" id="Action" name="action" />
+                        <input type="checkbox" id="Action" name="action" value="off" />
                         <label for="action" class="fw-semibold">Action</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Animated" name="animated" />
+                        <input type="checkbox" id="Animated" name="animated" value="off" />
                         <label for="animated" class="fw-semibold">Animated</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Adventure" name="adventure"/>
+                        <input type="checkbox" id="Adventure" name="adventure" value="off" />
                         <label for="adventure" class="fw-semibold">Adventure</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Comedy" name="comedy" />
+                        <input type="checkbox" id="Comedy" name="comedy" value="off" />
                         <label for="comedy" class="fw-semibold">Comedy</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Drama" name="drama" />
+                        <input type="checkbox" id="Drama" name="drama" value="off" />
                         <label for="drama" class="fw-semibold">Drama</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Fantasy" name="fantasy" />
+                        <input type="checkbox" id="Fantasy" name="fantasy" value="off" />
                         <label for="fantasy" class="fw-semibold">Fantasy</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Horror" name="horror" />
+                        <input type="checkbox" id="Horror" name="horror" value="off" />
                         <label for="horror" class="fw-semibold">Horror</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Mystery" name="mystery" />
+                        <input type="checkbox" id="Mystery" name="mystery" value="off" />
                         <label for="mystery" class="fw-semibold">Mystery</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Romance" name="romance" />
+                        <input type="checkbox" id="Romance" name="romance" value="off" />
                         <label for="romance" class="fw-semibold">Romance</label>
                       </div>
                       <div class="filter-item">
-                        <input type="checkbox" id="Thriller" name="thriller" />
+                        <input type="checkbox" id="Thriller" name="thriller" value="off" />
                         <label for="thriller" class="fw-semibold">Thriller</label>
                       </div>
                     </div>

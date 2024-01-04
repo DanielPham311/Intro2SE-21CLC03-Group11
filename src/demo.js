@@ -23,7 +23,7 @@ const stuff = async () => {
     // });
     // let siu = await movie.findTopMovieRating(5); // CategorizeMovieByGenres(['Adventure','Action','Thriller']);
 
-    let siu = await movie.searchByTitle("spider");
+    let siu = await movie.searchMovieByGenres(["Adventure","Action"]);
     console.log(siu);
     // siu[0].MovieTrailers.forEach(trailer => {
     //   console.log(trailer.dataValues);

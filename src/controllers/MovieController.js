@@ -27,7 +27,7 @@ controller.search = async (req, res) => {
         console.log(movie);
         res.render('movieSearchResult', {
             layout: 'layout',
-            unfinishedList: movie
+            result: movie
          });
     } catch (err) {
         console.error(err);
@@ -37,11 +37,21 @@ controller.search = async (req, res) => {
 controller.searchByGenre = async (req, res) => {
     const genreList = req.body.genres;
     try {
-        const movie = await MovieService.CategorizeMovieByGenres(genreList);
+        const movie = await MovieService.searchMovieByGenres(genreList);
         console.log(movie);
         res.render('movieSearchResult', {
             layout: 'layout',
-            unfinishedList: movie
+            result: movie
+         });
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+controller.movieSearchDefault = async (req, res) => {
+    try {
+        res.render('movieSearchResult', {
+            layout: 'layout'
          });
     } catch (err) {
         console.error(err);

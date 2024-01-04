@@ -84,7 +84,10 @@ app.use((req, res, next) => {
   next();
 });
 app.use(AppRouter);
+
+app.use(MovieRouter);
 app.use("/watch", MovieRouter);
+app.use("/movieResult", MovieRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
