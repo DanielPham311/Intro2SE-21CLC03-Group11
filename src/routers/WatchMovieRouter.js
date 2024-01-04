@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const MovieController = require('../controllers/MovieController');
+const getAllGenre = require('../services/MovieService').getAllGenre;
 router.get('/:movie_id', (req, res, next) => {
     try {
         return MovieController.movie_detail(req, res);
@@ -9,7 +10,7 @@ router.get('/:movie_id', (req, res, next) => {
 });
 
 router.post("/movieResult", async (req, res) => {
-    let checkboxes = ['TV Movie', 'History', 'Action', 'Animated', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Romance', 'Thriller'];
+    let checkboxes = await getAllGenre();
     checkboxes = checkboxes.filter(checkbox => req.body[checkbox]);
 
     if (req.body.movieName) {

@@ -33,6 +33,14 @@ const MovieService = {};
 //     return [];
 //   }
 // }
+MovieService.getAllGenre = async () => {
+  try {
+    const res = await Genre.findAll();
+    return res.map((genre) => genre.dataValues.genre_name);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 MovieService.searchByTitle = async (movie_name) => {
   const Op = require("sequelize").Op;
