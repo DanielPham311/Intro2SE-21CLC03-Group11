@@ -12,5 +12,5 @@
     "database": "btqwfrkhhohfbtds6c9u",
     "host": "btqwfrkhhohfbtds6c9u-mysql.services.clever-cloud.com",
     "dialect": "mysql"
-  },
+  }
 }
