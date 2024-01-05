@@ -1,5 +1,6 @@
 const AccountService = require("../services/Authentication_Service");
 const MailService = require("../services/SendEmailService");
+const MovieService = require("../services/MovieService");
 
 const controller = {};
 
@@ -41,6 +42,32 @@ controller.resetPasswordByEmail = async (req, res) => {
 
 controller.resetPasswordByPhoneNumbers = async (req, res) => {
   res.status(200).json({ message: "TEST" });
+};
+
+controller.checkValidMovie = async (req, res) => {
+  const movie_id = req.params.movie_id;
+
+  const mov = await MovieService.getMovieById(movie_id);
+
+  if (mov != undefined) {
+    if (
+      mov.dataValues.video_link == null ||
+      mov.dataValues.video_link == undefined ||
+      mov.dataValues.video_link == ''
+    ) {
+      return res
+        .status(401)
+        .json({
+          message: "Movie hiện chưa được cập nhật. Xin bạn quay lại lần sau!",
+        });
+    }
+    return res.status(200).json({ message: "Movie available" });
+  }
+  return res
+    .status(401)
+    .json({
+      message: "Movie hiện chưa được cập nhật. Xin bạn quay lại lần sau!",
+    });
 };
 
 module.exports = controller;

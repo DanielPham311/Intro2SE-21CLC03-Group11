@@ -60,19 +60,40 @@ function displaySearchResults(results) {
   }
 }
 
-
-function handleWatchBtnClick(event, movie_id) {
+async function handleWatchBtnClick(event, movie_id) {
   event.preventDefault();
 
   // Get the movie ID from the clicked button's data attribute
   const movieId = movie_id;
 
-  // Perform your custom checks based on the movie ID
-  if (yourCustomCheckFunction(movieId)) {
-    // If the check passes, navigate to the link
+  try {
+    const response = await fetch(`/video-available/${movieId}`);
+
+    if (!response.ok) {
+      let errorMessage = "An error occurred. Please try again.";
+
+      try {
+        // Attempt to parse the response body as JSON
+        const errorBody = await response.json();
+        if (errorBody.message) {
+          errorMessage = errorBody.message.toUpperCase();
+        }
+      } catch (parseError) {
+        console.error("Error parsing JSON:", parseError);
+      }
+
+      throw new Error(errorMessage);
+    }
+
+    const data = await response.json();
+    console.log(data);
     window.location.href = event.target.getAttribute('href');
-  } else {
-    // If the check fails, do something else or just return
-    console.log('Custom check failed. Do something else.');
+  } catch (error) {
+    Swal.fire({
+      icon: "Warning", // or 'error', 'warning', 'info'
+      title: "Thật xin lỗi!",
+      text: error.message, // Assuming there is a 'message' property in the response body
+    });
+    console.error("Error:", error.message);
   }
 }
