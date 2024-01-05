@@ -55,7 +55,7 @@ MovieService.searchByTitle = async (movie_name) => {
         { model: Genre },
         { model: MovieTrailer }
       ],
-      limit: 7
+      // limit: 7
     });
     return movies.map((movies) => movies.dataValues);
   } catch (error) {
@@ -102,11 +102,11 @@ MovieService.searchMovieByGenres = async (genreList) => {
     const intersection = results.reduce((a, b) =>
       a.filter((c) => b.some((d) => d.title === c.title))
     );
-    // Extract movie titles from the intersection
-    const limitedIntersection = intersection.slice(0, 7);
-    // Extract movie titles from the limited intersection
-    return limitedIntersection.map((movie) => movie.dataValues);
-    // return intersection.map((movie) => movie.dataValues);
+    // // Extract movie titles from the intersection
+    // const limitedIntersection = intersection.slice(0, 7);
+    // // Extract movie titles from the limited intersection
+    // return limitedIntersection.map((movie) => movie.dataValues);
+    return intersection.map((movie) => movie.dataValues);
   } catch (error) {
     throw error;
   }

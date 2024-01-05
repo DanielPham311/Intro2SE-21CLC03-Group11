@@ -71,8 +71,29 @@
   box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
   border: none;
   border-radius: 0;
-  height: 420px;
+  height: 420px;  
 }
+
+/*new stuff*/
+
+.card-res {
+  position: relative;
+  max-width: 500px;
+  height: 600px;
+}
+
+.card-img-top {
+  height: 400px;
+  overflow: hidden;
+}
+
+.btn-res {
+  position: absolute;
+  bottom: 30px;
+  left: 67px;
+}
+
+/*new stuff*/
 
 .card img {
   max-width: 100%;

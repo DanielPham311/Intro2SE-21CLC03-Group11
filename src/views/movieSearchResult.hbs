@@ -66,7 +66,41 @@
   <h2 class="text-white bg-dark px-5 py-3 mt-2 fw-lighter">
     <i class="bi bi-play-fill" id="play-title"></i> Search results
   </h2>
-  <div class="d-flex flex-row bg-dark pt-5">
+
+<div class="row bg-dark pt-5">
+  {{#unless result }}
+    <h2 class="text-white fs-2 fw-bold ps-5 ms-5 pb-5 mb-5"> No result found </h2>
+  {{/unless}}
+  {{#each result}} <!--For each movie-->
+  <div class="col-lg-2 col-md-4 col-sm-6">
+    <div class="card-res bg-black bg-opacity-50 mt-3">
+      <img
+        src="{{poster_path}}"
+        class="card-img-top"
+        alt="{{movie_id}}"
+        style="height: auto; width: 100%; object-fit: cover;"
+      />
+      <div class="card-body text-white text-center">
+        <p class="d-block justify-content-start align-items-start">
+          {{#each (Array (half rating))}}
+            <i class="bi bi-star-fill"></i>
+          {{/each}}
+        </p>
+        <p class="card-text w-100">{{title}}</p>
+        <a
+          name="playMovie"
+          id="movie_{{movie_id}}"
+          class="btn-res btn p-3 fw-bold play-btn text-white"
+          href="/watch/{{movie_id}}"
+          role="button"
+        ><i class="bi bi-play-fill"></i> Watch</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+  {{!-- <div class="d-flex flex-row bg-dark pt-5">
     {{#unless result }}
       <h2 class="text-white fs-2 fw-bold ps-5 ms-5 pb-5 mb-5"> No result found </h2>
     {{/unless}}
@@ -103,7 +137,7 @@
       </div>
     </div>
   {{/each}}
-  </div>
+  </div> --}}
 
   <!-- Modal Body -->
   <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
