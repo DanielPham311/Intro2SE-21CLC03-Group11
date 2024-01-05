@@ -28,6 +28,7 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "password-generator": "^2.3.2",
-    "sequelize": "^6.35.1"
+    "sequelize": "^6.35.1",
+    "sweetalert2": "^11.10.2"
   }
 }

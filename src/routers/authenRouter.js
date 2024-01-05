@@ -5,7 +5,8 @@ const AuthenService = require("../services/Authentication_Service");
 router.post(
   "/login",
   passport.authenticate("local", {
-    failureRedirect: "/login-failure",
+    failureRedirect: "/login",
+    failureMessage: "Invalid username or password",
     successRedirect: "/",
   })
 );
@@ -38,6 +39,13 @@ router.post("/register", async (req, res, next) => {
 
 // When you visit http://localhost:3000/login, you will see "Login Page"
 router.get("/login", (req, res) => {
+  const messages = req.session.messages || [];
+  if(messages != []) {
+    const message = messages[0];
+    if (message == 'Invalid username or password') {
+      return res.render("login", { layout: "functional_layout", css_file_name: "login", err_msg: message, err: true});
+    }
+  }
   res.render("login", { layout: "functional_layout", css_file_name: "login" });
 });
 

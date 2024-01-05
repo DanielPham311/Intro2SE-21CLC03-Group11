@@ -12,7 +12,7 @@ const verifyCallback = async (username, password, callbackDone) => {
   // console.log(password);
   try {
     let result = await Auth.verifyAccount(username, password);
-    console.log(result);
+    console.log(`Authenticate result: ${result}`);
     if (result == true) {
       const user = await Auth.getAccountByUsername(username);
       // demo identify between user and admin account
@@ -28,6 +28,8 @@ const verifyCallback = async (username, password, callbackDone) => {
       //----------------------------------------------
       callbackDone(null, await user);
     } else {
+      console.log("Handling the wrong username or password");
+
       return callbackDone(null, false);
     }
   } catch (err) {

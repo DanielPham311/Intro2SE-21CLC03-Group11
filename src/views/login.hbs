@@ -114,3 +114,12 @@
 </div>
 
 <script src="/js/s_login.js"></script>
+{{#if err}}
+<script defer>
+  Swal.fire({
+        icon: "error", // or 'error', 'warning', 'info'
+        title: "Login failed",
+        text: '{{err_msg}}'.toUpperCase(), // Assuming there is a 'message' property in the response body
+      })
+</script>
+{{/if}}
