@@ -12,8 +12,8 @@ router.post("/resetPassword", async (req, res) => {
   }
 });
 
-router.get('/video-available', async (req, res) => {
-  
+router.get('/video-available/:movie_id', async (req, res) => {
+  return ApiController.checkValidMovie(req, res);
 })
 
 module.exports = router;
