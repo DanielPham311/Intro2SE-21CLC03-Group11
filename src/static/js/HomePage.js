@@ -59,3 +59,20 @@ function displaySearchResults(results) {
     resultsContainer.innerHTML = "<p>No results found</p>";
   }
 }
+
+
+function handleWatchBtnClick(event, movie_id) {
+  event.preventDefault();
+
+  // Get the movie ID from the clicked button's data attribute
+  const movieId = movie_id;
+
+  // Perform your custom checks based on the movie ID
+  if (yourCustomCheckFunction(movieId)) {
+    // If the check passes, navigate to the link
+    window.location.href = event.target.getAttribute('href');
+  } else {
+    // If the check fails, do something else or just return
+    console.log('Custom check failed. Do something else.');
+  }
+}

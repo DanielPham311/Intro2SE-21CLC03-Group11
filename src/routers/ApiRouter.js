@@ -12,4 +12,8 @@ router.post("/resetPassword", async (req, res) => {
   }
 });
 
+router.get('/video-available', async (req, res) => {
+  
+})
+
 module.exports = router;

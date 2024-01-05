@@ -59,10 +59,16 @@ router.get("/login-failure", (req, res, next) => {
 
 // Visiting this route logs the user out
 router.get("/logout", (req, res, next) => {
-  req.logout((err) => {
+  console.log('User logout');
+  // Destroy the session
+  req.session.destroy((err) => {
     if (err) {
       return next(err);
     }
+
+    // Clear the session cookie
+    res.clearCookie('connect.sid');  // Replace 'connect.sid' with your actual cookie name
+
     // Additional cleanup or actions can be added here
     res.redirect("/login");
   });
